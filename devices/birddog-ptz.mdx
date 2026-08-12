@@ -1,0 +1,42 @@
+---
+title: "BirdDog PTZ"
+sidebarTitle: "BirdDog PTZ"
+description: "Control BirdDog NDI pan/tilt/zoom cameras — drive pan, tilt, zoom, and focus, recall presets, control NDI output and tally, and adjust exposure and power — with live state and triggers."
+icon: "camera"
+---
+
+The **BirdDog PTZ** device controls [BirdDog](https://www.birddog.tv/) NDI pan/tilt/zoom cameras — including the X and P series, A200 / A300, MAX, and MAKI Ultra.
+
+A single BirdDog PTZ device drives both camera movement and BirdDog's own NDI, tally, and imaging features, so you don't need to add a separate [VISCA PTZ](/devices/visca-ptz) device for the same camera.
+
+## Connection
+
+The agent connects to the camera over your network. Provide the camera's **host**, and if needed adjust the **control port** (default **8080**), the **VISCA port** (default **52381**), the **camera address** (almost always **1**), and the **status poll interval**. You can also record the camera **model** for reference; it is detected automatically when left blank.
+
+<Note>
+  These cameras are unauthenticated — keep them on an isolated production network.
+</Note>
+
+## Commands
+
+The BirdDog PTZ device supports the full range of camera operations, including:
+
+- **Pan, tilt, zoom, and focus** — drive in a direction, move to an absolute or relative position, return **home**, or reset; toggle **auto focus** or trigger a one-push focus
+- **Presets** — recall, store, or clear a stored position
+- **Power** the camera on or to standby
+- Adjust **exposure**, **white balance**, **iris**, **gain**, and **shutter**, and **flip** or **mirror** the image — including BirdDog's named exposure and white-balance modes
+- **NDI output** — start or stop the NDI stream, set the stream name and video mode, and point the camera at an NDI discovery server
+- Control the **tally** lamp
+- Send a raw command for operations not listed above
+
+## State and triggers
+
+The device reports its connection state and raises triggers your [rules](/automation/rules) can react to, including:
+
+- Connection changes
+- **Power** on / standby changes
+- **Tally** state changes
+- **NDI output** changes
+- A **preset** being recalled
+
+Trigger data such as the preset number, power state, and tally state is available for use in rule actions.
