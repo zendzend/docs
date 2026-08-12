@@ -1,0 +1,34 @@
+---
+title: "Viz Flowics"
+sidebarTitle: "Viz Flowics"
+description: "Control Vizrt Viz Flowics cloud graphics — take overlays on and off air, update text and images from your rundown, and toggle overlays — over its Graphics Control API."
+icon: "sparkles"
+---
+
+The **Viz Flowics** device controls [Vizrt Viz Flowics](https://www.vizrt.com/products/viz-flowics/) (formerly Flowics), a cloud, HTML5 graphics platform, over its Graphics Control API. It is ideal for driving live overlays — such as lower thirds — straight from your rundown.
+
+## Connection
+
+The agent connects to Viz Flowics over the internet. Provide the graphics package's **Control API token** (stored securely), and if needed set a different **API base URL**.
+
+<Note>
+  Before Fabl can address a text or image element, give it a **Control API ID** in the Flowics editor and republish the graphics package.
+</Note>
+
+## Commands
+
+The Viz Flowics device supports overlay control, including:
+
+- **Show** an overlay (take it on air), **hide** it (take it off air), or **toggle** it
+- **Update a text control** — ideal for pushing rundown text into a live graphic
+- Show an overlay and set its text in a single step
+- **Set an image control** from an asset in your Flowics library
+- Send a raw request for Control API operations not listed above, such as playlists, timers, and output control
+
+<Note>
+  One overlay is on air per region — taking a second overlay in the same region automatically takes out the first.
+</Note>
+
+## State
+
+The device reports its connection state, derived from the outcome of the commands it sends. It does not raise triggers.

@@ -135,7 +135,10 @@
               "devices/xpression",
               "devices/birddog-ptz",
               "devices/bolin-ptz",
-              "devices/canon-ptz"
+              "devices/canon-ptz",
+              "devices/viz-flowics",
+              "devices/companion-satellite",
+              "devices/bitfocus-companion"
             ]
           }
         ],
