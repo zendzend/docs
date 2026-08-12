@@ -7,30 +7,106 @@ icon: "sliders"
 
 Fabl controls your studio gear through a [Studio Agent](/automation/agents) running in your facility. The agent connects to each device over your local network and carries out the commands produced by [rules](/automation/rules) and live [studio mode](/production/studio-mode) cues. It also reports each device's state back to Fabl in real time, and some devices raise **triggers** that rules can react to.
 
-This section documents each supported device: what it controls, how it connects, the commands it accepts, and the state and triggers it reports.
+Every device type below can be added and driven today. Where a device name links to a page, that page documents its commands, state, and triggers in detail.
 
-## Supported devices
+## Video switchers and production systems
 
 | Device | Controls | Connection |
 | --- | --- | --- |
 | [ATEM](/devices/atem) | Blackmagic ATEM video switchers | Network (UDP) |
 | [vMix](/devices/vmix) | vMix live production software | TCP API |
+| [Vizrt TriCaster](/devices/tricaster) | Vizrt (NewTek) TriCaster systems | HTTP API |
+| OBS Studio | OBS Studio live production | WebSocket |
+| Streamlabs Desktop | Streamlabs Desktop | WebSocket |
+| Ross Video Carbonite | Ross Carbonite production switchers | TCP |
+| Ross Video Ultrix | Ross Ultrix routing platform | TCP |
+| Utah Scientific | Utah Scientific routers | TCP |
+| Barco Event Master | Barco Event Master screen management | JSON-RPC over HTTP |
+| RØDECaster Video | RØDECaster Video production console | OSC over TCP |
+
+## Playout, media servers, and clip players
+
+| Device | Controls | Connection |
+| --- | --- | --- |
 | [CasparCG](/devices/casparcg) | CasparCG playout server | AMCP over TCP |
-| [Behringer X32](/devices/behringer-x32) | X32 / M32 digital audio mixers | OSC over UDP |
-| [ChamSys GeNetix](/devices/chamsys-genetix) | ChamSys MagicQ / GeNetix lighting consoles | OSC over UDP |
-| [TouchDesigner](/devices/touchdesigner) | Derivative TouchDesigner | TCP or UDP |
 | [Metus Player](/devices/metus-player) | Metus media playout | HTTP API |
-| [Vizrt TriCaster](/devices/tricaster) | Vizrt (NewTek) TriCaster live production systems | HTTP API |
-| [Blackmagic Fairlight](/devices/fairlight) | Blackmagic Fairlight Live audio consoles | OSC over UDP |
-| [VISCA PTZ](/devices/visca-ptz) | VISCA-compatible pan/tilt/zoom cameras | VISCA over IP |
+| Metus Ingest | Metus ingest | TCP |
+| Blackmagic HyperDeck | HyperDeck recorders and players | HTTP API and WebSocket |
+| Imimot Mitti | Mitti clip playback | OSC over UDP |
+| OnTheAir Video | OnTheAir Video playout | HTTP API |
+| Ross Video Server (Tria) | Ross Tria video servers | TCP |
+| AV Stumpfl Pixera | Pixera media servers | OSC over UDP |
+| Resolume Arena | Resolume Arena | HTTP API and OSC |
+| Figure 53 QLab | QLab show playback | OSC over UDP |
+
+## Graphics
+
+| Device | Controls | Connection |
+| --- | --- | --- |
+| [TouchDesigner](/devices/touchdesigner) | Derivative TouchDesigner | TCP or UDP |
+| [Ross Video XPression](/devices/xpression) | XPression graphics | TCP |
+| Singular.Live | Singular.Live cloud graphics | HTTP API |
+| Viz Flowics | Viz Flowics cloud graphics | HTTP API |
+| RenewedVision ProPresenter | ProPresenter presentation software | HTTP API |
+
+## Audio
+
+| Device | Controls | Connection |
+| --- | --- | --- |
+| [Behringer X32](/devices/behringer-x32) | X32 / M32 digital audio mixers | OSC over UDP |
+| [Blackmagic Fairlight](/devices/fairlight) | Fairlight Live audio consoles | OSC over UDP |
+| Behringer X Air | X Air / M Air compact mixers | OSC over UDP |
+| Genelec Smart IP | Genelec Smart IP loudspeakers | HTTP API |
+| Sennheiser Spectera | Sennheiser Spectera wireless | HTTP API |
+
+## Cameras
+
+| Device | Controls | Connection |
+| --- | --- | --- |
+| [VISCA PTZ](/devices/visca-ptz) | VISCA-compatible PTZ cameras | VISCA over IP |
+| [Panasonic PTZ](/devices/panasonic-ptz) | Panasonic PTZ cameras | HTTP API |
+| Canon PTZ | Canon PTZ cameras | HTTP API |
+| BirdDog PTZ | BirdDog PTZ cameras | HTTP API and VISCA over IP |
+| Bolin PTZ | Bolin PTZ cameras | VISCA over IP |
+| OBSBOT | OBSBOT cameras | OSC |
+
+## Lighting
+
+| Device | Controls | Connection |
+| --- | --- | --- |
+| [ChamSys GeNetix](/devices/chamsys-genetix) | ChamSys MagicQ / GeNetix lighting consoles | OSC over UDP |
+
+## Streaming and encoding
+
+| Device | Controls | Connection |
+| --- | --- | --- |
 | [Twitch](/devices/twitch) | A Twitch channel | Twitch API |
+| Blackmagic Streaming Encoder | Blackmagic streaming encoders | HTTP API and WebSocket |
+| Teradek | Teradek encoders | HTTP API |
+
+## Control surfaces, timing, and automation
+
+| Device | Controls | Connection |
+| --- | --- | --- |
 | [Streamer.bot](/devices/streamer-bot) | Streamer.bot automation | WebSocket |
+| [Bitfocus Companion](/devices/bitfocus-companion) | Companion button surfaces | HTTP API |
+| Bitfocus Satellite Surface | A Satellite surface connecting to the agent | TCP (the agent listens) |
+| Cuez Automator | Cuez Automator | HTTP API |
+| Ontime | Ontime rundown timer | WebSocket |
+
+## Utility
+
+| Device | Controls | Connection |
+| --- | --- | --- |
 | [File Watcher](/devices/file-watcher) | A watched folder on the agent host | Local file system |
+| Generic OSC | Any OSC-capable device or application | OSC over UDP or TCP |
+| HTTP Webhook | Any HTTP endpoint | HTTP request |
+| [Shelly](/devices/shelly) | Shelly smart switches and power monitoring | HTTP API |
 
 ## Adding a device
 
 To connect any of these, add it from **Automations → Devices**, choose its type, select the agent that will manage it, and enter its connection settings. See [Devices](/automation/devices) for the full procedure.
 
 <Note>
-  Connection ports listed in these pages are the common defaults; configure them to match your environment.
+  Connection ports are the common defaults for each product; configure them to match your environment.
 </Note>
