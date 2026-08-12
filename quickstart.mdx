@@ -1,0 +1,83 @@
+---
+title: "Quickstart: Set Up Fabl and Run Your First Show"
+sidebarTitle: "Quickstart"
+description: "Create your workspace, connect an agent and a device, build a page, and run it as a live rundown — everything you need to get on air."
+---
+
+This guide takes you from a fresh account to running a live rundown that controls a real device. The setup steps take only a few minutes.
+
+<Steps>
+  <Step title="Sign in and create your workspace">
+    Sign in to Fabl. The first time you log in, the onboarding wizard helps you set up your **workspace** — the shared environment that holds all your spaces, pages, devices, and automations.
+
+    1. Enter a **workspace name** and confirm the **handle** (used in your workspace URL).
+    2. Choose what you'll use Fabl for (live broadcast, studio production, sports, news, corporate AV, or other). This is optional and only tailors your onboarding.
+    3. Continue to the next step.
+
+    <Tip>
+      You can skip the optional steps and come back later. The **Get started** checklist on your dashboard tracks what's left to do.
+    </Tip>
+  </Step>
+  <Step title="Invite your team">
+    Still in onboarding, add teammates by email and assign each one a role of **Member** or **Admin**. Click **Send invites**, or **Skip for now** if you'd rather invite people later.
+
+    Invitations are sent by email; teammates join your workspace as soon as they accept. See [Invite members](/team/invite-members) for the full flow.
+  </Step>
+  <Step title="Connect a Studio Agent">
+    A **Studio Agent** is a small service you install on a machine in your gallery or control room. It connects your devices to Fabl and relays your live cues to them.
+
+    1. Go to **Automations → Agents** and click **Add agent**.
+    2. Give the agent a name and copy the **registration token** it generates.
+    3. Install and start the agent on a machine on the same network as your gear, providing the token so it can register.
+
+    Once the agent connects, its status turns **Online** on the Agents page. See [Agents](/automation/agents) for details.
+  </Step>
+  <Step title="Add a device">
+    With an agent online, connect a device for it to control.
+
+    1. Go to **Automations → Devices** and click **Add device**.
+    2. Choose a **device type** (for example, vMix or ATEM).
+    3. Select the **agent** that will manage it, then fill in the connection details (host, port, and any device-specific options).
+    4. Click **Save**. The device reports **Online** once the agent reaches it.
+
+    See [Devices](/automation/devices) and the [Devices](/devices/overview) reference for every supported device.
+  </Step>
+  <Step title="Build a page">
+    Content in Fabl lives in **pages** built from **blocks**.
+
+    1. In the left sidebar, open or create a **space**, then create a **new page**.
+    2. Add blocks to the page — type a title and press the **\+** control to add fields, media, components, or containers.
+    3. Each row becomes a rundown item when you run the page live.
+
+    See [Pages and blocks](/content/pages-and-blocks) to learn the building blocks.
+  </Step>
+  <Step title="Run it as a rundown">
+    Now run your page as a live rundown.
+
+    1. Open the page and click **Studio** to enter studio mode, selecting the agent that will execute the show.
+    2. Use the transport controls to **cue** an item and **take** it on air. Each item shows its status — idle, cued, on-air, completed, or skipped.
+    3. Watch the **show clock** and **item timer** as you advance through the rundown.
+
+    See [Studio mode](/production/studio-mode) for every control and shortcut.
+  </Step>
+</Steps>
+
+## What's next?
+
+<CardGroup cols={2}>
+  <Card title="Pages and blocks" icon="layout-grid" href="/content/pages-and-blocks">
+    Learn how spaces, pages, blocks, components, and templates fit together.
+  </Card>
+
+  <Card title="Studio mode" icon="play" href="/production/studio-mode">
+    Master the live control surface — cue, take, auto-advance, and timing.
+  </Card>
+
+  <Card title="Automation rules" icon="bolt" href="/automation/rules">
+    Make production events drive your devices and prompter automatically.
+  </Card>
+
+  <Card title="Supported devices" icon="sliders" href="/devices/overview">
+    See how the agent connects switchers, audio, lighting, and playout.
+  </Card>
+</CardGroup>

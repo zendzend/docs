@@ -1,0 +1,97 @@
+---
+title: "Sync Fabl Rundowns and Segments to an Airtable Base"
+sidebarTitle: "Airtable"
+description: "Sync Fabl rundowns and segments to an Airtable base for production tracking, reporting, and planning with full field-level control."
+---
+
+The Airtable integration lets you push Fabl rundown and segment data into an Airtable base so your team can track, analyze, and report on production activity using Airtable's powerful grid, gallery, calendar, and Gantt views. Once connected, Fabl keeps your chosen Airtable base up to date as rundowns are published or updated — giving producers, coordinators, and executives a live view of the production pipeline without needing to log in to Fabl. You configure exactly which Fabl fields map to which Airtable fields, so the integration fits your existing base structure rather than forcing you to rebuild it.
+
+## What syncs from Fabl to Airtable
+
+Fabl can sync the following data to your Airtable base:
+
+- **Rundowns** — name, show, air date, production status, segment count, publish date, and a direct link back to Fabl
+- **Segments** — segment title, type, script summary, duration, assigned team member, and segment status
+
+Rundowns and segments can sync into a single Airtable table or into separate linked tables — you decide during setup.
+
+<Note>
+  The Airtable integration is a one-way sync from Fabl to Airtable. Edits made in Airtable are not written back to Fabl. Treat Fabl as your production source of truth.
+</Note>
+
+## Connect Fabl to Airtable
+
+<Steps>
+  <Step title="Open Integrations settings">
+    In Fabl, click your workspace avatar and select **Settings**. Go to the **Integrations** tab and click **Connect** next to Airtable.
+  </Step>
+  <Step title="Authorize with Airtable">
+    Fabl redirects you to Airtable's OAuth authorization page. Sign in to Airtable if prompted, then select the bases you want to grant Fabl access to. Click **Grant access** to return to Fabl.
+  </Step>
+  <Step title="Choose your base">
+    In the integration settings panel, use the **Base** dropdown to select the Airtable base where Fabl should sync data. Only bases you granted access to in the previous step appear here.
+  </Step>
+  <Step title="Choose your table">
+    Select the table within the base where Fabl should create and update records. If you plan to sync rundowns and segments into separate linked tables, you can configure the second table in the **Advanced settings** section.
+  </Step>
+  <Step title="Map your fields">
+    Fabl presents a field mapping interface. For each Fabl data field you want to sync, choose the corresponding Airtable field from the dropdown. Fields you leave unmapped are not synced.
+  </Step>
+  <Step title="Configure sync triggers and save">
+    Choose when Fabl syncs to Airtable — on publish, on a schedule, or manually. Click **Save**, then click **Sync now** to run an initial sync and populate the table with your existing Fabl rundowns.
+  </Step>
+</Steps>
+
+## Configure the base, table, and field mapping
+
+### Choosing the right table structure
+
+You have two options for how Fabl writes data to Airtable:
+
+**Single table** — Fabl writes one row per rundown. Segment data is flattened into summary fields (such as total segment count and a comma-separated list of segment titles). This is the simplest setup.
+
+**Linked tables** — Fabl writes rundowns into one table and individual segments into a second table, linked by a relational field. This preserves full segment-level detail and is ideal for detailed production tracking. Configure the segments table under **Settings → Integrations → Airtable → Configure → Advanced settings**.
+
+### Field mapping reference
+
+| Airtable field type | Supported Fabl fields |
+|---|---|
+| **Single line text** | Rundown Name, Show Name, Segment Title |
+| **Long text** | Script Summary, Notes, Description |
+| **Single select** | Production Status, Segment Type |
+| **Date** | Air Date, Publish Date, Segment Created Date |
+| **Number** | Segment Count, Duration (seconds) |
+| **URL** | Fabl Rundown Link |
+| **Email** | Assigned Team Member Email |
+| **Checkbox** | Published |
+
+<Tip>
+  If your Airtable base uses a **Formula** field to derive values (such as a formatted air date string), map the underlying data field in Fabl to the source field the formula reads from, not the formula field itself. Airtable does not allow external apps to write to formula fields directly.
+</Tip>
+
+## Sync behavior
+
+### On-publish sync
+
+Fabl pushes data to Airtable immediately when you publish a rundown. If a record for that rundown already exists in the table (matched by rundown ID), Fabl updates it in place. If no matching record exists, Fabl creates a new row.
+
+### Scheduled sync
+
+Fabl syncs all changed rundowns at a regular interval — every hour, every 6 hours, or daily. This ensures Airtable stays current even if the on-publish trigger is not used.
+
+### Manual sync
+
+Click **Sync now** in **Settings → Integrations → Airtable → Configure** to immediately push all Fabl data to Airtable. Use this after making bulk changes in Fabl or when first setting up the integration.
+
+## Working with synced data in Airtable
+
+Once data is in Airtable, you can use it with any Airtable feature:
+
+- **Views** — build calendar views by air date, gallery views of rundown covers, or Gantt charts tracking production timelines
+- **Filters and grouping** — filter by status, group by show, or sort by air date to slice the data for different teams
+- **Automations** — trigger Airtable automations when Fabl updates a record — for example, send an email when a rundown's status changes to "Approved"
+- **Reporting** — use Airtable's dashboard blocks to build executive summaries of upcoming production
+
+<Warning>
+  Fabl does not delete records from Airtable when rundowns are deleted in Fabl. If you need your Airtable base to stay clean, set up an Airtable automation or view filter to surface records that are no longer active, and archive or delete them manually.
+</Warning>

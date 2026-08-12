@@ -1,0 +1,82 @@
+---
+title: "Automatically Sync Fabl Rundown Exports to Dropbox"
+sidebarTitle: "Dropbox"
+description: "Deliver Fabl rundown and script exports to a Dropbox folder on every publish. Supports PDF and CSV, personal accounts, and Dropbox Business team folders."
+---
+
+The Dropbox integration works the same way your team probably already uses Dropbox: files show up in a folder, and everyone with access to that folder can see them. Once connected, Fabl writes rundown and script exports directly to the Dropbox path you configure, either automatically on every publish or whenever you manually trigger an export. Because the files land in a standard Dropbox folder, your team can access them from the Dropbox desktop app, mobile app, or web interface — no Fabl account required.
+
+## What the integration does
+
+- Exports rundowns and scripts to a Dropbox folder path you specify
+- Supports PDF and CSV export formats
+- Runs automatically on publish, or on demand via a manual export
+- Names files with the rundown name and export date to prevent overwrites
+- Works with both personal Dropbox accounts and Dropbox Business accounts
+
+## Connect Dropbox
+
+<Steps>
+  <Step title="Open Integrations settings">
+    Click your workspace avatar in the bottom-left corner of Fabl and select **Settings**. Go to the **Integrations** tab and click **Connect** next to Dropbox.
+  </Step>
+  <Step title="Sign in to Dropbox">
+    Fabl redirects you to Dropbox's authorization page. Sign in with the Dropbox account that has write access to the folder you want to use for exports.
+  </Step>
+  <Step title="Authorize Fabl">
+    Review the permissions Fabl requests — it needs permission to create files in a specific folder in your Dropbox (it does not access the rest of your Dropbox). Click **Allow** to grant access and return to Fabl.
+  </Step>
+  <Step title="Set your export folder path">
+    In the Dropbox integration settings panel, enter the folder path where Fabl should save exports. For example, `/Production/Fabl Exports`. If the folder does not already exist in Dropbox, Fabl creates it on the first export.
+  </Step>
+  <Step title="Choose your export format and triggers">
+    Select PDF, CSV, or both. Then decide whether to enable **Auto-export on publish**. Click **Save** to activate the integration.
+  </Step>
+</Steps>
+
+<Note>
+  Fabl connects to Dropbox using the official Dropbox OAuth flow. Your Dropbox password is never shared with or stored by Fabl. You can revoke Fabl's access at any time from your Dropbox account's **Connected apps** page.
+</Note>
+
+## Configure the folder path
+
+You can change your export destination at any time by going to **Settings → Integrations → Dropbox → Configure** and updating the folder path field.
+
+### Folder path format
+
+Enter the path starting with a forward slash relative to your Dropbox root:
+
+- `/Fabl Exports` — saves files at the top level of your Dropbox
+- `/Production/Season 2/Rundowns` — saves files in a nested subfolder
+- `/Team Folder/Scripts` — works with Dropbox Business shared team folders
+
+<Tip>
+  If you use Dropbox Business, point the folder path to a shared team folder so that every team member automatically gets access to exported files without needing separate sharing permissions.
+</Tip>
+
+### Subfolder organization by show
+
+Enable **Organize by show** in the configuration panel to have Fabl automatically create a subfolder for each show within your base export path. For example, if your base path is `/Fabl Exports`, rundowns for a show called "Morning Brief" would appear at `/Fabl Exports/Morning Brief/`.
+
+## Export formats
+
+| Format | Description |
+|---|---|
+| **PDF** | A formatted, print-ready version of the rundown — ideal for sharing with stakeholders. |
+| **CSV** | A structured data export of rundown segments — useful for importing into spreadsheets or other tools. |
+
+You can enable both formats simultaneously. When both are selected, Fabl deposits two files for each export — one PDF and one CSV — in the same folder.
+
+## Automatic vs. manual export
+
+### Automatic export
+
+Enable **Auto-export on publish** in the configuration panel. Every time you publish a rundown in Fabl, it is automatically exported to your configured Dropbox folder in the background.
+
+### Manual export
+
+Open any rundown in Fabl, click the **•••** menu in the top-right corner, and select **Export to Dropbox**. Fabl immediately sends the current version to Dropbox regardless of whether the rundown has been published.
+
+<Warning>
+  If you disconnect the integration and then reconnect with a different Dropbox account, the folder path setting is preserved but points to the new account's Dropbox. Verify the destination folder is correct before your next publish.
+</Warning>

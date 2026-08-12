@@ -1,0 +1,25 @@
+---
+title: "CasparCG"
+sidebarTitle: "CasparCG"
+description: "Control a CasparCG playout server over AMCP — load and play clips and graphics, pause, stop, seek, and clear channels."
+icon: "clapperboard"
+---
+
+The **CasparCG** device controls a CasparCG playout server — commonly used for video playback and live graphics — using the AMCP control protocol.
+
+## Connection
+
+The agent connects to the CasparCG server over TCP using AMCP. Provide the **host** and, if needed, adjust the AMCP **port** (commonly **5250**).
+
+## Commands
+
+The CasparCG device wraps AMCP playout operations, including:
+
+- **Play**, **stop**, **pause**, and **seek**
+- **Load** a clip into a channel (including background load)
+- **Add**, **remove**, and **clear** layers and clips
+- Run server-side macros and send raw AMCP commands
+
+## State
+
+The device reports its connection state, including whether it's connected and the server version it's talking to.

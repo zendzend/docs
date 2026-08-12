@@ -1,0 +1,90 @@
+---
+title: "Configure Production Notifications and Alerts in Fabl"
+sidebarTitle: "Notifications"
+description: "Set up in-app, email, and Slack notifications to keep your team informed about show status, exports, and production milestones automatically."
+---
+
+Fabl can alert you and your team whenever something important happens in your production — a segment is completed, a scheduled export finishes, a rundown is approved, or an automation fails. Notifications work across three channels: the in-app notification center, email, and Slack. You control which events trigger notifications and which channels receive them, both at the workspace level and for your individual account.
+
+## Configure notification preferences
+
+<Steps>
+  <Step title="Open notification settings">
+    Click your avatar in the bottom-left corner and select **Notification Preferences** from the dropdown menu.
+  </Step>
+  <Step title="Choose your notification channel">
+    At the top of the preferences panel, select which channels you want to configure: **In-App**, **Email**, or **Slack**. You can enable multiple channels simultaneously.
+  </Step>
+  <Step title="Select events to subscribe to">
+    For each channel, toggle on the event categories you want to receive notifications for. Events are grouped by category — Show Events, Segment Events, Export Events, and Automation Events. Enable only the events relevant to your role to reduce noise.
+  </Step>
+  <Step title="Connect Slack (if applicable)">
+    If you select the Slack channel and have not yet connected Slack, click **Connect Slack** to authorize Fabl in your Slack workspace. Then choose the default channel or direct message where notifications should be delivered.
+  </Step>
+  <Step title="Save your preferences">
+    Click **Save Preferences**. Your settings apply immediately — you do not need to reload the page.
+  </Step>
+</Steps>
+
+<Note>
+  Workspace Owners and Admins can also configure workspace-level notification defaults under **Settings → Notifications**. These defaults apply to all team members who have not set their own preferences.
+</Note>
+
+## Notification types
+
+<AccordionGroup>
+  <Accordion title="In-App Notifications">
+    In-app notifications appear in the bell icon (🔔) in the top navigation bar. A badge count shows how many unread notifications you have. Click the bell to open the notification center, where each item shows the event type, the affected show or segment, the user who triggered it, and a timestamp.
+
+    **Events that generate in-app notifications by default:**
+    - A team member mentions you in a show note.
+    - A segment you own is marked complete or moved to review.
+    - A rundown you created is approved or rejected.
+    - An automation you built encounters an error.
+
+    You can mark individual notifications as read or clear all at once. Notifications are retained in the notification center for 30 days.
+  </Accordion>
+
+  <Accordion title="Email Notifications">
+    Email notifications are sent to the address associated with your Fabl account. They are designed to be actionable — each email includes a direct link back to the relevant show, segment, or export in Fabl.
+
+    **Events that generate email notifications by default:**
+    - You are invited to a workspace.
+    - A scheduled export completes successfully or fails.
+    - A rundown is approved and ready for distribution.
+    - Your account role is changed by an Admin or Owner.
+
+    To adjust email frequency, go to **Notification Preferences → Email** and choose **Instant**, **Daily Digest**, or **Off** for each event category. The daily digest bundles all email events from the previous 24 hours into a single message delivered at 8 AM in your workspace timezone.
+  </Accordion>
+
+  <Accordion title="Slack Notifications">
+    Slack notifications let Fabl post messages directly into your Slack workspace. After connecting your Slack account under **Settings → Integrations**, you can route different event types to different Slack channels — for example, sending export completions to `#production-ops` and show-start alerts to `#on-air`.
+
+    **Events commonly routed to Slack:**
+    - Show started or ended.
+    - Rundown approved and ready for air.
+    - Segment marked complete by an editor.
+    - Automation triggered or failed.
+
+    Slack notifications support dynamic message templates. You can customize the message body using variables like `{{show.name}}`, `{{segment.title}}`, and `{{user.name}}` to include context directly in the Slack post.
+
+    <Tip>
+      Create a dedicated `#fabl-alerts` channel in Slack and route all automation failure notifications there. This gives your team a single place to monitor issues without cluttering show-specific channels.
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Scheduled Export Notifications">
+    When you configure a scheduled export — either through a workflow automation or directly under **Settings → Scheduled Exports** — Fabl can notify you when each export runs.
+
+    **Notification options for scheduled exports:**
+    - **On success:** Receive a notification (in-app, email, or Slack) confirming the export completed and providing a download link or Google Drive URL.
+    - **On failure:** Receive an alert if the export fails, including a brief error description so you can troubleshoot quickly.
+    - **Recipient list:** You can add multiple email addresses to receive export completion notifications, including stakeholders who do not have a Fabl account.
+
+    To configure export notifications, open the scheduled export you want to update, go to the **Notifications** tab within the export settings, and enable your preferred channels and recipients.
+  </Accordion>
+</AccordionGroup>
+
+## Mute notifications for a show
+
+To temporarily silence notifications for a specific show — for example, during a high-volume live production — open the show, click the **⋯ More** menu in the show header, and select **Mute Notifications**. You can mute for 1 hour, 8 hours, or until you manually unmute. Global notification preferences remain unchanged for all other shows.

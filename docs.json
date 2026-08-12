@@ -1,0 +1,153 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "sequoia",
+  "name": "Fabl",
+  "description": "Documentation for Fabl — the broadcast production platform for live rundowns, studio control, teleprompter, media, and device automation.",
+  "colors": {
+    "primary": "#a6a6a6",
+    "light": "#353535",
+    "dark": "#dfdfdf"
+  },
+  "favicon": {
+    "light": "https://media.brand.dev/87495f41-a47e-40ab-9339-f1da8ae651f5.png",
+    "dark": "https://media.brand.dev/87495f41-a47e-40ab-9339-f1da8ae651f5.png"
+  },
+  "logo": {
+    "light": "/images/fabl-mintlify.png",
+    "dark": "/images/fabl-mintlify-white.png",
+    "href": "https://fabl.studio/"
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
+  "contextual": {
+    "options": ["copy", "view", "assistant"]
+  },
+  "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Home",
+          "icon": "house",
+          "href": "/"
+        },
+        {
+          "anchor": "Fabl Studio",
+          "icon": "external-link",
+          "href": "https://fabl.studio"
+        }
+      ]
+    },
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "key-concepts"
+            ]
+          },
+          {
+            "group": "Content",
+            "icon": "layout-grid",
+            "pages": [
+              "content/spaces-and-folders",
+              "content/pages-and-blocks",
+              "content/fields",
+              "content/components",
+              "content/field-presets",
+              "content/templates"
+            ]
+          },
+          {
+            "group": "Production",
+            "icon": "play",
+            "pages": [
+              "production/rundowns",
+              "production/studio-mode",
+              "production/prompter"
+            ]
+          },
+          {
+            "group": "Media",
+            "icon": "film",
+            "pages": [
+              "media/media-assets",
+              "media/transcoding",
+              "media/subtitle-editor"
+            ]
+          },
+          {
+            "group": "Automation",
+            "pages": [
+              "automation/overview",
+              "automation/rules",
+              "automation/devices",
+              "automation/agents"
+            ]
+          },
+          {
+            "group": "Team & Settings",
+            "pages": [
+              "team/invite-members",
+              "team/roles-and-permissions",
+              "settings/workspace"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Devices",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "devices/overview"
+            ],
+            "icon": "book-open"
+          },
+          {
+            "group": "Supported Devices",
+            "icon": "sliders",
+            "pages": [
+              "devices/atem",
+              "devices/vmix",
+              "devices/casparcg",
+              "devices/behringer-x32",
+              "devices/chamsys-genetix",
+              "devices/touchdesigner",
+              "devices/metus-player",
+              "devices/file-watcher",
+              "devices/tricaster",
+              "devices/fairlight",
+              "devices/visca-ptz",
+              "devices/twitch",
+              "devices/streamer-bot"
+            ]
+          }
+        ],
+        "icon": "sliders"
+      }
+    ]
+  },
+  "navbar": {
+    "links": [],
+    "primary": {
+      "type": "button",
+      "label": "Get Early Access",
+      "href": "https://fabl.studio"
+    }
+  },
+  "footer": {
+    "socials": {}
+  },
+  "fonts": {
+    "family": "Inter"
+  }
+}

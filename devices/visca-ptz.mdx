@@ -1,0 +1,35 @@
+---
+title: "VISCA PTZ"
+sidebarTitle: "VISCA PTZ"
+description: "Control pan/tilt/zoom cameras over the VISCA protocol — drive pan, tilt, and zoom, recall presets, adjust focus and exposure, and power — with live state and triggers."
+icon: "camera"
+---
+
+The **VISCA PTZ** device controls pan/tilt/zoom cameras over the [VISCA protocol](https://pro.sony/en_US/products/pan-tilt-zoom-cameras), a Sony-originated standard supported by many camera brands — including Sony, [PTZOptics](https://ptzoptics.com/), Lumens, Marshall, BirdDog, and Avonic.
+
+## Connection
+
+The agent connects to the camera over the network. Provide the camera's **host**, choose the **protocol** that matches your camera (Sony VISCA over UDP, or raw VISCA over TCP or UDP for PTZOptics-style cameras), and if needed adjust the **port** (defaults are set per protocol), the **status poll interval**, and the **camera address** (almost always **1** for cameras controlled over IP).
+
+## Commands
+
+The VISCA PTZ device supports the core camera operations, including:
+
+- **Pan and tilt** — drive in a direction, move to an absolute or relative position, stop, or return **home**
+- **Zoom** — drive in or out, or move to an absolute position
+- **Focus** — drive near or far or set an absolute position (manual focus), toggle **auto focus**, or trigger a one-push focus
+- **Presets** — recall, store, or clear a stored position
+- **Power** the camera on or to standby
+- Adjust **exposure**, **backlight compensation**, and **white balance**
+- **Flip** or **mirror** the image, and control the **tally** lamp (where supported)
+- Send a raw VISCA command for operations not listed above
+
+## State and triggers
+
+The device reports its connection state and raises triggers your [rules](/automation/rules) can react to, including:
+
+- Connection changes
+- **Power** on / standby changes
+- A **preset** being recalled
+
+Trigger data such as the preset number and power state is available for use in rule actions.

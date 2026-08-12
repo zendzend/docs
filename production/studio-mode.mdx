@@ -1,0 +1,70 @@
+---
+title: "Studio Mode: Run Your Show Live"
+sidebarTitle: "Studio Mode"
+description: "Run a page as a live rundown — cue and take items, auto-advance on timing, track on-air status, and watch the show clock and item timer."
+icon: "play"
+---
+
+**Studio mode** is Fabl's live control surface. Enter it from any [page](/content/pages-and-blocks) to run it as a [rundown](/production/rundowns): you cue and take items on air, the system tracks each item's status, and your cues are relayed to your [devices](/automation/devices) through a connected [agent](/automation/agents).
+
+## Enter studio mode
+
+Open the page and click **Studio**, then choose the agent that will execute the show. The page switches to the studio control surface with transport controls, a current/next preview, and live timers.
+
+## Transport controls
+
+<AccordionGroup>
+  <Accordion title="Play">
+    Starts the show. If nothing is on air yet, the cued item (or the first item) is taken to air. If a show was paused, it resumes. The show clock starts when you first play.
+  </Accordion>
+
+  <Accordion title="Stop">
+    Halts the show and resets it: the first item is re-cued, all others return to idle, and the clocks clear.
+  </Accordion>
+
+  <Accordion title="Next / Take">
+    Takes the cued item to air and automatically pre-cues the next item. **Take** is the same action — you can also take by clicking a cued item. Skipped items are jumped automatically.
+  </Accordion>
+
+  <Accordion title="Previous">
+    Steps back to the previous item, making the current on-air item the cued item again. Skipped items are passed over.
+  </Accordion>
+
+  <Accordion title="Cue">
+    Moves the cue forward one item without taking it to air, so you can pre-select what plays next. You can also cue a specific item directly by clicking it.
+  </Accordion>
+
+  <Accordion title="Skip">
+    Marks the on-air item as skipped and advances to the next item.
+  </Accordion>
+
+  <Accordion title="Auto-advance">
+    When enabled, the rundown advances to the next item automatically when the current item's duration elapses.
+  </Accordion>
+</AccordionGroup>
+
+## Item status
+
+Every item shows where it is in the show:
+
+| Status | Meaning |
+| --- | --- |
+| **Idle** | Not yet cued |
+| **Cued** | Selected, ready to take next |
+| **On-air** | Currently live |
+| **Completed** | Already played |
+| **Skipped** | Passed over |
+
+The on-air item is marked live, the cued item is highlighted, and skipped items are dimmed.
+
+## Timers
+
+Studio mode runs three clocks:
+
+- **Time of day** — the current wall-clock time
+- **Show clock** — elapsed time since the show started
+- **Item timer** — elapsed time on the current on-air item
+
+## How cues reach your gear
+
+When you take, cue, or advance, the command is sent to the selected agent, which executes it on the connected device — cutting a switcher input, firing a graphic, recalling an audio scene, and so on. State flows back so the rundown stays in sync for everyone watching. Set up that automation in [Rules](/automation/rules).

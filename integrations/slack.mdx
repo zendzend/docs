@@ -1,0 +1,101 @@
+---
+title: "Get Real-Time Fabl Production Notifications in Slack"
+sidebarTitle: "Slack"
+description: "Route Fabl production alerts to any Slack channel, choose which events trigger messages, and look up rundowns instantly with the /fabl slash command."
+---
+
+Connecting Fabl to Slack keeps your entire production team informed without requiring everyone to have a Fabl account or check the platform constantly. When key production events happen — a rundown is published, a script is approved, or a segment's status changes — Fabl sends a formatted message to the Slack channel of your choice. You can also use the `/fabl` slash command to pull up rundown summaries and share them directly in any Slack conversation.
+
+## What the Slack integration does
+
+- Posts notifications to one or more Slack channels when production events occur in Fabl
+- Lets you choose exactly which events trigger a message so channels stay relevant and noise-free
+- Formats messages with rundown details, direct links back to Fabl, and the name of the team member who triggered the event
+- Enables the `/fabl` slash command in your Slack workspace so anyone can look up and share rundown information on demand
+
+## Connect Fabl to Slack
+
+<Steps>
+  <Step title="Open Integrations settings">
+    In Fabl, click your workspace avatar in the bottom-left corner and select **Settings**. Go to the **Integrations** tab and find **Slack**.
+  </Step>
+  <Step title="Click Connect">
+    Click the **Connect** button next to Slack. Fabl opens Slack's OAuth authorization page in a new window.
+  </Step>
+  <Step title="Choose your Slack workspace">
+    If you belong to multiple Slack workspaces, select the correct one from the dropdown at the top of the authorization page.
+  </Step>
+  <Step title="Authorize Fabl">
+    Review the permissions Fabl requests — it needs permission to post messages and install a slash command — then click **Allow**. You are redirected back to Fabl with the integration active.
+  </Step>
+  <Step title="Select a default channel">
+    In the Slack integration settings panel, choose the default Slack channel where Fabl will post notifications. You can override this per event type in the next step.
+  </Step>
+  <Step title="Save your settings">
+    Click **Save**. Fabl immediately posts a confirmation message to your chosen channel to confirm the connection is live.
+  </Step>
+</Steps>
+
+<Note>
+  You must be a Slack workspace admin (or have permission to install apps) to complete the authorization step. If you do not have this permission, ask your Slack admin to authorize Fabl on your behalf.
+</Note>
+
+## Configure notification events
+
+After connecting, you control exactly which Fabl events post to Slack and which channel each event goes to.
+
+Go to **Settings → Integrations → Slack → Configure** and use the event list to toggle notifications on or off:
+
+| Event | What it reports |
+|---|---|
+| **Rundown Created** | A new rundown has been added to any show in your workspace. |
+| **Rundown Published** | A rundown has been published or exported. |
+| **Status Changed** | A rundown's production status has moved to a new stage. |
+| **Script Approved** | A script segment has been marked as approved. |
+| **Comment Added** | A comment has been posted on a rundown or segment. |
+| **Asset Attached** | A video asset or Frame.io review link has been added to a segment. |
+
+For each event, you can:
+- Toggle the notification on or off
+- Set a specific Slack channel (or leave it to post to your default channel)
+- Customize the message prefix or label that appears in the notification
+
+Click **Save changes** after adjusting any settings.
+
+<Tip>
+  Create a dedicated `#fabl-updates` channel in Slack and route all notifications there. Team members can join or leave the channel based on how closely they need to follow production activity.
+</Tip>
+
+## Use the /fabl slash command
+
+Once the integration is active, the `/fabl` slash command is available to everyone in your Slack workspace.
+
+### Look up a rundown
+
+Type `/fabl rundown [name or ID]` in any Slack channel or direct message. Fabl returns a formatted summary of the rundown including the show name, air date, status, segment count, and a **View in Fabl** link.
+
+### Share a rundown
+
+Type `/fabl share [name or ID]` to post the rundown summary as a visible message in the current channel so your teammates can see it.
+
+### List recent rundowns
+
+Type `/fabl list` to see the five most recently updated rundowns in your workspace, with their current statuses and direct links.
+
+<Info>
+  The `/fabl` command respects Fabl's permissions. Team members can only retrieve rundowns they have access to in Fabl — the slash command does not bypass any existing access controls.
+</Info>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Fabl is not posting messages to Slack">
+    Confirm the integration is enabled under **Settings → Integrations → Slack** (the toggle should be green). Also check that the Fabl app has not been removed from your Slack workspace — a Slack admin may have uninstalled it. If so, reconnect from the Fabl settings panel.
+  </Accordion>
+  <Accordion title="The /fabl slash command is not working">
+    The slash command is installed at the workspace level. If it stopped working, the Fabl app may have been uninstalled from Slack. Reconnect the integration in Fabl to reinstall the slash command. If the command still does not appear, ask your Slack admin to check whether the Fabl app is active in your workspace's app directory.
+  </Accordion>
+  <Accordion title="Notifications are going to the wrong channel">
+    Go to **Settings → Integrations → Slack → Configure** and check the channel assignment for each event type. An individual event's channel setting overrides the default channel, so make sure the per-event channel fields are set correctly.
+  </Accordion>
+</AccordionGroup>

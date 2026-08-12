@@ -1,0 +1,29 @@
+---
+title: "File Watcher"
+sidebarTitle: "File Watcher"
+description: "Watch a folder on the agent host and trigger automations when files arrive or are removed — ideal for ingest and media handoff workflows."
+icon: "folder-search"
+---
+
+The **File Watcher** device monitors a folder on the agent host and raises triggers when files appear or disappear. It's a powerful way to start [rules](/automation/rules) from external systems — for example, reacting when a recording or export lands in a watched directory.
+
+## Connection
+
+The File Watcher runs on the [agent](/automation/agents) host and watches the local file system. Configure:
+
+- **Watch folder** — the absolute path to monitor on the agent machine
+- **File filter** — limit to all files, video, or images
+- **Watch mode** — automatic (use OS file events where available, otherwise poll) or polling, with a configurable **poll interval**
+
+## Commands
+
+- **Refresh** — force a rescan of the watched folder
+
+## State and triggers
+
+The device reports state about the watched folder, including whether it's active, the folder and filter in use, the watch mode, the current file count, and the total size. It raises triggers your rules can react to:
+
+- **File added**
+- **File removed**
+
+Trigger data includes the file name, full path, extension, size, and last-modified time for use in rule actions.

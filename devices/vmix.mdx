@@ -1,0 +1,33 @@
+---
+title: "vMix"
+sidebarTitle: "vMix"
+description: "Control vMix live production software — program and preview inputs, transitions, overlays, recording, streaming, and per-input playback — with live state and triggers."
+icon: "video"
+---
+
+The **vMix** device controls vMix live production software over its TCP API.
+
+## Connection
+
+The agent connects to vMix's TCP API. Provide the **host** and, if needed, adjust the API **port** (commonly **8099**). You can also set a **local media path** and a **device-side media path** so file references resolve correctly between Fabl and the vMix machine.
+
+## Commands
+
+The vMix device supports a broad set of operations, including:
+
+- Set the **active (program)** input and the **preview** input
+- **Cut** and **transition**
+- **Fade to black**
+- Control **overlays**
+- Start and stop **recording** and **streaming**, and toggle **external** output and **fullscreen**
+- Per-input playback controls such as play, pause, seek, loop, volume, mute, and gain
+
+## State and triggers
+
+The device reports its connection state and raises triggers your [rules](/automation/rules) can react to, including:
+
+- Input active, preview, and playing changes
+- Overlay changes
+- Recording, streaming, external output, and fullscreen changes
+
+Trigger data such as the input number and name is available for use in rule actions.

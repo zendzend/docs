@@ -1,0 +1,77 @@
+---
+title: "Format and Share Scripts in Fabl Teleprompter Mode"
+sidebarTitle: "Teleprompter"
+description: "Switch any Fabl script to Teleprompter Mode to apply talent-friendly formatting, adjust display settings, and share a live scrolling view with talent."
+---
+
+Fabl's Teleprompter Mode transforms your finished script into a clean, on-screen reading experience optimized for on-camera talent. You control font size, line spacing, and scroll speed, and when the script is ready you can share a dedicated teleprompter view — no third-party apps, no copy-pasting into separate tools, no version drift between what the writer has and what the talent reads.
+
+## Switching to Teleprompter Mode
+
+<Steps>
+  <Step title="Open the Script in the Editor">
+    Navigate to the rundown segment that contains your script and click **Open Script**. The script editor opens in its default writing view.
+  </Step>
+  <Step title="Enable Teleprompter Mode">
+    Click the **Teleprompter** icon in the top toolbar — it looks like a display monitor with horizontal lines. The editor transitions to Teleprompter Mode, applying the formatting settings to the script immediately.
+  </Step>
+  <Step title="Adjust Display Settings">
+    The **Teleprompter Settings** panel appears on the right side of the screen. Configure font size, line spacing, scroll speed, and text alignment to suit your talent and display setup. Changes apply to the view in real time so you can preview exactly what talent will see.
+  </Step>
+  <Step title="Review the Formatted Script">
+    Scroll through the teleprompter view to confirm the text is readable and flows naturally. Make any last-minute copy edits directly in Teleprompter Mode — the editor remains fully functional.
+  </Step>
+  <Step title="Share with Talent">
+    Click **Share Teleprompter** in the top-right corner to generate a shareable link. The link opens a full-screen, read-only teleprompter view that talent can access on any device — tablet, laptop, or dedicated teleprompter hardware running a browser.
+  </Step>
+</Steps>
+
+<Note>
+  Editing the script after sharing the teleprompter link automatically updates the shared view. Talent will see your latest changes the next time they load or refresh the link — no need to regenerate it.
+</Note>
+
+## Teleprompter Settings Reference
+
+Adjust the following settings from the **Teleprompter Settings** panel to match your production environment and talent preferences.
+
+| Setting | Description | Default |
+|---|---|---|
+| **Font Size** | Controls the text size displayed in the teleprompter view. Increase for larger screens or farther camera distances. | 36px |
+| **Line Spacing** | Sets the vertical space between lines. More spacing reduces eye-tracking effort for talent reading at speed. | 1.8 |
+| **Scroll Speed** | Determines how fast the text auto-scrolls, measured in words per minute. Set to 0 to disable auto-scroll and let talent control pacing manually. | 150 wpm |
+| **Text Alignment** | Aligns script text left, center, or right in the teleprompter view. Center alignment is standard for on-camera use. | Center |
+| **Text Color** | Sets the foreground text color. White on black is the default for minimal glare in studio environments. | White |
+| **Background Color** | Sets the background of the teleprompter view. Black is recommended for most studio and field conditions. | Black |
+| **Mirror Mode** | Horizontally flips the text for use with physical teleprompter mirrors and beam-splitter hardware. | Off |
+| **Margin Width** | Controls the left and right margins as a percentage of screen width. Wider margins create a narrower reading column that is easier to track. | 20% |
+
+<Tip>
+  For talent who prefer to control their own reading pace, set **Scroll Speed** to 0 and share the link. The shared view includes manual scroll controls so talent can advance the script at their own rhythm without depending on an operator.
+</Tip>
+
+## Formatting Notes for Talent Readability
+
+Well-formatted teleprompter scripts read more naturally on camera. Keep the following in mind when preparing a script for teleprompter delivery:
+
+<AccordionGroup>
+  <Accordion title="Write in Short, Scannable Lines" icon="align-left">
+    Long sentences are hard to read at a glance on a scrolling display. Break complex sentences into shorter clauses. Aim for lines that a talent can read in a single breath. Fabl's AI Assist can help shorten sentences — select dense passages and use the **Rewrite** tool with the instruction "shorten for teleprompter delivery."
+  </Accordion>
+  <Accordion title="Avoid Abbreviations and Symbols" icon="font">
+    Teleprompter readers often parse text character by character at speed. Write out abbreviations ("mister" not "Mr."), spell out numbers under 10, and avoid symbols like "&" or "%" in favor of "and" or "percent." This prevents mid-sentence stumbles that break the on-camera flow.
+  </Accordion>
+  <Accordion title="Use Phonetic Spelling for Proper Nouns" icon="language">
+    If your script includes names, places, or technical terms that may be unfamiliar to talent, add a phonetic pronunciation in parentheses immediately after the word. For example: "Fabl's CEO, Alejandro Reyes (ah-leh-HAN-dro RAY-es), announced today…" These annotations display in the teleprompter view but you can mark them as **Prompt Notes** so they appear in a different color and talent knows they are guides, not spoken text.
+  </Accordion>
+</AccordionGroup>
+
+## Sharing the Teleprompter View
+
+The shared teleprompter link is device-agnostic and requires no login. Anyone with the link can open the full-screen view. To manage sharing:
+
+- **Revoke a link** — In the script editor, open **Share Teleprompter** and click **Revoke Link**. The existing link immediately stops working. Generate a new link to share a fresh one.
+- **Multiple links** — You can generate separate links for different talent reading the same script (useful in multi-anchor formats where each person reads specific sections).
+
+<Warning>
+  Teleprompter share links do not require authentication. Treat them as sensitive production assets and share them only with intended recipients. Revoke links promptly when a production wraps.
+</Warning>

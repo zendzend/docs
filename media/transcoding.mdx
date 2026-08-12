@@ -1,0 +1,32 @@
+---
+title: "Transcoding and Encoding Profiles"
+sidebarTitle: "Transcoding"
+description: "Define reusable encoding profiles and transcode video assets into delivery-ready variants, with live job status."
+icon: "file-video-2"
+---
+
+Fabl can transcode your uploaded video into additional variants for delivery and playback. You define reusable **transcoding profiles**, then run **encoding jobs** that apply them to an asset.
+
+## Transcoding profiles
+
+A **transcoding profile** is a saved set of encoding settings. Create and manage profiles from the transcoding profiles section, where each profile defines:
+
+- **Label** and **description**
+- **Video codec**, **resolution**, **frame rate**, and **bitrate** (with a constant or variable bitrate mode)
+- Advanced video options such as profile, keyframe interval, and B-frames
+- **Audio** settings — codec, bitrate, sample rate, and channels
+
+<Note>
+  Managing profiles and starting jobs requires the services management permission. See [Roles and permissions](/team/roles-and-permissions).
+</Note>
+
+## Encoding jobs
+
+To transcode a video, start a new encoding job: select the asset and one or more profiles. Each job shows its progress in a list with:
+
+- A job identifier and creation time
+- The asset name and the provider running the job
+- **Status** — queued, running, finished, or failed
+- Elapsed duration, updated live for active jobs
+
+Failed jobs can be retried. When a job finishes, its output variants appear under the asset's encoded versions, ready to download or use.

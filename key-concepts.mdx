@@ -1,0 +1,77 @@
+---
+title: "Key Concepts in Fabl"
+sidebarTitle: "Key Concepts"
+description: "Understand Fabl's core building blocks — workspaces, spaces, pages, blocks, components, rundowns, agents, devices, and rules — and how they fit together."
+---
+
+Fabl is organized around a small set of building blocks. Understanding how they fit together makes the rest of the platform easy to navigate. This page defines each concept and shows how content flows from a page into a live, hardware-driven show.
+
+<AccordionGroup>
+  <Accordion title="Workspace">
+    A **workspace** is the top-level environment for your team. It holds all of your spaces, pages, media, devices, agents, and automations, and it's where your members and their permissions are managed. Each workspace is a separate, isolated environment — useful for keeping different shows, clients, or facilities apart.
+  </Accordion>
+
+  <Accordion title="Space">
+    A **space** is a top-level container inside your workspace, shown in the left sidebar. Spaces group related pages and folders — for example, one space per show or per production. Open a space to browse and create the pages it contains.
+  </Accordion>
+
+  <Accordion title="Folder">
+    A **folder** organizes pages inside a space and can be nested. Use folders to group pages by episode, segment, day, or any structure that fits your workflow. Folders are optional — a page can live directly in a space.
+  </Accordion>
+
+  <Accordion title="Page">
+    A **page** is the main editing canvas. You build it from **blocks** — fields, media, components, and containers — and edit it live with your team. A page can be a rundown, a script, a graphics playlist, or any structured document. When you run a page in studio mode, each of its items becomes a rundown item.
+  </Accordion>
+
+  <Accordion title="Block">
+    A **block** is the fundamental unit of content. Everything is a block: pages, fields, media, references, and containers. Blocks nest inside one another, so a page contains blocks, and a container block can hold more blocks. See [Pages and blocks](/content/pages-and-blocks).
+  </Accordion>
+
+  <Accordion title="Field">
+    A **field** is a block that holds a value — text, a number, a date or time, a list selection, a yes/no toggle, or a media item. Fields are how you capture the structured data of your show: segment titles, durations, lower-third text, input numbers, and more. See [Fields](/content/fields) for every field type.
+  </Accordion>
+
+  <Accordion title="Component">
+    A **component** is a reusable, parameterized building block you define once and drop into any page. Adding a component to a page creates an independent copy you can fill in, so updating the original doesn't disturb copies already in use. See [Components](/content/components).
+  </Accordion>
+
+  <Accordion title="Field preset">
+    A **field preset** is a saved field definition — its type, label, default value, options, and formatting. Reuse presets to keep the same fields consistent across pages instead of reconfiguring them each time. See [Field presets](/content/field-presets).
+  </Accordion>
+
+  <Accordion title="Template">
+    A **template** is a full-page blueprint. Create a new page from a template to start with a ready-made block structure and default values. See [Templates](/content/templates).
+  </Accordion>
+
+  <Accordion title="Rundown (studio mode)">
+    A **rundown** is a page run live in **studio mode**. The page's items become an ordered list you cue and take on air, each tracking its own status and timing while a connected agent drives your devices. See [Rundowns](/production/rundowns) and [Studio mode](/production/studio-mode).
+  </Accordion>
+
+  <Accordion title="Prompter">
+    The **prompter** is a full-screen, chrome-free teleprompter view of a page. It supports auto-scroll, voice-controlled scrolling, mirroring, and custom colors, and it can be driven live by automation rules during a show. See [Prompter](/production/prompter).
+  </Accordion>
+
+  <Accordion title="Agent">
+    A **Studio Agent** is an on-premises service you install in your facility. It registers with your workspace, connects to your devices on the local network, relays live cues to them, and reports device state back to Fabl in real time. See [Agents](/automation/agents).
+  </Accordion>
+
+  <Accordion title="Device">
+    A **device** is a piece of hardware or software the agent controls — a switcher, playout server, audio mixer, lighting desk, or media player. Each device has a type that defines the commands it accepts and the state and triggers it reports. See [Devices](/automation/devices) and the [device reference](/devices/overview).
+  </Accordion>
+
+  <Accordion title="Rule">
+    A **rule** is an automation that runs when something happens. Each rule has a **trigger** (a production or device event), optional **conditions**, and one or more **actions** — such as sending a device command, updating a block value, or controlling the prompter. See [Rules](/automation/rules).
+  </Accordion>
+</AccordionGroup>
+
+## How the concepts connect
+
+These building blocks form a clear hierarchy:
+
+- A **workspace** contains **spaces**, which contain **folders** and **pages**
+- A **page** is built from **blocks** — including **fields**, reused from **field presets**, and **components**; new pages can start from a **template**
+- Running a page in **studio mode** turns it into a **rundown** of items you cue and take live
+- A **rule** reacts to production and device events and fires **actions**
+- An **agent** carries those actions and live cues to your **devices**, and a **prompter** view feeds your talent
+
+Ready to build? Follow the [Quickstart](/quickstart) to set up your workspace and run your first rundown.

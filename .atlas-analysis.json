@@ -1,0 +1,113 @@
+{
+  "projectType": "saas",
+  "projectName": "Fabl",
+  "projectDescription": "A cloud-based video production platform that streamlines rundowns, AI-powered scripting, workflow automation, and multi-camera management for production teams.",
+  "theme": "willow",
+  "primaryColor": "#a6a6a6",
+  "lightColor": "#353535",
+  "darkColor": "#dfdfdf",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "key-concepts"
+            ]
+          },
+          {
+            "group": "Rundowns",
+            "pages": [
+              "rundowns/overview",
+              "rundowns/create-rundown",
+              "rundowns/timing-and-segments",
+              "rundowns/collaboration",
+              "rundowns/export"
+            ]
+          },
+          {
+            "group": "Scripting",
+            "pages": [
+              "scripting/overview",
+              "scripting/ai-assist",
+              "scripting/teleprompter",
+              "scripting/shot-lists"
+            ]
+          },
+          {
+            "group": "Multi-Camera",
+            "pages": [
+              "multi-camera/overview",
+              "multi-camera/shot-lists",
+              "multi-camera/live-show-mode"
+            ]
+          },
+          {
+            "group": "Workflow Automation",
+            "pages": [
+              "automation/overview",
+              "automation/custom-workflows",
+              "automation/notifications"
+            ]
+          },
+          {
+            "group": "Team & Settings",
+            "pages": [
+              "team/invite-members",
+              "team/roles-and-permissions",
+              "settings/workspace"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Integrations",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "integrations/overview",
+              "integrations/zapier"
+            ]
+          },
+          {
+            "group": "Connected Apps",
+            "pages": [
+              "integrations/slack",
+              "integrations/google-drive",
+              "integrations/dropbox",
+              "integrations/frame-io",
+              "integrations/notion",
+              "integrations/airtable",
+              "integrations/premiere-pro"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Professional rundowns with real-time collaboration and automatic timing calculations",
+    "AI-powered scripting with draft generation, teleprompter formatting, and shot list creation",
+    "Multi-camera production management with shot lists, cue points, and live show mode",
+    "Workflow automation with scheduled exports, status updates, and integration triggers",
+    "Team collaboration with shared timelines, notes, and real-time updates",
+    "Integrations with Slack, Google Drive, Dropbox, Frame.io, Notion, Airtable, Zapier, and Premiere Pro",
+    "Export to PDF, Excel, or print",
+    "Version history and rollback for rundowns and scripts"
+  ],
+  "publicApiSurface": [
+    "Rundown creation and management",
+    "Script editor with AI assistance",
+    "Shot list builder",
+    "Workflow automation builder",
+    "Integration connectors (Slack, Google Drive, Dropbox, Frame.io, Notion, Airtable, Zapier, Premiere Pro)",
+    "Export (PDF, Excel, print)",
+    "Team and workspace settings",
+    "Live show mode"
+  ]
+}

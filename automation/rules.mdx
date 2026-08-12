@@ -1,0 +1,58 @@
+---
+title: "Rules: Trigger, Condition, Action"
+sidebarTitle: "Rules"
+description: "Build automations that react to production and device events with conditions and ordered actions — device commands, block updates, and prompter control — including delays and chaining."
+icon: "bolt"
+---
+
+A **rule** automates what happens when something occurs in your production. Every rule follows the same shape: a **trigger** starts it, optional **conditions** decide whether it should run, and one or more **actions** carry out the result.
+
+## Triggers
+
+A trigger is the event that starts a rule. Triggers come from across the platform:
+
+- **Rundown events** — an item is cued, taken on air, completed, uncued, added, or removed; a rundown starts or stops
+- **Block changes** — a field value changes on a page
+- **Device events** — a connected [device](/automation/devices) reports a change, such as a switcher's program input changing, an audio channel muting, or a file appearing in a watched folder
+
+Many triggers carry data about what happened (for example, the input number on a switcher, the channel on a mixer, or the file name from a watched folder). You can use that data in your actions.
+
+## Conditions
+
+Conditions filter whether a rule's actions should run after the trigger fires. Each condition compares a field or trigger value against a value you specify, using operators such as **equals**, **not equals**, **contains**, **greater than**, and **less than**. A rule can require **all** conditions to match or **any** of them.
+
+## Actions
+
+When the trigger fires and conditions pass, the rule runs its actions in order. Action types include:
+
+- **Device command** — run a command on a device (for example, set a switcher's program input, recall an audio scene, or send a message to a graphics engine)
+- **Set block value** — write a value into a block on a page
+- **Prompter command** — control the [prompter](/production/prompter), such as sending content to it, clearing it, or focusing a field
+- **Control the rundown** — drive the live [rundown](/production/rundowns) from a rule: take the **next** item, **cue a block** (a specific item, by id or a token from the trigger), or **restart** to re-cue the first item
+
+Action parameters can use values from the triggering event, so a single rule can react dynamically to whatever fired it.
+
+### Looping a rundown
+
+The **restart** rundown command re-cues the first item without disturbing what's on air, so the next take wraps back to the top — the basis for an automatic loop. Combine it with a rundown-item trigger and a condition on the item's position (rundown-item triggers carry data such as whether the item is the last in the rundown, plus the first item's block id) to loop a show end-to-end. For example: when an item is taken on air and it is the last in the rundown, restart.
+
+### Delays and chaining
+
+Each action can wait before it runs:
+
+- A **fixed delay** in milliseconds
+- A **dynamic delay** read from a block field at run time, with a fallback value if the field isn't a valid number
+
+Actions can also be **chained** so one begins only after another has finished — useful for sequencing longer-running device commands precisely.
+
+## Build a rule
+
+1. Go to **Automations → Rules** and create a new rule, then give it a name.
+2. Choose a **trigger** from the categorized list.
+3. Optionally add **conditions** and choose whether all or any must match.
+4. Add one or more **actions**, filling in each action's parameters, delay, and chaining.
+5. Save the rule, and enable or disable it at any time without deleting it.
+
+<Note>
+  Creating and editing rules requires the automations management permission. See [Roles and permissions](/team/roles-and-permissions).
+</Note>

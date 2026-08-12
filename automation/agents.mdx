@@ -1,0 +1,36 @@
+---
+title: "Studio Agents"
+sidebarTitle: "Agents"
+description: "A Studio Agent is an on-premises service that connects your devices to Fabl, executes commands locally, and reports device state in real time."
+icon: "server"
+---
+
+A **Studio Agent** is a small service you install on a machine in your facility. It is the bridge between Fabl in the cloud and the gear on your local network: it connects to your [devices](/automation/devices), executes the commands your [rules](/automation/rules) and live cues produce, and reports device state back to Fabl in real time.
+
+Because the agent runs on-premises, commands reach your hardware over the local network — there's no cloud round-trip in the critical path while you're on air.
+
+## Register an agent
+
+1. Go to **Automations → Agents** and click **Add agent**.
+2. Give the agent a name. Fabl generates a **registration token**.
+3. Install and start the agent on a machine on the same network as your devices, providing the token so it can register with your workspace.
+
+Once it registers, the agent exchanges the one-time token for a permanent credential and begins connecting to its devices.
+
+## Status and heartbeat
+
+An agent reports its status to Fabl:
+
+- **Online** — actively connected and sending regular heartbeats
+- **Offline** — not connected, or its heartbeat has gone stale
+- **Error** — the agent reported a problem
+
+When an agent is offline, the devices it manages are unavailable until it reconnects. You can revoke or regenerate an agent's credentials at any time if you need to re-register it.
+
+## Agents and rundowns
+
+When you run a page in [studio mode](/production/studio-mode), you choose which agent executes the show. As you cue and take items, your commands are relayed to that agent, which carries them out on the connected devices.
+
+<Note>
+  Managing agents requires the automations management permission. See [Roles and permissions](/team/roles-and-permissions).
+</Note>

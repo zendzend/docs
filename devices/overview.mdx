@@ -1,0 +1,36 @@
+---
+title: "Supported Devices"
+sidebarTitle: "Overview"
+description: "Fabl controls broadcast hardware and software through an on-prem agent. See the supported switchers, playout servers, audio mixers, lighting desks, and media players."
+icon: "sliders"
+---
+
+Fabl controls your studio gear through a [Studio Agent](/automation/agents) running in your facility. The agent connects to each device over your local network and carries out the commands produced by [rules](/automation/rules) and live [studio mode](/production/studio-mode) cues. It also reports each device's state back to Fabl in real time, and some devices raise **triggers** that rules can react to.
+
+This section documents each supported device: what it controls, how it connects, the commands it accepts, and the state and triggers it reports.
+
+## Supported devices
+
+| Device | Controls | Connection |
+| --- | --- | --- |
+| [ATEM](/devices/atem) | Blackmagic ATEM video switchers | Network (UDP) |
+| [vMix](/devices/vmix) | vMix live production software | TCP API |
+| [CasparCG](/devices/casparcg) | CasparCG playout server | AMCP over TCP |
+| [Behringer X32](/devices/behringer-x32) | X32 / M32 digital audio mixers | OSC over UDP |
+| [ChamSys GeNetix](/devices/chamsys-genetix) | ChamSys MagicQ / GeNetix lighting consoles | OSC over UDP |
+| [TouchDesigner](/devices/touchdesigner) | Derivative TouchDesigner | TCP or UDP |
+| [Metus Player](/devices/metus-player) | Metus media playout | HTTP API |
+| [Vizrt TriCaster](/devices/tricaster) | Vizrt (NewTek) TriCaster live production systems | HTTP API |
+| [Blackmagic Fairlight](/devices/fairlight) | Blackmagic Fairlight Live audio consoles | OSC over UDP |
+| [VISCA PTZ](/devices/visca-ptz) | VISCA-compatible pan/tilt/zoom cameras | VISCA over IP |
+| [Twitch](/devices/twitch) | A Twitch channel | Twitch API |
+| [Streamer.bot](/devices/streamer-bot) | Streamer.bot automation | WebSocket |
+| [File Watcher](/devices/file-watcher) | A watched folder on the agent host | Local file system |
+
+## Adding a device
+
+To connect any of these, add it from **Automations → Devices**, choose its type, select the agent that will manage it, and enter its connection settings. See [Devices](/automation/devices) for the full procedure.
+
+<Note>
+  Connection ports listed in these pages are the common defaults; configure them to match your environment.
+</Note>

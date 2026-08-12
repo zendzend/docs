@@ -1,0 +1,81 @@
+---
+title: "Build Custom Automations with Fabl Workflow Builder"
+sidebarTitle: "Custom Workflows"
+description: "Use Fabl's visual workflow builder to create trigger-action chains that automate exports, status updates, and third-party integrations."
+---
+
+The Fabl workflow builder gives you a visual canvas for wiring together triggers and actions without writing any code. You define what event starts the workflow, add one or more actions to run in sequence, and optionally apply conditions so the automation only fires when your criteria are met. Once enabled, the workflow runs automatically every time its trigger conditions are satisfied.
+
+## Open the workflow builder
+
+Navigate to **Settings → Automations** in your workspace sidebar. Click **New Workflow** in the top-right corner to open the builder canvas.
+
+## Create a workflow from scratch
+
+<Steps>
+  <Step title="Name your workflow">
+    Enter a descriptive name for your workflow in the **Workflow name** field (for example, "Export rundown on approval"). A clear name helps your team understand what the automation does at a glance.
+  </Step>
+  <Step title="Choose a trigger">
+    Click **Add Trigger** and select an event from the trigger list. Each trigger represents something that happens in Fabl or in a connected integration. See the [trigger reference](#available-triggers) below for a full list.
+  </Step>
+  <Step title="Add a condition (optional)">
+    Click **Add Condition** beneath the trigger to filter when the workflow fires. For example, you can restrict a trigger to a specific show, segment type, or user role. Multiple conditions are evaluated with AND logic by default.
+  </Step>
+  <Step title="Add one or more actions">
+    Click **Add Action** and choose what Fabl should do when the trigger fires. You can chain multiple actions — they execute in the order you arrange them. See the [action reference](#available-actions) below.
+  </Step>
+  <Step title="Configure each action">
+    Fill in the required fields for each action. For example, a **Send Slack Message** action requires a channel and message body; an **Export Rundown** action requires a format and destination folder.
+  </Step>
+  <Step title="Test the workflow">
+    Click **Test Workflow** to send a simulated trigger event through your action chain. Review the test results in the **Run Log** panel to confirm each action completes successfully before going live.
+  </Step>
+  <Step title="Enable the workflow">
+    Toggle the workflow status to **Active** and click **Save**. The workflow will begin running automatically whenever the trigger conditions are met.
+  </Step>
+</Steps>
+
+<Tip>
+  Always test a workflow in a non-production show before enabling it in a live environment. Use a duplicate or staging show to verify that exports land in the right folders, Slack messages appear in the correct channels, and conditional logic behaves as expected. Catching issues during testing prevents unwanted notifications or duplicate exports during a live production.
+</Tip>
+
+## Available triggers
+
+| Trigger | Description |
+|---|---|
+| Rundown Approved | Fires when a rundown status is changed to **Approved** by any user with approval permissions. |
+| Segment Marked Complete | Fires when an individual segment's status is set to **Complete**. |
+| Show Started | Fires when a show's start time is reached and the show transitions to **Live** status. |
+| Show Ended | Fires when a show is manually ended or its scheduled end time passes. |
+| File Uploaded | Fires when a new asset is uploaded to a specified show or folder. |
+| Scheduled Time | Fires at a recurring time you define (daily, weekly, or a custom cron schedule). |
+| Webhook Received | Fires when Fabl receives an inbound HTTP POST to your workspace webhook URL. |
+| Integration Event | Fires when a connected third-party tool (e.g., Google Drive, Slack) emits a configured event. |
+
+## Available actions
+
+| Action | Description |
+|---|---|
+| Send Slack Message | Posts a message to a specified Slack channel or direct message. Supports dynamic variables (e.g., show name, rundown title). |
+| Send Email Notification | Sends an email to one or more recipients. Supports plain-text and templated HTML bodies. |
+| Export Rundown | Exports the current rundown to PDF, CSV, or XLSX and optionally sends it to a Google Drive folder or email. |
+| Update Segment Status | Changes the status of a segment (e.g., Draft → Review → Complete). |
+| Create Google Drive Folder | Creates a new folder in a connected Google Drive account, useful for organizing show assets automatically. |
+| Upload to Google Drive | Uploads a Fabl-generated file or asset to a specified Google Drive folder. |
+| Trigger Webhook | Sends an HTTP POST request to an external URL with a configurable JSON payload. |
+| Add Show Note | Appends an automated note to a show's activity log with a custom message. |
+
+## Manage existing workflows
+
+Navigate to **Settings → Automations** to see a list of all workflows in your workspace. From this view you can:
+
+- **Enable or disable** a workflow using the toggle in the workflow row.
+- **Edit** a workflow by clicking its name to reopen the builder canvas.
+- **Duplicate** a workflow to use it as a starting point for a similar automation.
+- **Delete** a workflow permanently — this cannot be undone.
+- **View run history** by clicking **Run Log** to see recent trigger events, action outcomes, and any errors.
+
+<Info>
+  Disabled workflows retain their configuration and run history. Re-enabling a workflow does not replay past trigger events — it only starts responding to new ones.
+</Info>

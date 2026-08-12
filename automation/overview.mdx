@@ -1,0 +1,35 @@
+---
+title: "Automation in Fabl"
+sidebarTitle: "Overview"
+description: "Automate your production with rules that turn events into device commands, block updates, and prompter actions — executed by on-prem agents that control your devices."
+---
+
+Fabl's automation connects your production content to your studio hardware. Events in a show — an item going on air, a value changing, a device reporting a new state — drive **actions** that control your gear and your prompter, with no operator having to push the button each time.
+
+## The pieces
+
+<CardGroup cols={2}>
+  <Card title="Rules" icon="bolt" href="/automation/rules">
+    A trigger → condition → action engine. Rules decide what happens when a production or device event occurs.
+  </Card>
+
+  <Card title="Devices" icon="sliders" href="/automation/devices">
+    The hardware and software you control — switchers, playout, audio, lighting, and media players.
+  </Card>
+
+  <Card title="Agents" icon="server" href="/automation/agents">
+    On-premises services that connect to your devices and execute commands locally.
+  </Card>
+
+  <Card title="Studio mode" icon="play" href="/production/studio-mode">
+    The live control surface whose cues drive your rules during a show.
+  </Card>
+</CardGroup>
+
+## How it fits together
+
+A **rule** listens for a **trigger** — such as a rundown item going on air or a device changing state. When the trigger fires and the rule's **conditions** are met, its **actions** run. An action can send a command to a [device](/automation/devices), update a block value on a page, control the [rundown](/production/rundowns), or control the [prompter](/production/prompter).
+
+Actions that target physical devices are carried out by an [agent](/automation/agents) — the on-prem service running in your facility — so the commands reach your gear over the local network with no cloud round-trip on air.
+
+Start with [Rules](/automation/rules) to see how to build automations, then connect your hardware in [Devices](/automation/devices) and [Agents](/automation/agents).

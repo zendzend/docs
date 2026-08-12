@@ -1,0 +1,106 @@
+---
+title: "Build and Manage Shot Lists with Camera Assignments in Fabl"
+sidebarTitle: "Shot Lists"
+description: "Plan every shot for every segment: assign cameras, add framing notes and switching cues, attach lower-third graphics, and keep your whole crew aligned."
+---
+
+Shot lists are the foundation of your multi-camera plan. In Fabl, a shot list lives inside a rundown segment, giving every camera operator, director, and technical director a shared reference for what each camera should be doing at every moment of the show. You can assign shots to specific cameras, define framing and shot types, attach switching notes, and flag lower-third and graphics cues — all before you go live.
+
+## Create a Shot List for a Segment
+
+Each rundown segment can have its own shot list. Start by opening the segment you want to work with.
+
+<Steps>
+  <Step title="Open the Rundown">
+    Navigate to your production's rundown from the main dashboard. Click the rundown title to open it in the editor.
+  </Step>
+  <Step title="Select a Segment">
+    Click the segment you want to build a shot list for. The segment detail panel opens on the right side of the screen.
+  </Step>
+  <Step title="Open the Shot List Tab">
+    Inside the segment detail panel, click the **Shot List** tab. If no shots have been added yet, you'll see an empty state with an **Add Shot** button.
+  </Step>
+  <Step title="Add Your First Shot">
+    Click **Add Shot**. A new row appears in the shot list. Fill in the shot number, camera assignment, shot type, framing description, and any switching notes. Press **Enter** or click outside the row to save.
+  </Step>
+  <Step title="Continue Adding Shots">
+    Repeat the process for each shot in the segment. Shots are ordered by row, so drag and drop rows to reorder them as your plan evolves. Fabl saves all changes automatically.
+  </Step>
+</Steps>
+
+## Assign Shots to Cameras
+
+Every shot row includes a **Camera** field where you assign the shot to a specific camera in your production. Fabl supports any number of cameras — label them to match your physical setup (for example, Camera 1, Camera 2, Jib, or Handheld).
+
+Use consistent camera labels across all segments so operators can filter the shot list to their own camera view during rehearsal and production.
+
+<Tip>
+  Create a camera roster for your production before building shot lists. Consistent names like "Camera 1" and "Camera 2" make it easy for operators to filter their personal shot views and for the TD to scan assignments at a glance in Live Show Mode.
+</Tip>
+
+## Shot List Fields Reference
+
+Use the following fields on each shot row to fully describe the shot and its context:
+
+| Shot # | Camera | Shot Type | Framing | Notes |
+|---|---|---|---|---|
+| 1 | Camera 1 | Wide | Full stage, all presenters | Hold until presenter crosses left |
+| 2 | Camera 2 | Medium | Waist-up on lead presenter | Push in slowly on applause |
+| 3 | Camera 3 | Close-Up | Face, lead presenter | Cut to on keyword "results" |
+| 4 | Jib | Beauty / Establishing | Audience wide, high angle | Use for segment open and close |
+
+- **Shot #** — The sequential number for this shot within the segment. Used by the TD to call shots by number on comms.
+- **Camera** — The camera this shot is assigned to. Match the label to your camera roster.
+- **Shot Type** — Descriptive category such as Wide, Medium, Close-Up, Two-Shot, Over-the-Shoulder, or Insert.
+- **Framing** — Plain-language description of what the camera should show and how it should be composed.
+- **Notes** — Switching instructions, timing triggers, movement direction, or anything the TD or operator needs to know.
+
+## Add Switching Notes
+
+Switching notes give your technical director precise guidance on when to cut or transition between cameras. Add switching notes in the **Notes** column of any shot row, or use the dedicated **Switching Notes** field in the shot detail view.
+
+Good switching notes reference specific triggers — a word, an action, or a timecode — rather than vague instructions. For example:
+
+- *Cut to Camera 2 on "welcome to the stage"*
+- *Dissolve to wide at the 30-second mark*
+- *Hold Camera 3 until applause breaks*
+
+## Add Graphics and Lower-Third Cues
+
+Fabl lets you attach graphics and lower-third cues directly to shot rows. This ensures the TD or graphics operator knows exactly which shot should carry a lower third and what name, title, or text to display.
+
+<Steps>
+  <Step title="Open a Shot Row">
+    Click any shot row in the shot list to expand its detail view.
+  </Step>
+  <Step title="Enable a Graphics Cue">
+    Toggle on **Graphics Cue** in the shot detail panel. A graphics cue block appears below the shot fields.
+  </Step>
+  <Step title="Fill In Lower-Third Details">
+    Enter the name, title, and any secondary text for the lower third. You can also choose a graphics template if your production has pre-defined templates configured.
+  </Step>
+  <Step title="Set the Cue Timing">
+    Specify when the graphic should appear relative to the shot — for example, **On Cut** (display immediately when this camera is taken), **+5s** (display five seconds after the cut), or **Manual** (operator triggers it live).
+  </Step>
+</Steps>
+
+<Tip>
+  Fill in all lower-third names, titles, and template selections before your tech rehearsal, not during it. Last-minute edits to graphics cues during a rehearsal often mean missing them in the real show. Lock your lower-third data at least one hour before going live.
+</Tip>
+
+## Link Shot Lists to Rundown Segments
+
+Shot lists are always scoped to a specific rundown segment. When you build a shot list inside a segment, it automatically inherits that segment's timecode, duration, and script context. If you reorder segments in the rundown, the shot lists travel with their segments.
+
+<Note>
+  Deleting a rundown segment permanently deletes its associated shot list and all cue points. If you need to remove a segment temporarily, use the **Disable** toggle instead of deleting it.
+</Note>
+
+## Duplicate a Shot List
+
+If several segments share a similar camera plan, duplicate an existing shot list to use as a starting point.
+
+1. Open the segment with the shot list you want to copy.
+2. Click the **Shot List** tab, then select **Duplicate Shot List** from the options menu (⋯).
+3. Choose the target segment from the dropdown.
+4. Confirm. The duplicated shot list appears in the target segment and is fully independent — edits to one do not affect the other.

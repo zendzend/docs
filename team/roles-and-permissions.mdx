@@ -1,0 +1,37 @@
+---
+title: "Roles and Permissions"
+sidebarTitle: "Roles & Permissions"
+description: "Fabl uses two membership roles — Member and Admin — plus granular, per-area permissions that control read and manage access across the workspace."
+---
+
+Fabl controls access with two membership **roles** and a set of granular **permissions**. Roles set the baseline; permissions decide exactly what a member can see and change in each area of the workspace.
+
+## Roles
+
+- **Admin** — full control of the workspace, including managing members and settings
+- **Member** — a regular teammate whose access is determined by the permissions assigned to them
+
+## Permissions
+
+Permissions are granted per area of the product. Most areas have a **read** level (view) and a **manage** level (create, edit, and delete). The areas are:
+
+| Area | What it covers |
+| --- | --- |
+| **Workspace** | Workspace settings |
+| **Pages** | Pages and block content (also has a separate write level) |
+| **Components** | The components library |
+| **Field presets** | Saved field definitions |
+| **Templates** | Page templates |
+| **Media** | Media assets and uploads |
+| **Devices** | Device configuration |
+| **Services** | Media services such as transcoding and encoding |
+| **Automations** | Rules, agents, and devices automation |
+| **Admin** | Administrative settings |
+
+## How permissions are enforced
+
+Permissions gate both the interface and the underlying actions. If you lack the required permission for an area, its controls are hidden or disabled and the corresponding pages aren't accessible — for example, the **Upload media** button only appears with media management permission, and the automation pages require the automations permissions.
+
+<Note>
+  There are no fixed named roles beyond Member and Admin — access is composed from the per-area permissions above, so you can grant exactly the access each teammate needs.
+</Note>

@@ -1,0 +1,25 @@
+---
+title: "ChamSys GeNetix"
+sidebarTitle: "ChamSys GeNetix"
+description: "Control ChamSys MagicQ and GeNetix lighting consoles over OSC — run playbacks, execute commands, and recall scenes."
+icon: "lightbulb"
+---
+
+The **ChamSys GeNetix** device controls ChamSys MagicQ and GeNetix lighting consoles over OSC.
+
+## Connection
+
+The agent sends OSC to the console over the network. Provide the **host** and, if needed, adjust the **port** (commonly **8000**).
+
+## Commands
+
+The ChamSys device supports lighting control operations, including:
+
+- **Playback** control such as go, stop, and release
+- **Execute** a command by number
+- **Recall a scene**
+- Send a raw OSC message
+
+## State
+
+The device reports its connection state. This driver sends commands to the console and does not poll it for state or raise triggers.

@@ -1,0 +1,36 @@
+---
+title: "Twitch"
+sidebarTitle: "Twitch"
+description: "Control a Twitch channel and react to channel events — update title and category, run commercials, manage polls and predictions, post chat, and trigger rules on follows, subs, cheers, and raids."
+icon: "twitch"
+---
+
+The **Twitch** device controls a [Twitch](https://www.twitch.tv/) channel and reacts to its live channel events, so your automations can respond to what happens on stream.
+
+## Connection
+
+Each device controls one broadcaster channel and authenticates with a Twitch application you register in the [Twitch Developer Console](https://dev.twitch.tv/docs/authentication/register-app/). Provide the **broadcaster login** (your channel name), the application's **client ID** and **client secret**, and a user **refresh token** for the channel. See the [Twitch developer documentation](https://dev.twitch.tv/docs/) for creating an application and obtaining a token.
+
+## Commands
+
+The Twitch device supports channel, chat, and engagement operations, including:
+
+- Update the stream **title** or **category**
+- Create a stream **marker**, run a **commercial** break, or capture a **clip**
+- Start or cancel a **raid** to another channel
+- Post a **chat message** or a highlighted **announcement**
+- Create and end a **poll**
+- Create, lock, resolve, or cancel a **prediction**
+
+## State and triggers
+
+The device reports its connection state and raises triggers your [rules](/automation/rules) can react to, including:
+
+- The channel going **live** or **offline**
+- The **title or category** changing
+- A new **follower** or **subscriber**, and **gifted** subscriptions
+- A viewer **cheering with Bits**
+- Another channel **raiding** yours
+- A **channel-point reward** being redeemed
+
+Trigger data such as the viewer name, subscription tier, Bits amount, and reward title is available for use in rule actions.

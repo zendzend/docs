@@ -1,0 +1,84 @@
+---
+title: "Generate and Manage Shot Lists from Your Fabl Script"
+sidebarTitle: "Shot Lists"
+description: "Generate a shot list from your Fabl script, add and edit shots, assign cameras, and link shots to rundown segments for a complete production plan."
+---
+
+Fabl bridges the gap between your written script and your camera plan by generating shot lists directly from script content. Instead of maintaining a separate document that inevitably falls out of sync with your script, your shot list lives inside Fabl alongside the words that inspired each shot. When the script changes, you can regenerate or update the shot list without starting from scratch.
+
+## Generating a Shot List from a Script
+
+<Steps>
+  <Step title="Open the Script Editor">
+    Navigate to the rundown segment containing your script and click **Open Script** to open it in the editor.
+  </Step>
+  <Step title="Open the Shot List Panel">
+    Click the **Shot List** icon in the right sidebar (a camera with a list). The Shot List panel opens alongside the script without obscuring your text.
+  </Step>
+  <Step title="Generate Shots Automatically">
+    Click **Generate Shot List** at the top of the Shot List panel. Fabl's AI analyzes your script — identifying scene changes, subject introductions, action cues, and visual references — and creates an initial list of suggested shots.
+  </Step>
+  <Step title="Review Suggested Shots">
+    Each generated shot appears as a card showing the shot type, a brief description, and the script line it corresponds to. The corresponding script line is highlighted in the editor when you hover over a shot card, so you can see exactly what prompted each suggestion.
+  </Step>
+  <Step title="Edit, Accept, or Remove Shots">
+    Click any shot card to edit its type, description, or camera assignment. Click the **trash** icon to remove a shot that doesn't apply. Use **Add Shot** to insert any shot the AI missed.
+  </Step>
+  <Step title="Link Shots to Rundown Segments">
+    In each shot card, open the **Segment** dropdown to link the shot to a specific rundown segment. This populates the shot list view in the rundown and gives your director and camera operators a production-ready plan tied to your show structure.
+  </Step>
+</Steps>
+
+<Note>
+  Generating a shot list on a script that already has one will show a **Merge or Replace** prompt. Choose **Merge** to add AI-suggested shots alongside your existing shots, or **Replace** to start fresh. Merge is recommended when you've manually customized your shot list.
+</Note>
+
+## Shot Types Reference
+
+Fabl supports standard industry shot types. Use these when manually adding shots or editing AI-generated suggestions to keep your shot list consistent and clear for camera operators.
+
+| Shot Type | Description | Example |
+|---|---|---|
+| **Wide Shot (WS)** | Captures the full scene or environment, establishing location and context. | Opening establishing shot of a studio set |
+| **Medium Shot (MS)** | Frames a subject from the waist up, balancing environment and subject detail. | Anchor delivering a news segment at a desk |
+| **Close-Up (CU)** | Fills the frame with the subject's face or a specific object, emphasizing detail or emotion. | Talent's face during an emotional interview |
+| **Extreme Close-Up (ECU)** | Isolates a very small detail — eyes, hands, a logo, a product feature. | A product label or a signature being written |
+| **Over-the-Shoulder (OTS)** | Frames a conversation from behind one subject's shoulder, showing both participants. | Two-person interview or panel discussion |
+| **B-Roll** | Supplementary footage that cuts away from the main subject to support narration or add visual context. | Footage of a location, product, or activity being described |
+| **Insert Shot** | A tight cutaway to a specific object or action relevant to the narrative. | Hands typing on a keyboard during a tech segment |
+| **Two-Shot** | Frames two subjects in a single shot, typically side by side or in conversation. | Co-anchors presenting together at the desk |
+| **Cutaway** | A shot that cuts away from the main action to show something related but not the primary subject. | Crowd reaction during a live event broadcast |
+| **Point of View (POV)** | Shows the scene from a subject's perspective, as if through their eyes. | First-person view during a product walkthrough |
+
+## Manually Adding Shots
+
+You can add shots at any point — before, during, or after AI generation. To add a shot manually:
+
+1. Click **Add Shot** at the bottom of the Shot List panel or the **+** icon between existing shot cards.
+2. Select a **Shot Type** from the dropdown.
+3. Enter a **Description** that gives the camera operator enough context to set up the shot.
+4. Optionally link the shot to a specific **Script Line** by clicking **Link to Script** and selecting the relevant passage.
+5. Assign a **Camera** if you are working in a multi-camera setup.
+6. Click **Save Shot**.
+
+## Assigning Shots to Cameras
+
+<Tip>
+  On multi-camera shoots, use the camera assignment feature to pre-plan which camera covers each shot. This lets your director build a camera blocking plan directly from the shot list in Fabl, and gives each camera operator a filtered view showing only their assigned shots — reducing confusion during fast-paced live or studio productions.
+</Tip>
+
+To assign a shot to a camera, open the shot card and select from the **Camera** dropdown. Your production's available cameras are configured in **Production Settings → Cameras**. You can assign shots to:
+
+- A specific named camera (e.g., "Camera 1 – Wide," "Camera 2 – Close")
+- A camera role (e.g., "Jib," "Handheld," "Overhead")
+- **Unassigned** — for shots where the director will make the call on set
+
+## Linking Shots to Rundown Segments
+
+Shots linked to rundown segments appear in the **Shot List** column of your rundown view, giving everyone on the production team — from the director to the technical director — a clear picture of the visual plan for each segment.
+
+<Info>
+  If a segment has no script but you still need a shot list for it (such as a live performance or a pre-produced package), you can add shots directly from the rundown's segment detail panel without going through the script editor.
+</Info>
+
+To review the complete shot list for your entire rundown in sequence, open the rundown and click **View → Shot List**. This displays all shots from all segments in rundown order, with camera assignments and shot types visible at a glance — ideal for the director's pre-production review or a camera blocking session.

@@ -1,0 +1,33 @@
+---
+title: "Devices"
+sidebarTitle: "Devices"
+description: "Connect and configure the hardware and software your studio controls. Each device has a type that defines its commands, state, and triggers."
+icon: "sliders"
+---
+
+A **device** is a piece of hardware or software your studio controls through Fabl — a switcher, playout server, audio mixer, lighting desk, or media player. Devices are managed by an [agent](/automation/agents) running in your facility and driven by [rules](/automation/rules) during a show.
+
+## Device types
+
+Every device has a **type** that defines what it can do:
+
+- The **commands** it accepts (for example, set program input or recall a scene)
+- The **state** it reports back, such as connection status
+- The **triggers** it can raise, which [rules](/automation/rules) can react to
+- The **connection settings** it needs, such as host and port
+
+For the full list of supported device types and their connection details, see the [device reference](/devices/overview).
+
+## Add a device
+
+1. Go to **Automations → Devices** and click **Add device**.
+2. Choose the **device type**.
+3. Select the **agent** that will manage it.
+4. Fill in the connection settings shown for that type (host, port, and any type-specific options).
+5. Click **Save**.
+
+Once saved, the agent connects to the device and reports its status. A device's state updates live, so you can see at a glance whether it's online and reachable.
+
+<Note>
+  Adding and editing devices requires the devices management permission. See [Roles and permissions](/team/roles-and-permissions).
+</Note>

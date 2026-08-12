@@ -1,0 +1,30 @@
+---
+title: "Metus Player"
+sidebarTitle: "Metus Player"
+description: "Control a Metus media playout server over its HTTP API — play, pause, seek, and step through a playlist — with live playback state and triggers."
+icon: "monitor-play"
+---
+
+The **Metus Player** device controls a Metus media playout server over its HTTP API.
+
+## Connection
+
+The agent talks to the Metus Player over HTTP. Provide the **host** and, if needed, adjust the **port** (commonly **3006**), an optional **auth token**, and the **poll interval** used to read playback state.
+
+## Commands
+
+The Metus Player device supports playback and playlist operations, including:
+
+- **Play**, **stop**, and **pause**
+- **Seek** to a position
+- Play the **next** or **previous** clip, or **jump to a clip** by index
+- **Add** and **remove** clips, and **clear** the playlist
+
+## State and triggers
+
+The device polls the player and reports detailed state, including connection status, playback state and rate, current clip and index, position and duration, and clip count. It raises triggers your [rules](/automation/rules) can react to, including:
+
+- Playback started, stopped, and paused
+- Clip changed
+- Clip added and removed
+- Connection changes

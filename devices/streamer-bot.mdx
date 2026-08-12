@@ -1,0 +1,30 @@
+---
+title: "Streamer.bot"
+sidebarTitle: "Streamer.bot"
+description: "Run Streamer.bot actions from your automation rules — trigger any action by ID or name, with optional arguments — over its WebSocket server."
+icon: "bot"
+---
+
+The **Streamer.bot** device runs actions in [Streamer.bot](https://streamer.bot/), a Windows automation tool, so your automations can trigger anything you have built there.
+
+## Connection
+
+The agent connects to Streamer.bot over its WebSocket server. Provide the **host**, and if needed adjust the **port** (default **8080**) and a **password** (only required if you enabled authentication on the Streamer.bot WebSocket server).
+
+<Note>
+  Enable the WebSocket server in Streamer.bot under **Servers/Clients → WebSocket Server** before connecting.
+</Note>
+
+## Commands
+
+The Streamer.bot device lets you run your actions:
+
+- **Run an action by ID** — the most reliable option, since the ID does not change if you rename the action
+- **Run an action by name** — using the action's exact name in Streamer.bot
+- Optionally pass **arguments** to the action for use inside Streamer.bot
+
+## State and triggers
+
+The device reports its connection state and raises a trigger your [rules](/automation/rules) can react to:
+
+- Connection changes

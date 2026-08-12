@@ -1,0 +1,126 @@
+---
+title: "Manage Your Live Production with Fabl Live Show Mode"
+sidebarTitle: "Live Show Mode"
+description: "Activate Fabl Live Show Mode to manage cues, monitor camera assignments, track elapsed time, and guide your team through a live production in real time."
+---
+
+Live Show Mode transforms Fabl from a planning tool into your production's command center. When you activate it, the interface switches to a focused real-time view designed for the pace of a live show — displaying the current segment, upcoming cues, camera assignments, elapsed time, and next segment at a glance. Directors and technical directors use Live Show Mode to advance cues, mark segments complete, and keep the entire crew in sync from the first frame to the final sign-off.
+
+## Before You Go Live
+
+<Warning>
+  Ensure all team members — including camera operators, the technical director, and the graphics operator — are connected to the production in Fabl before activating Live Show Mode. Once the show starts, any crew member who joins late will land on the current state of the rundown, but may miss context from segments already completed. Confirm all connections in the **Crew** panel before you activate.
+</Warning>
+
+<Tip>
+  Run a full tech rehearsal in Live Show Mode before your actual broadcast. Use the rehearsal to walk through every segment, advance all cue points, and verify graphics cues fire on the correct shots. Fabl lets you reset the show state after rehearsal so you start fresh for the real thing — see [Reset Show State](#reset-show-state) below.
+</Tip>
+
+## Activate Live Show Mode
+
+<Steps>
+  <Step title="Open Your Production Rundown">
+    From the Fabl dashboard, navigate to your production and open its rundown. Confirm that all segments, shot lists, cue points, and graphics cues are finalized.
+  </Step>
+  <Step title="Verify Crew Connections">
+    Click the **Crew** icon in the top toolbar to open the crew panel. Check that every team member assigned to the production shows a green connected indicator. If someone is missing, ask them to open the production in Fabl before you proceed.
+  </Step>
+  <Step title="Activate Live Show Mode">
+    Click the **Go Live** button in the top-right corner of the rundown editor. Fabl will prompt you to confirm. Click **Start Live Show** to activate. The interface immediately switches to the Live Show Mode layout.
+  </Step>
+  <Step title="Confirm the Starting Segment">
+    Live Show Mode opens on the first segment in your rundown. Verify the correct segment is highlighted as **Current**. If you need to start from a different segment, click it in the segment rail on the left and select **Set as Current**.
+  </Step>
+</Steps>
+
+## The Live Show Mode Interface
+
+Once active, Live Show Mode presents all the information you need to run the show without switching screens.
+
+<CardGroup cols={2}>
+  <Card title="Current Segment" icon="circle-play">
+    The center panel displays the active segment's name, duration, shot list, and any attached script notes. The segment header shows elapsed time counting up from the moment you advanced into it.
+  </Card>
+  <Card title="Next Segment" icon="forward">
+    A preview panel below the current segment shows the next segment in the rundown — its name, planned duration, and the first shot on its shot list — so the TD can prepare in advance.
+  </Card>
+  <Card title="Cue Points" icon="flag">
+    All cue points for the current segment appear in a vertical cue rail on the right. Each cue shows its label, associated camera, and trigger type. The next upcoming cue is highlighted automatically.
+  </Card>
+  <Card title="Camera Assignments" icon="video">
+    The camera rail displays each camera's current shot assignment based on the shot list. When a new cue fires, the camera rail updates to reflect the new active shot.
+  </Card>
+</CardGroup>
+
+<Info>
+  Elapsed time is tracked per segment, not for the entire show. Use the **Show Clock** toggle in the top toolbar to display total elapsed show time alongside the segment timer.
+</Info>
+
+## Advance Cues During the Show
+
+Advancing cues moves the live state forward through the shot list, signaling to the TD and camera operators that the next planned shot is active.
+
+<Steps>
+  <Step title="Monitor the Cue Rail">
+    Watch the cue rail on the right side of Live Show Mode. The next cue is highlighted in amber. Its label, camera target, and notes are visible so you can prepare to call it.
+  </Step>
+  <Step title="Advance the Cue">
+    When the moment arrives, click **Advance Cue** or press the **spacebar** shortcut. The highlighted cue moves to active (green), the camera rail updates, and the next upcoming cue becomes highlighted in amber.
+  </Step>
+  <Step title="Override a Cue if Needed">
+    If the show departs from the plan, click any cue in the rail directly to jump to it out of sequence. Fabl marks any skipped cues as bypassed so you have a record for the post-show review.
+  </Step>
+</Steps>
+
+<Note>
+  The spacebar shortcut for advancing cues is only active when the cue rail or main content area has keyboard focus. If you're typing in a notes field, the spacebar will not advance the cue. Click back into the main panel to restore focus.
+</Note>
+
+## Mark Segments Complete
+
+As each segment ends, mark it complete to advance the rundown and move Live Show Mode's focus to the next segment.
+
+<Steps>
+  <Step title="Finish the Segment">
+    When the current segment is wrapping up, verify the elapsed time and confirm all cue points for that segment have been advanced or bypassed.
+  </Step>
+  <Step title="Mark as Complete">
+    Click **Mark Complete** (or press **M**) to close out the current segment. Fabl timestamps the completion, logs any bypassed cues, and immediately advances the live focus to the next segment.
+  </Step>
+  <Step title="Confirm the Next Segment is Active">
+    The center panel updates to display the new current segment. Verify the segment name, confirm the first shot is correct in the camera rail, and give your TD the call to proceed.
+  </Step>
+</Steps>
+
+## Reset Show State
+
+During a tech rehearsal, you can walk through the entire show in Live Show Mode and then reset everything back to its pre-show state before the real broadcast.
+
+1. With Live Show Mode active, open the **Options** menu (⋯) in the top toolbar.
+2. Select **Reset Show State**.
+3. Fabl will ask you to confirm. Click **Reset** to clear all elapsed times, completion flags, and cue advancement history.
+4. The rundown returns to its initial state, with the first segment set as current and all cues queued from the beginning.
+
+<Warning>
+  Resetting show state is irreversible. All logged timestamps, completion records, and cue advancement history from the session are permanently deleted. Only reset after a rehearsal — never during or after a real broadcast if you need the logs for post-show review.
+</Warning>
+
+## End the Show
+
+When the final segment is complete, end the show to close the live session and preserve the production record.
+
+<Steps>
+  <Step title="Complete the Final Segment">
+    Mark the last segment complete using the **Mark Complete** button. The rundown will indicate that all segments are finished.
+  </Step>
+  <Step title="End Live Show Mode">
+    Click the **End Show** button in the top-right corner. Fabl prompts you to confirm. Click **End Show** to deactivate Live Show Mode.
+  </Step>
+  <Step title="Review the Show Record">
+    After ending the show, Fabl generates a post-show summary that includes segment completion times, advanced and bypassed cues, and any notes added during the production. Access this record from the **History** tab on the production page.
+  </Step>
+</Steps>
+
+<Info>
+  The post-show record is saved automatically and is available to all team members with access to the production. Use it for debrief sessions, to identify timing issues, and to improve shot lists and cue plans for future shows.
+</Info>

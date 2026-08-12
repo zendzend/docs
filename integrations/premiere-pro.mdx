@@ -1,0 +1,93 @@
+---
+title: "Export Fabl Scripts and Shot Lists to Premiere Pro"
+sidebarTitle: "Premiere Pro"
+description: "Export Fabl rundown scripts and shot lists in formats that import directly into Adobe Premiere Pro for seamless edit-suite handoff."
+---
+
+The Premiere Pro integration gives editors everything they need from Fabl without requiring them to log in to the platform. From any rundown, you can export scripts and shot lists in formats that Premiere Pro recognizes natively — so your edit suite can start working from the moment the rundown is locked, without manual reformatting or copy-pasting. The export includes segment order, script content, durations, and any notes your team has added, organized so they map cleanly to Premiere Pro sequences and bins.
+
+<Note>
+  The Fabl Premiere Pro integration supports **Adobe Premiere Pro versions 2020 (14.0) and later** on both macOS and Windows. Earlier versions of Premiere Pro may not support all imported file formats. If you are running an older version, upgrade to ensure full compatibility.
+</Note>
+
+## What the integration exports
+
+Fabl generates export files that you import directly into Premiere Pro:
+
+- **Script export (PDF or Final Draft .fdx)** — the full script content from your rundown, formatted for reading in an edit suite or for import into speech-to-text workflows
+- **Shot list (CSV or tab-delimited text)** — one row per segment, with columns for segment name, type, script summary, estimated duration, and editor notes
+- **Sequence metadata (XML — Premiere Pro sequence format)** — a structured file that Premiere Pro can import as an empty sequence with named clips and durations pre-populated from your rundown segments
+
+## Export to Premiere Pro
+
+<Steps>
+  <Step title="Open the rundown">
+    In Fabl, navigate to the rundown you want to export and open it. Make sure all segments are finalized and scripts are approved before exporting to avoid sending incomplete information to the edit suite.
+  </Step>
+  <Step title="Open the Export menu">
+    Click the **•••** menu in the top-right corner of the rundown and select **Export**. The export panel opens on the right side of the screen.
+  </Step>
+  <Step title="Select Premiere Pro as the destination">
+    In the export panel, choose **Premiere Pro** from the **Destination** dropdown.
+  </Step>
+  <Step title="Choose your export formats">
+    Select one or more output formats:
+    - **Script (PDF)** for a formatted, printable script
+    - **Script (Final Draft .fdx)** for import into Final Draft or speech-to-text tools
+    - **Shot List (CSV)** for a spreadsheet-compatible segment breakdown
+    - **Sequence XML** for import directly into a Premiere Pro project as a sequence
+  </Step>
+  <Step title="Configure export options">
+    Set any format-specific options that appear:
+    - For **Sequence XML**: choose whether to include segment notes as clip markers and whether to set clip color labels by segment type
+    - For **Shot List CSV**: choose the column delimiter (comma or tab) and whether to include script text in the export
+  </Step>
+  <Step title="Download and import into Premiere Pro">
+    Click **Export**. Fabl packages your selected formats into a ZIP file and downloads it to your computer. Extract the ZIP, then import the relevant files into your Premiere Pro project using **File → Import** (for XML and CSV) or open the PDF directly.
+  </Step>
+</Steps>
+
+## Supported export formats
+
+<AccordionGroup>
+  <Accordion title="Sequence XML (Premiere Pro sequence format)">
+    The Sequence XML export creates a Premiere Pro-compatible XML file representing an empty sequence. When you import it into a Premiere Pro project, Premiere creates a sequence with one clip stub per rundown segment. Each clip stub carries the segment name, estimated duration, and any editor notes as clip markers.
+
+    **How to import in Premiere Pro:** Go to **File → Import**, select the `.xml` file, and choose the project bin where you want the sequence to appear. Premiere Pro creates the sequence automatically.
+
+    **Best for:** Editors who want to pre-structure their timeline before media is captured or ingested.
+  </Accordion>
+  <Accordion title="Shot List (CSV)">
+    The CSV export produces a comma-separated file with one row per segment. Default columns include: Segment Number, Segment Name, Segment Type, Estimated Duration, Script Summary, and Editor Notes. You can open this file in any spreadsheet application or use it with third-party Premiere Pro panel extensions that accept shot list imports.
+
+    **Best for:** ACs, production coordinators, and editors who need a quick reference breakdown without importing into the timeline.
+  </Accordion>
+  <Accordion title="Script (PDF)">
+    The PDF export renders the full script content of your rundown in a clean, print-ready format. Page breaks occur between major segments. Each page includes the show name, air date, and rundown version number in the header.
+
+    **Best for:** On-set reading copies, teleprompter prep, and archiving finalized scripts.
+  </Accordion>
+  <Accordion title="Script (Final Draft .fdx)">
+    The Final Draft export converts your Fabl script content into a `.fdx` file compatible with Final Draft 11 and later. Scene headings correspond to segment names, and action lines carry the segment script content. This format is also compatible with many speech-to-text and closed-captioning tools.
+
+    **Best for:** Productions that use Final Draft for script locking, or that use `.fdx` as input for transcription or captioning services.
+  </Accordion>
+</AccordionGroup>
+
+## Tips for a smooth edit-suite handoff
+
+<Tip>
+  Export the Sequence XML and the Shot List CSV together. Give the editor the XML to build their initial sequence and keep the CSV on their desk as a reference during offline edit.
+</Tip>
+
+<Tip>
+  Lock your rundown in Fabl (using the **Lock** button on the rundown toolbar) before exporting. A locked rundown prevents further edits that could create discrepancies between the exported files and what ends up in the edit suite.
+</Tip>
+
+<Info>
+  Estimated durations in the Sequence XML come from the **Duration** field on each Fabl segment. If your segments don't have durations set, the sequence clips default to five seconds each. Fill in segment durations in Fabl before exporting for the most useful sequence structure.
+</Info>
+
+<Warning>
+  Sequence XML import works with Premiere Pro's legacy XML importer. If Premiere Pro prompts you to choose between **Final Cut Pro XML** and **Premiere Pro XML** on import, select **Premiere Pro XML**. Selecting the wrong format may result in an unreadable sequence.
+</Warning>

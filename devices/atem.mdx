@@ -1,0 +1,35 @@
+---
+title: "ATEM"
+sidebarTitle: "ATEM"
+description: "Control Blackmagic ATEM video switchers — program and preview inputs, transitions, keyers, fade to black, and record/stream — with live state and triggers."
+icon: "tv"
+---
+
+The **ATEM** device controls Blackmagic Design ATEM video switchers. It's a natural fit for studio mode: cue and take rundown items that cut or transition your switcher's program output automatically.
+
+## Connection
+
+The agent connects to the switcher over the network. Provide the switcher's **host** and, if needed, adjust the **port** and the **mix-effect (ME) index** for multi-ME switchers. The common control port is **9910**.
+
+## Commands
+
+The ATEM device supports the core switcher operations, including:
+
+- Set **program** and **preview** inputs
+- Perform a **cut** or **auto transition**
+- **Fade to black**
+- Control **upstream** and **downstream keyers** (on/off air)
+- Start and stop **recording** and **streaming**
+- Run switcher **macros** and control **aux** outputs
+
+## State and triggers
+
+The device reports its connection state and raises triggers your [rules](/automation/rules) can react to, including:
+
+- Connection changes
+- Program and preview input changes
+- Transition activity and fade-to-black changes
+- Upstream and downstream keyer on-air changes
+- Recording and streaming state changes
+
+Trigger data such as the input number and ME index is available for use in rule actions.

@@ -1,0 +1,38 @@
+---
+title: "Blackmagic Fairlight"
+sidebarTitle: "Blackmagic Fairlight"
+description: "Control Blackmagic Fairlight Live audio consoles over OSC — set channel and bus faders, mute, pan, aux sends, and talkback routing — with live state and triggers."
+icon: "audio-lines"
+---
+
+The **Blackmagic Fairlight** device controls [Blackmagic Design Fairlight](https://www.blackmagicdesign.com/products/fairlightconsoles) live audio consoles over OSC.
+
+## Connection
+
+The agent connects to the console over the network using OSC. Provide the **host** and the **OSC UDP port** configured in the console's Show settings, and if needed adjust the **channel count** (typically **32**).
+
+<Note>
+  Enable the OSC server on the console and set it to UDP transport so the agent can connect.
+</Note>
+
+## Commands
+
+The Fairlight device supports common mixing operations, including:
+
+- Set a channel's **fader level**, **mute** or **unmute** it, and set its **pan**
+- Set a channel's **aux (monitor) send** level, and mute or unmute the send
+- Set a **main bus** fader level, and mute or unmute the bus
+- Route **talkback** to a destination
+- Enable or disable **audio-follows-video**
+- Send a raw OSC message
+
+## State and triggers
+
+The device reports its connection state and raises triggers your [rules](/automation/rules) can react to, including:
+
+- Connection changes
+- Channel **mute** changes
+- Channel **fader** changes
+- **On-air** state changes
+
+Trigger data such as the channel number and level is available for use in rule actions.

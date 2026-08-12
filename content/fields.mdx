@@ -1,0 +1,50 @@
+---
+title: "Fields and Field Types"
+sidebarTitle: "Fields"
+description: "Fields are blocks that hold values. Learn the available field types, including text, number, date, time, list, boolean, and media."
+icon: "text-cursor-input"
+---
+
+A **field** is a block that holds a value. Fields capture the structured data of your show — segment titles, durations, lower-third text, input numbers, and more — and they can be read and written by [automation rules](/automation/rules) during a live show.
+
+## Field types
+
+<AccordionGroup>
+  <Accordion title="Text">
+    **Text** for a single line, and **multiline text** for longer paragraphs. Text fields can also be styled as **headings** (levels 1–4) to structure a page.
+  </Accordion>
+
+  <Accordion title="Number">
+    A **number** field holds an integer or decimal value — useful for input numbers, counts, and durations in seconds.
+  </Accordion>
+
+  <Accordion title="Date and time">
+    **Date**, **date & time**, and **time** fields. Time fields support several formats, including hours/minutes, hours/minutes/seconds, timecode with frames, and milliseconds.
+  </Accordion>
+
+  <Accordion title="List">
+    A **list** field presents a dropdown of predefined options you configure on the field.
+  </Accordion>
+
+  <Accordion title="Yes/No">
+    A **boolean** field is a simple yes/no toggle.
+  </Accordion>
+
+  <Accordion title="Media">
+    **Video**, **image**, and **audio** fields hold an uploaded media item. See [Media assets](/media/media-assets) for how upload and metadata work.
+  </Accordion>
+</AccordionGroup>
+
+## Configuring a field
+
+Each field has options you can set from its configuration menu:
+
+- **Label** and **placeholder** text
+- A **default value** used when the field is created
+- **List options** for list fields, and a **time format** for time fields
+- An **icon** and optional **foreground/background colors**
+- An **access mode** that controls who can change the value — everyone, automation only, or nobody
+
+<Tip>
+  If you reuse the same field configuration often, save it as a [field preset](/content/field-presets) so you can add a ready-made field in one click.
+</Tip>

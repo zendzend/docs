@@ -1,0 +1,41 @@
+---
+title: "Vizrt TriCaster"
+sidebarTitle: "Vizrt TriCaster"
+description: "Control Vizrt (NewTek) TriCaster live production systems — switch program and preview, transitions, keyers, recording, streaming, media players, and macros — with live state and triggers."
+icon: "tv-2"
+---
+
+The **Vizrt TriCaster** device controls [Vizrt TriCaster](https://www.vizrt.com/products/tricaster/) live production systems (formerly NewTek) over their HTTP control interface.
+
+## Connection
+
+The agent connects to the TriCaster over the network. Provide the switcher's **host**, and if needed adjust the **port** (default **80**), the **user name** and **password** (both default to `admin` — change them on your switcher for security), and the **status poll interval**.
+
+<Note>
+  The TriCaster must have a live session running (not just be powered on) for automation commands to work.
+</Note>
+
+## Commands
+
+The TriCaster device supports a broad set of live-production operations, including:
+
+- Set the **program** and **preview** source by name, and **cut** or **auto-transition** — with a selectable transition type and speed
+- Control **M/E buses** and **downstream keyers** (transition, or force on/off air)
+- Start and stop **recording** and **streaming**, and **grab a still** of the program output
+- Control **media players** (DDRs, graphics, stills, and titles) — play, stop, next, previous, and mark in/out
+- **Run macros** by name
+- Set **audio** volume and mute per source, and **route outputs** (mix/aux) to a source
+- **Recall and save** M/E memories
+- Push rundown data into on-air **title templates**
+- Send a raw switcher shortcut for operations not listed above
+
+## State and triggers
+
+The device reports its connection state and raises triggers your [rules](/automation/rules) can react to, including:
+
+- Connection changes
+- A source going **on or off air** (tally)
+- **Program** and **preview** source changes
+- **Recording** and **streaming** state changes
+
+Trigger data such as the source name and on-air status is available for use in rule actions.

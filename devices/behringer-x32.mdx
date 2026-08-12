@@ -1,0 +1,32 @@
+---
+title: "Behringer X32"
+sidebarTitle: "Behringer X32"
+description: "Control Behringer X32 and M32 digital mixers over OSC — mute and unmute channels, set fader levels, and recall scenes — with live state and triggers."
+icon: "audio-lines"
+---
+
+The **Behringer X32** device controls Behringer X32 and M32 digital mixing consoles over OSC.
+
+## Connection
+
+The agent connects to the console over the network using OSC. Provide the **host** and, if needed, adjust the **port** (commonly **10023**) and the **channel count** (typically 32).
+
+## Commands
+
+The X32 device supports common mixing operations, including:
+
+- **Mute** and **unmute** a channel
+- Set a channel's **fader level**
+- **Recall a scene**
+- Send a raw OSC message
+
+## State and triggers
+
+The device reports its connection state and raises triggers your [rules](/automation/rules) can react to, including:
+
+- Connection changes
+- Channel **mute** changes
+- Channel **fader** changes
+- **Scene recalled**
+
+Trigger data such as the channel number and level is available for use in rule actions.
