@@ -156,8 +156,8 @@
               "devices/generic-osc",
               "devices/teradek",
               "devices/behringer-xair",
-              "devices/hyperdeck",
-              "devices/blackmagic-streaming-encoder"
+              "devices/obsbot",
+              "devices/metus-ingest"
             ]
           }
         ],
