@@ -1,0 +1,44 @@
+---
+title: "RODECaster Video"
+sidebarTitle: "RODECaster Video"
+description: "Control a RODECaster Video console - switch Program, cut and auto, recall scenes and media, toggle overlays, stream, record and mute audio."
+icon: "sliders"
+---
+
+The **RØDECaster Video** device controls a RØDECaster Video production console, so a rundown can switch sources, roll graphics, and start the stream from one place.
+
+## Connection
+
+Provide the console's **host** and **TCP port**.
+
+## Commands
+
+### Switching
+
+| Command | What it does |
+| --- | --- |
+| Set Program input | Switches the live input by index |
+| Cut | Switches immediately, with no transition |
+| Auto | Performs the configured transition |
+| Recall scene | Recalls a stored scene by index |
+| Recall media | Recalls a media clip or source to Program by index |
+| Toggle overlay | Puts a graphic overlay on or off air |
+
+### Stream and record
+
+| Command | What it does |
+| --- | --- |
+| Start / stop streaming | Controls streaming |
+| Start / stop recording | Controls recording |
+
+### Audio
+
+| Command | What it does |
+| --- | --- |
+| Mute / unmute channel | Mutes or unmutes an audio channel on a submix bus |
+
+Audio channels are addressed by their index on a bus, counted from zero.
+
+## State and triggers
+
+The device reports its connection state, whether it is streaming and recording, the current Program input, the last recalled scene, which overlay is on air, and the submix bus and channel last addressed. A trigger fires when the connection changes.

@@ -1,0 +1,31 @@
+---
+title: "Singular.Live"
+sidebarTitle: "Singular.Live"
+description: "Animate Singular.Live cloud graphics in and out, push data into a sub-composition, and clear the app output."
+icon: "shapes"
+---
+
+The **Singular.Live** device controls Singular.Live cloud graphics, so a rundown item can bring a lower third in, update its text from your page, and take it out again.
+
+## Connection
+
+Singular.Live is a cloud service, so there is no host to reach on your network. Provide the **app token** for the control app you want to drive; the **API base URL** is already set and rarely needs changing.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Animate in | Animates a sub-composition in, optionally setting data fields in the same call |
+| Animate out | Animates a sub-composition out |
+| Update data | Pushes field values to a sub-composition without changing its animation state |
+| Clear output | Takes out all of the app's output |
+
+<Tip>
+  **Update data** is the one to use for a graphic that is already on air - a name correction or a score change lands without the graphic animating out and back in.
+</Tip>
+
+Field values are supplied as a set of model fields, so a rule can drive a graphic straight from a field on your page.
+
+## State and triggers
+
+The device reports its connection state and raises a trigger when the connection changes.

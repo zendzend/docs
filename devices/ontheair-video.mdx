@@ -1,0 +1,31 @@
+---
+title: "OnTheAir Video"
+sidebarTitle: "OnTheAir Video"
+description: "Play out from Softron OnTheAir Video - select playlists, cue and play items, skip forward, and read what is on air."
+icon: "monitor-play"
+---
+
+The **OnTheAir Video** device controls Softron OnTheAir Video playout, so your rundown can select the right playlist and roll the right item as the show advances.
+
+## Connection
+
+Provide the playout machine's **host** and **port**.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Select playlist | Selects a playlist by name, index or unique ID, and starts it |
+| Cue item | Cues and plays a specific playlist item, by index or name |
+| Skip next | Skips to the next item on the active playlist |
+| Get current item | Reads the item now playing |
+
+**Skip next** can be limited to live-flagged items only, so a rule advancing the playlist steps past anything not meant to go to air.
+
+<Tip>
+  **Get current item** returns what is on air rather than changing anything, so it can be used in a rule condition - for example, to only fire a graphic when a particular clip is playing.
+</Tip>
+
+## State and triggers
+
+The device reports its connection state and raises a trigger when the connection changes.

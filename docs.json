@@ -156,8 +156,16 @@
               "devices/generic-osc",
               "devices/teradek",
               "devices/behringer-xair",
-              "devices/obsbot",
-              "devices/metus-ingest"
+              "devices/hyperdeck",
+              "devices/blackmagic-streaming-encoder",
+              "devices/ontheair-video",
+              "devices/utah-scientific",
+              "devices/barco-event-master",
+              "devices/rodecaster-video",
+              "devices/singular-live",
+              "devices/propresenter",
+              "devices/genelec-smart-ip",
+              "devices/sennheiser-spectera"
             ]
           }
         ],

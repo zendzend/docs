@@ -1,0 +1,34 @@
+---
+title: "Sennheiser Spectera"
+sidebarTitle: "Sennheiser Spectera"
+description: "Monitor and control a Sennheiser Spectera base station - audio transport per interface, pack instrument assignment, and device naming."
+icon: "mic"
+---
+
+The **Sennheiser Spectera** device connects Fabl to a Spectera wideband wireless base station, so pack status reaches your show and routing changes can be made from a rule.
+
+## Connection
+
+Provide the base station's **host** and **port**, plus the **API user** and **password**. Two further settings cover the secure link:
+
+- **TLS trust** and an optional **certificate pin**, for verifying the base station's certificate
+- A **minimum request gap**, which paces requests so the base station is not overwhelmed
+
+State arrives by push rather than polling, so pack changes reach Fabl as they happen.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Set device name | Sets the base station's display name |
+| Set input transport | Selects which audio transport an input interface uses - Dante, MADI or analog |
+| Set output transport | Selects the transport for an output interface |
+| Assign instrument | Switches the instrument assigned to a pack, addressed by its type and serial |
+
+Packs are addressed by **type and serial** - for example an SEK bodypack or an SKM handheld - rather than by slot, so a rule keeps working when packs are swapped between positions.
+
+A raw command is available for any request not listed here.
+
+## State and triggers
+
+The device reports whether the base station is connected, along with pack type and serial for the packs it is tracking. A trigger fires when the connection changes.
