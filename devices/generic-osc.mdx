@@ -1,0 +1,53 @@
+---
+title: "Generic OSC"
+sidebarTitle: "Generic OSC"
+description: "Send and receive OSC with any device or application — typed arguments, scheduled bundles, and a listener that starts rules when a matching message arrives."
+icon: "radio-tower"
+---
+
+The **Generic OSC** device talks OSC to anything that speaks it, in both directions. Use it for gear Fabl has no dedicated device for, or for a bespoke show-control setup of your own.
+
+## Connection
+
+- **Target host** and **send port** — where messages go, default port **9000**
+- **Transport** — UDP or TCP
+- **Listen port** — where Fabl receives OSC, default **8000** (UDP)
+- **Listen address pattern** — which incoming addresses raise a trigger, default `/*` for everything
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Send message | Sends an OSC message: an address pattern plus optional typed arguments |
+| Send bundle | Sends a one-message bundle, optionally scheduled a number of milliseconds into the future |
+
+Arguments are given as a comma-separated list with matching **type tags**, one character per argument:
+
+| Tag | Type |
+| --- | --- |
+| `i` | integer |
+| `f` | float |
+| `s` | string |
+| `b` | blob, as hex |
+| `T` / `F` | true / false |
+| `N` | null |
+| `I` | impulse |
+
+So `1,0.5,hello` with type tags `ifs` sends an integer, a float, and a string.
+
+## Triggers
+
+| Trigger | Fires when |
+| --- | --- |
+| Listener connects or disconnects | The OSC listener comes up or goes down |
+| Message received | An incoming message matches the listen address pattern |
+
+The received-message trigger carries the address, the argument count, the type tags, and the first two arguments, so a [rule](/automation/rules) can branch on what arrived.
+
+<Tip>
+  Narrow the **listen address pattern** from `/*` to the addresses you actually care about. A wide-open pattern fires a trigger for every message on the port, including traffic meant for something else.
+</Tip>
+
+## State
+
+The device reports whether the listener is up, along with its connection state.

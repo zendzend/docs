@@ -1,0 +1,46 @@
+---
+title: "Behringer X Air"
+sidebarTitle: "Behringer X Air"
+description: "Control Behringer X Air and M Air compact mixers over OSC — channel and main faders, mutes, aux sends, mute groups and snapshots — with live state and triggers."
+icon: "audio-lines"
+---
+
+The **X Air** device controls [Behringer X Air and M Air](https://www.behringer.com/) compact digital mixers, so a rundown item can open a presenter's microphone, duck a bed, or recall a snapshot for the next segment.
+
+For the larger consoles, see [Behringer X32](/devices/behringer-x32).
+
+## Connection
+
+Provide the mixer's **host** and **UDP port** (default **10024**), and pick the **model** — XR12, XR16, XR18, or X18.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Set channel fader | Sets an input channel's fader level, from 0.0 to 1.0 |
+| Mute / unmute channel | Mutes or unmutes an input channel |
+| Set main fader | Sets the main LR fader level |
+| Mute / unmute main | Mutes or unmutes the main LR bus |
+| Set send level | Sets a channel's send level to a bus or aux |
+| Set mute group | Mutes or unmutes one of the four mute groups |
+| Recall snapshot | Recalls a stored snapshot by index |
+
+A raw OSC command is available for anything not listed here.
+
+<Tip>
+  A **mute group** changes several channels in one message. Muting a group of microphones that way avoids the ragged effect of separate rule actions arriving a few milliseconds apart.
+</Tip>
+
+## Triggers
+
+| Trigger | Fires when |
+| --- | --- |
+| Connection changes | The mixer connects or disconnects |
+| Channel mute changes | A channel is muted or unmuted, carrying the channel and its new state |
+| Channel fader changes | A fader moves, carrying the channel and level |
+
+Because mute and fader changes fire whoever made them, a rule can react to an operator moving a fader on the console itself — not only to changes Fabl made.
+
+## State
+
+The device reports its connection state.
