@@ -1,0 +1,35 @@
+---
+title: "Ross Video Server (Tria)"
+sidebarTitle: "Ross Tria"
+description: "Play clips from a Ross Tria video server — cue, play, stop and eject per channel, seek and jog, set repeat mode, and select an ISO camera angle."
+icon: "monitor-play"
+---
+
+The **Tria** device controls [Ross Video Tria](https://www.rossvideo.com/) video servers, so a rundown item can cue a clip on a channel and roll it exactly when the item goes on air.
+
+## Connection
+
+Provide the server's **host** and **TCP port**.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Cue | Loads a clip into a channel without playing it, optionally at a timecode |
+| Play | Plays the loaded clip, or loads and plays one when a clip is supplied |
+| Stop | Stops the clip playing in a channel |
+| Eject | Unloads the clip in a channel |
+| Go to | Seeks to a timecode in the loaded clip |
+| Jog | Jogs the loaded clip by a number of frames, forwards or backwards |
+| Loop | Sets the repeat mode for a channel |
+| Angle | Selects the ISO camera angle for the loaded clip |
+
+Every command targets a **channel**, so one configured server can drive all of its outputs from different rules.
+
+<Tip>
+  Cue on the rundown item's cue and play on its take. The clip is already loaded when the item goes on air, so playback starts without the load delay.
+</Tip>
+
+## State and triggers
+
+The device reports its connection state and raises a trigger when the connection changes.

@@ -1,0 +1,34 @@
+---
+title: "Cuez Automator"
+sidebarTitle: "Cuez Automator"
+description: "Drive Cuez Automator from your rundown — trigger steps and CuezDeck buttons, fire macros, run timers, and select the active project or episode."
+icon: "square-play"
+---
+
+The **Cuez Automator** device connects Fabl to [Cuez](https://cuez.app/), so your rundown can drive an existing Cuez automation — firing its steps, buttons, macros, and timers as your show advances.
+
+## Connection
+
+Provide the **host** and **port** of the machine running Cuez Automator.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Step | Triggers the step at a given index |
+| Trigger button | Presses a CuezDeck button |
+| Switch on | Switches a CuezDeck button on |
+| Switch off | Switches a CuezDeck button off |
+| Fire macro | Fires a macro by id |
+| Start timer | Starts a timer by id |
+| Stop timer | Stops a timer by id |
+| Select project | Selects a project by id |
+| Select episode | Selects an episode by id |
+
+<Tip>
+  **Switch on** and **Switch off** set a button to a known state, while **Trigger button** presses it. Use the switches when a rule must leave Cuez in a specific state regardless of what it was before.
+</Tip>
+
+## State and triggers
+
+The device reports its connection state and raises a trigger when the connection changes.

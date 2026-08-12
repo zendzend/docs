@@ -1,0 +1,96 @@
+---
+title: "OBS Studio"
+sidebarTitle: "OBS Studio"
+description: "Control OBS Studio from your rundown — switch scenes, show and hide sources, mute inputs, run streaming, recording, the virtual camera and the replay buffer — with live state and triggers."
+icon: "video"
+---
+
+The **OBS Studio** device controls [OBS Studio](https://obsproject.com/), so your rundown can switch scenes, reveal a source, mute a microphone, and start the stream without anyone touching the OBS machine.
+
+## Connection
+
+Provide the **host** and **port** of the machine running OBS (default **4455**), plus the **password** if you enabled authentication.
+
+<Note>
+  Turn on the WebSocket server in OBS under **Tools → WebSocket Server Settings** before connecting.
+</Note>
+
+## Commands
+
+### Scenes
+
+| Command | What it does |
+| --- | --- |
+| Set current program scene | Switches the active scene |
+| Set current preview scene | Sets the preview scene in studio mode |
+| Create scene / Remove scene / Set scene name | Manages scenes |
+
+### Sources and inputs
+
+| Command | What it does |
+| --- | --- |
+| Set scene item enabled | Shows or hides a source in a scene |
+| Set scene item locked | Locks or unlocks a source |
+| Set scene item index | Reorders a source |
+| Set input mute / Toggle input mute | Mutes or unmutes an audio input |
+| Set input volume | Sets an input's volume in dB or as a multiplier |
+| Set input settings / Set input name | Changes an input's settings or renames it |
+
+### Transitions and studio mode
+
+| Command | What it does |
+| --- | --- |
+| Set current scene transition | Sets the active transition |
+| Set transition duration | Sets the transition length in milliseconds |
+| Trigger studio mode transition | Fires the studio-mode transition |
+| Set studio mode enabled | Turns studio mode on or off |
+
+### Stream, record, and capture
+
+| Command | What it does |
+| --- | --- |
+| Start / Stop / Toggle stream | Controls streaming |
+| Start / Stop / Toggle record | Controls recording |
+| Pause / Resume record | Pauses and resumes a recording |
+| Start / Stop / Toggle virtual camera | Controls the virtual camera |
+| Start / Stop replay buffer | Controls the replay buffer |
+| Save replay buffer | Writes the replay buffer to disk |
+
+### Media and outputs
+
+| Command | What it does |
+| --- | --- |
+| Trigger media input action | Plays, pauses, restarts, or stops a media input |
+| Set media input cursor | Seeks a media input to a timestamp |
+| Start / Stop / Toggle output | Controls a named output |
+
+### Profiles and general
+
+| Command | What it does |
+| --- | --- |
+| Set current profile | Switches the active profile |
+| Set current scene collection | Switches the scene collection |
+| Trigger hotkey by name | Fires an OBS hotkey |
+| Broadcast custom event | Sends a custom event to all connected clients |
+
+A **Send request** command is also available as an escape hatch, taking any request type and raw JSON, so anything the protocol supports is reachable even if it is not listed above.
+
+## Triggers
+
+[Rules](/automation/rules) can react to:
+
+- The OBS connection changes
+- The program scene changes
+- Streaming starts or stops
+- Recording starts or stops
+- An input is muted or unmuted
+- A scene item is shown or hidden
+- A media clip finishes playing
+
+<Tip>
+  The media-finished trigger carries the input name, so a clip ending in OBS can advance your rundown automatically.
+</Tip>
+
+## State
+
+The device reports its connection state, the current program scene, whether streaming and recording are active, and the recording output path when a recording stops.

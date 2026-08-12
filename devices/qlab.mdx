@@ -1,0 +1,33 @@
+---
+title: "Figure 53 QLab"
+sidebarTitle: "QLab"
+description: "Run QLab cues from your rundown — start, stop, pause and resume, select cues, move the playhead, load to a position, and set audio levels."
+icon: "list-music"
+---
+
+The **QLab** device controls [Figure 53 QLab](https://qlab.app/), the show-control application, so your rundown can fire sound, video, and lighting cues that already live in a QLab workspace.
+
+## Connection
+
+Provide the **host**, the **send port**, and the **reply port**. If the machine holds more than one workspace, name the **workspace ID**; if the workspace is protected, set its **passcode**.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Transport | Runs a transport action — start, stop, pause, resume and the rest — on a target cue |
+| Select cue | Selects a cue by number or by unique id |
+| Move playhead | Moves the standby cue to a specific cue number |
+| Load to position | Loads a cue and sets its playback position to a time in seconds |
+| Set audio level | Sets an audio cue's slider level in dB for a channel, where 0 is the master |
+| Authenticate | Authenticates to the workspace with its passcode |
+
+Cues can be addressed by number, by unique id, or as the current selection. A raw OSC command is available for any address not listed here.
+
+<Tip>
+  Addressing by **unique id** survives renumbering. A cue number is easier to read in a rule, but it changes when someone reorders the workspace — an id does not.
+</Tip>
+
+## State and triggers
+
+The device reports its connection state and raises a trigger when the connection changes.
