@@ -51,7 +51,8 @@
               "introduction",
               "quickstart",
               "key-concepts"
-            ]
+            ],
+            "icon": "rocket"
           },
           {
             "group": "Content",
@@ -79,7 +80,6 @@
             "icon": "film",
             "pages": [
               "media/media-assets",
-              "media/transcoding",
               "media/subtitle-editor"
             ]
           },
@@ -90,7 +90,8 @@
               "automation/rules",
               "automation/devices",
               "automation/agents"
-            ]
+            ],
+            "icon": "spline"
           },
           {
             "group": "Team & Settings",
@@ -98,7 +99,8 @@
               "team/invite-members",
               "team/roles-and-permissions",
               "settings/workspace"
-            ]
+            ],
+            "icon": "cog"
           }
         ]
       },

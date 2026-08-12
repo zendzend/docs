@@ -1,0 +1,41 @@
+---
+title: "Blackmagic Streaming Encoder"
+sidebarTitle: "Blackmagic Streaming Encoder"
+description: "Configure and monitor a Blackmagic streaming encoder — platform, server, quality and stream key, video format and monitor audio — with live stream status and triggers."
+icon: "radio"
+---
+
+The **Blackmagic Streaming Encoder** device controls [Blackmagic streaming encoders](https://www.blackmagicdesign.com/), so your show can set up its destination and, more importantly, tell you the moment the stream stops behaving.
+
+## Connection
+
+Provide the encoder's **host** and **port**. The **reconciliation poll** sets how often Fabl re-reads state to stay in step.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Set stream configuration | Sets the platform, server, quality preset and stream key — or a custom RTMP/SRT URL with an SRT passphrase |
+| Set video format | Sets the video format, or leaves it on Auto |
+| Set monitor audio source | Selects the monitoring audio source |
+
+A raw request command is available for anything the Streaming API supports that is not listed here.
+
+## Triggers
+
+| Trigger | Fires when |
+| --- | --- |
+| Connection changes | The encoder connects or disconnects |
+| Stream status changes | The stream goes live, stops, or is interrupted |
+| Platform changes | The active streaming platform changes |
+| Video format or product info changes | The format or device details change |
+
+The status trigger carries both the new status and the **previous** one, so a rule can tell an ordinary stop from an interruption and only raise an alarm for the second.
+
+<Tip>
+  Status runs through Idle, Connecting, Streaming, Flushing and Interrupted. **Flushing** is normal at the end of a stream — do not treat it as a failure.
+</Tip>
+
+## State
+
+The device reports its connection state, stream status and whether it is streaming, the platform, server and quality, the video and effective video format, product name and software version, bitrate, stream duration, and cache usage.
