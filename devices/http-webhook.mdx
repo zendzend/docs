@@ -1,0 +1,46 @@
+---
+title: "HTTP Webhook"
+sidebarTitle: "HTTP Webhook"
+description: "Call any HTTP endpoint from your rundown — send a configured request, or override method, URL, headers and body per action, with tokens from your page."
+icon: "webhook"
+---
+
+The **HTTP Webhook** device sends outbound HTTP requests, so a rundown can reach any system with a web API — an internal service, a third-party tool, a piece of gear Fabl does not have a dedicated device for.
+
+## Connection
+
+Configure the request that this device sends by default:
+
+- **Target URL** and **default method**
+- **Content-Type**, default **application/json**
+- **Default headers**, as a `Key: Value` list or a JSON object
+- **Auth header name and value**, kept as a secret
+- **Timeout**, default 10 seconds
+
+Two settings are worth understanding before you go live:
+
+- **Allowed hosts** restricts which hosts this device may call. Leave it empty to allow any, or list hosts to keep a misconfigured rule from reaching somewhere it should not.
+- **Accept self-signed certificate** is for LAN equipment with its own certificate. Leave it off for anything on the public internet.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Send | Sends the configured request — its method, URL and headers — with an optional body |
+| Send request | Sends a fully specified request, overriding the method, URL, headers, body and content type for this action alone |
+
+Both accept **tokens**, so the body, URL, and headers can carry live values from your page — `{blockValue}` and the other rule tokens.
+
+<Note>
+  In a JSON body, write a literal brace by doubling it: `{{` and `}}`. Otherwise it is read as the start of a token.
+</Note>
+
+On the override command, an absolute URL replaces the configured one, while a relative path is appended to it — so one device can serve many endpoints on the same host.
+
+## State
+
+The device reports its connection state, the last HTTP status code it received, the last action, and the last error. The status code is readable in a rule condition, so a rule can branch on whether the call succeeded.
+
+## Triggers
+
+This device sends only — it raises no triggers. To have an external system start a rule, use a device that listens, such as [Generic OSC](/devices/generic-osc).

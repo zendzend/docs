@@ -1,0 +1,39 @@
+---
+title: "Teradek"
+sidebarTitle: "Teradek"
+description: "Control a Teradek encoder from your rundown — start and stop streaming and recording, capture snapshots, and react when the stream state changes."
+icon: "radio"
+---
+
+The **Teradek** device controls [Teradek](https://teradek.com/) encoders, so the stream starts when your show does and stops when it ends — and a rule can react if the stream drops mid-show.
+
+## Connection
+
+Provide the encoder's **host** and **password**. **Allow self-signed certificate** covers encoders using their own certificate on the local network.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Start stream | Starts a stream, defaulting to the first or active one |
+| Stop stream | Stops a stream |
+| Start recording | Starts recording on an encoder |
+| Stop recording | Stops recording |
+| Snapshot | Captures a still on an encoder |
+
+Units with more than one stream or encoder take an index, so a single device can drive each of them.
+
+## Triggers
+
+| Trigger | Fires when |
+| --- | --- |
+| Connection changes | The encoder becomes reachable, or stops being reachable |
+| Stream state changes | The stream starts, stops, or errors |
+
+<Tip>
+  The stream-state trigger is the one worth building an alert on: it fires on **error** as well as start and stop, so a rule can put a warning on a studio display the moment a stream drops rather than when someone notices.
+</Tip>
+
+## State
+
+The device reports its connection state, model and firmware, the current stream state, the bitrate, whether it is recording, and the last error.

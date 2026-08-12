@@ -149,7 +149,11 @@
               "devices/mitti",
               "devices/qlab",
               "devices/pixera",
-              "devices/resolume-arena"
+              "devices/resolume-arena",
+              "devices/http-webhook",
+              "devices/generic-osc",
+              "devices/teradek",
+              "devices/behringer-xair"
             ]
           }
         ],
