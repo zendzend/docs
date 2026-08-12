@@ -132,7 +132,13 @@
               "devices/shelly",
               "devices/bitfocus-companion",
               "devices/panasonic-ptz",
-              "devices/xpression"
+              "devices/xpression",
+              "devices/birddog-ptz",
+              "devices/bolin-ptz",
+              "devices/canon-ptz",
+              "devices/viz-flowics",
+              "devices/companion-satellite",
+              "devices/bitfocus-companion"
             ]
           }
         ],
@@ -154,7 +160,9 @@
   "fonts": {
     "family": "Inter"
   },
-  "metadata": {
-    "timestamp": true
+  "integrations": {
+    "ga4": {
+      "measurementId": "G-EHNGTWJYVD"
+    }
   }
 }

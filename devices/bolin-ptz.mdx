@@ -1,0 +1,37 @@
+---
+title: "Bolin PTZ"
+sidebarTitle: "Bolin PTZ"
+description: "Control Bolin Technology pan/tilt/zoom cameras over VISCA — drive pan, tilt, zoom, and focus, recall presets, adjust exposure and white balance, and power — with live state and triggers."
+icon: "camera"
+---
+
+The **Bolin PTZ** device controls [Bolin Technology](https://www.bolintechnology.com/) pan/tilt/zoom cameras — including the R9, EXU, Dante AV, 7 Series, and Blue Line — over VISCA-over-IP.
+
+## Connection
+
+The agent connects to the camera over your network. Provide the camera's **host**, and if needed adjust the **port** (default **52381**), the **camera address** (almost always **1**), and the **status poll interval**.
+
+<Note>
+  Bolin cameras control over VISCA on an unauthenticated network — keep them on an isolated production network.
+</Note>
+
+## Commands
+
+The Bolin PTZ device supports the core camera operations, including:
+
+- **Pan, tilt, zoom, and focus** — drive in a direction, move to an absolute or relative position, return **home**, or reset; toggle **auto focus** or trigger a one-push focus
+- **Presets** — recall, store, or clear a stored position
+- **Power** the camera on or to standby
+- Adjust **exposure**, **backlight compensation**, and **white balance**, set **iris**, **gain**, and **shutter** (in manual mode), and **flip** or **mirror** the image
+- Control the **tally** lamp (on supported models)
+- Send a raw command for operations not listed above, including model-specific functions such as wiper or stream control
+
+## State and triggers
+
+The device reports its connection state and raises triggers your [rules](/automation/rules) can react to, including:
+
+- Connection changes
+- **Power** on / standby changes
+- A **preset** being recalled
+
+Trigger data such as the preset number and power state is available for use in rule actions.

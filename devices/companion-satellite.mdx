@@ -1,0 +1,45 @@
+---
+title: "Bitfocus Satellite Surface"
+sidebarTitle: "Satellite Surface"
+description: "Use a Stream Deck, Loupedeck, or other control surface to drive Fabl rules and display live state, connected over the free Bitfocus Companion Satellite app."
+icon: "satellite"
+---
+
+The **Bitfocus Satellite Surface** device lets a hardware control surface — such as an Elgato Stream Deck, Loupedeck, X-keys, Infinitton, or Stream Dock — drive your Fabl [rules](/automation/rules) and display live Fabl state.
+
+It uses the free [Bitfocus Companion Satellite](https://bitfocus.io/companion-satellite) app, which owns the USB connection to your surface and relays it to the agent over your network — so the agent needs no drivers for the surface.
+
+## Connection
+
+Install the Companion Satellite app on the machine your surface is plugged into, and point it at the **agent's host and port** (instead of a Companion install). Each Fabl device represents **one surface**.
+
+In Fabl, identify which surface the device represents by its **product name** (for example, `Loupedeck Live`) or the id the Satellite app assigns. If needed, adjust the **listening port** (default **16622**) and the **network interface** the agent binds to.
+
+<Tip>
+  Two surfaces of the same model can't be told apart by product name — give at least one of them its assigned surface id instead.
+</Tip>
+
+## Commands
+
+The Satellite Surface device paints keys and reads their state, including:
+
+- **Paint a key** with text, an icon, an image, and colours
+- Show a live **clock**, a count-up **stopwatch**, or a **countdown** on a key
+- Show a clip's **position** or **remaining time** on a key, from a connected playout device
+- **Clear** a key or the whole surface, and set the surface **brightness**
+- **List the controls** the surface offers
+
+<Note>
+  Keys and controls are addressed by their own id — use **list controls** to discover them — not by a grid number.
+</Note>
+
+## State and triggers
+
+The device reports its connection state and raises triggers your rules can react to, including:
+
+- A **button** being pressed or released
+- An **encoder** (knob) being rotated
+- A displayed **variable** changing
+- A **surface** attaching or detaching
+
+Trigger data such as the control id and surface name is available for use in rule actions.
