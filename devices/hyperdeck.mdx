@@ -1,0 +1,73 @@
+---
+title: "Blackmagic HyperDeck"
+sidebarTitle: "Blackmagic HyperDeck"
+description: "Control a Blackmagic HyperDeck from your rundown — playback and transport, recording, the timeline, media and NAS, formats, and monitoring overlays."
+icon: "circle-dot"
+---
+
+The **HyperDeck** device controls [Blackmagic HyperDeck](https://www.blackmagicdesign.com/products/hyperdeck) recorders and players, so a rundown item can roll a clip, start an ISO record, or jump the deck to the right point on its timeline.
+
+## Connection
+
+Provide the deck's **host** and **port**. The **reconciliation poll** sets how often Fabl re-reads the deck's state to stay in step.
+
+## Commands
+
+### Playback and transport
+
+| Command | What it does |
+| --- | --- |
+| Play / Stop | Starts and stops playback |
+| Set transport mode | Switches between input preview, input record, and output |
+| Configure playback | Sets the playback type, loop, single-clip and speed |
+| Seek to frame | Seeks to an absolute timeline frame |
+| Go to clip | Jumps to a clip by name or timeline index |
+
+### Recording
+
+| Command | What it does |
+| --- | --- |
+| Record | Starts recording, optionally with a custom clip name |
+| Set record cache | Turns the record cache on or off |
+| Set filename configuration | Sets the record filename prefix and whether a timestamp is appended |
+| Set record trigger | Sets the automatic record trigger |
+
+### Timeline
+
+| Command | What it does |
+| --- | --- |
+| Add clip to timeline | Adds a clip by name, with optional in-point and length |
+| Remove timeline clip | Removes a clip by index |
+| Set play range | Sets the timeline play range |
+| Set timeline / default video format | Sets the video format |
+
+### Media
+
+| Command | What it does |
+| --- | --- |
+| Set active media | Selects the active slot by index or device name |
+| Select external media | Selects a USB device |
+| Select NAS share | Selects a NAS share by URL |
+| Add / delete NAS bookmark | Manages NAS bookmarks and their credentials |
+| Format media | Formats a media device |
+
+<Warning>
+  **Format media** erases the target. It uses a two-step key handshake, so it cannot fire by accident from a single stray action — but treat any rule that calls it with care.
+</Warning>
+
+### Formats and monitoring
+
+| Command | What it does |
+| --- | --- |
+| Set input source / codec / audio record format | Sets the recording chain |
+| Clean feed, display LUT, zebra, frame guide, false colour, focus assist, frame grids | Toggles and configures the monitoring overlays |
+
+A raw request command is available for anything not listed here.
+
+## Triggers
+
+[Rules](/automation/rules) can react to the connection changing, the transport mode changing, playback starting, stopping or changing speed, recording starting or stopping, the current clip changing, the timeline changing, the active media changing, and the input source or format changing.
+
+## State
+
+The device reports its connection state, product name and software version, transport mode, whether it is playing or recording, speed, loop and single-clip flags, the clip index, name and position, the clip count, active media, remaining record time, input source, codec and video format.
