@@ -1,0 +1,42 @@
+---
+title: "OBSBOT"
+sidebarTitle: "OBSBOT"
+description: "Control OBSBOT cameras over OSC - gimbal movement, zoom, presets, focus and AI tracking across the Tail, Tiny and Meet series."
+icon: "camera"
+---
+
+The **OBSBOT** device controls OBSBOT Tail, Tiny and Meet cameras, so a rundown can reframe a shot, recall a preset, or hand the framing over to the camera's own AI tracking.
+
+## Connection
+
+Provide the **host** - either the camera itself, or the PC running OBSBOT Center - and pick the **transport**, UDP or TCP. Center models also need their **device ID**.
+
+<Note>
+  Only TCP reports a connection. On UDP the agent sends without a return path, so the connection trigger never fires and state cannot be verified.
+</Note>
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Set zoom | Sets the zoom level, 0 wide to 100 tele |
+| Zoom at speed | Zooms to a level at a chosen speed |
+| Drive gimbal | Moves the gimbal in a direction at a speed |
+| Stop gimbal | Stops all gimbal movement |
+| Recenter | Returns the gimbal to its home position |
+| Go to angle | Moves to an absolute pan and pitch angle in degrees |
+| Auto focus | Turns auto focus on or off |
+| Set focus | Sets manual focus, 0 near to 100 far |
+| Recall preset | Recalls a stored preset, 1 to 3 |
+| AI tracking | Turns AI tracking on or off |
+| Set tracking mode | Selects the tracking mode |
+
+A raw OSC command covers the per-model long tail.
+
+<Warning>
+  Capabilities vary by series. Presets are **not available on the Meet series**, and on Meet the tracking commands drive auto-framing instead. Valid tracking modes differ per model, and angle ranges differ too.
+</Warning>
+
+## State and triggers
+
+The device reports its connection state, transport, model, last action and last error, and whether its state can be verified. A trigger fires when the connection changes - on TCP only.

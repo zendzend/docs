@@ -4,3 +4,48 @@ sidebarTitle: "Canon PTZ"
 description: "Control Canon CR-series pan/tilt/zoom cameras — drive pan, tilt, zoom, and focus, recall presets, adjust exposure and white balance, control tally, and power — with live state and triggers."
 icon: "camera"
 ---
+
+The **Canon PTZ** device controls Canon PTZ cameras, so a rundown item can reframe a shot or recall a preset without a camera operator.
+
+## Connection
+
+Provide the camera's **host**, plus the **user name** and **password** it requires. Leave **Model** blank and Fabl detects the camera itself; the available ND steps and white-balance modes differ per body.
+
+## Commands
+
+### Movement
+
+| Command | What it does |
+| --- | --- |
+| Drive pan and tilt | Moves the head at a constant speed, independent of the angle of view |
+| Stop | Stops pan and tilt movement |
+| Go to position | Moves to an absolute pan/tilt position |
+| Home | Returns the head to its home position |
+| Zoom | Zooms at a speed, or to an absolute position |
+
+### Presets
+
+| Command | What it does |
+| --- | --- |
+| Recall preset | Recalls presets 1-100 using the preset's stored speed |
+| Recall preset at speed | Recalls a preset at a speed you choose |
+| Recall preset over duration | Recalls a preset over a fixed time |
+
+<Tip>
+  Recalling **over a duration** is the one to use on air: the move takes exactly as long as you asked, so it can be matched to a transition regardless of how far the head has to travel.
+</Tip>
+
+### Picture
+
+| Command | What it does |
+| --- | --- |
+| Focus | Drives focus near or far at a speed, moves to an absolute position, toggles auto focus, or runs a one-shot auto focus |
+| Iris | Sets the manual iris, which switches iris to manual, or toggles auto iris |
+| Gain | Sets the manual gain in 0.5 dB steps |
+| Shutter | Sets the shutter speed by its denominator - 60 means 1/60 |
+| ND filter | Selects an ND step |
+| White balance | Sets the mode, or runs a one-shot auto white balance into set A or B |
+
+## State and triggers
+
+The device reports its connection state, model and power state, and raises a trigger when the connection changes.

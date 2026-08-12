@@ -1,0 +1,33 @@
+---
+title: "Metus Ingest"
+sidebarTitle: "Metus Ingest"
+description: "Control Metus Ingest recording from your rundown - start and stop capture per profile, insert markers, and drive timecode."
+icon: "circle-dot"
+---
+
+The **Metus Ingest** device controls Metus Ingest recording, so a show can start and stop capture on cue and mark points in the recording as it runs.
+
+For playback, see [Metus Player](/devices/metus-player).
+
+## Connection
+
+Provide the ingest machine's **host** and **TCP port**. The **poll interval** sets how often Fabl re-reads encoder status.
+
+## Commands
+
+Recording is controlled **per profile**, so one configured device can drive several encoders independently, and a command can target a single profile or all of them at once.
+
+| Command | What it does |
+| --- | --- |
+| Recording | Starts or stops capture on a profile, or on every profile |
+| Marker | Inserts a marker of a chosen type into the recording |
+| Timecode | Sets the timecode, in milliseconds |
+| Timecode source | Selects embedded timecode or external LTC |
+
+<Tip>
+  Inserting a **marker** as each rundown item goes on air gives the edit suite a set of cut points that line up with the show, without anyone logging them by hand.
+</Tip>
+
+## State and triggers
+
+The device reports its connection state, the encoder name and its reported status, and raises a trigger when the connection changes.
