@@ -65,6 +65,21 @@ Studio mode runs three clocks:
 - **Show clock** — elapsed time since the show started
 - **Item timer** — elapsed time on the current on-air item
 
+## Session bar on a director monitor
+
+The **session bar** is a full-screen, chrome-free view of the show's live status, made for a director or gallery monitor. Open it for a page from the page's options menu (**Open Session Bar**) and put it on a second screen.
+
+It shows the transport and a row of programmable buttons at monitor size, and it stays in step with the show for everyone watching. If no rundown is running, it says so; when a session starts, it fills in on its own, and refreshing the screen resumes where the show is.
+
+The buttons are driven by your automation:
+
+- [Rules](/automation/rules) can program what each button shows during the show, so the bar changes with the item on air.
+- Pressing a button raises an event your rules can react to, letting a director fire a cue straight from the monitor.
+
+<Note>
+  The session bar shows status and buttons, not the script. For a reading surface, use the [prompter](/production/prompter).
+</Note>
+
 ## How cues reach your gear
 
 When you take, cue, or advance, the command is sent to the selected agent, which executes it on the connected device — cutting a switcher input, firing a graphic, recalling an audio scene, and so on. State flows back so the rundown stays in sync for everyone watching. Set up that automation in [Rules](/automation/rules).

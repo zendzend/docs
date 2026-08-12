@@ -7,25 +7,83 @@ icon: "sliders"
 
 Fabl controls your studio gear through a [Studio Agent](/automation/agents) running in your facility. The agent connects to each device over your local network and carries out the commands produced by [rules](/automation/rules) and live [studio mode](/production/studio-mode) cues. It also reports each device's state back to Fabl in real time, and some devices raise **triggers** that rules can react to.
 
-This section documents each supported device: what it controls, how it connects, the commands it accepts, and the state and triggers it reports.
+Every device type below can be added and driven today. Where a device name links to a page, that page documents its commands, state, and triggers in detail; the remaining types are supported in the product and their reference pages are still being written.
 
-## Supported devices
+## Video switchers and production systems
 
-| Device | Controls | Connection |
-| --- | --- | --- |
-| [ATEM](/devices/atem) | Blackmagic ATEM video switchers | Network (UDP) |
-| [vMix](/devices/vmix) | vMix live production software | TCP API |
-| [CasparCG](/devices/casparcg) | CasparCG playout server | AMCP over TCP |
-| [Behringer X32](/devices/behringer-x32) | X32 / M32 digital audio mixers | OSC over UDP |
-| [ChamSys GeNetix](/devices/chamsys-genetix) | ChamSys MagicQ / GeNetix lighting consoles | OSC over UDP |
-| [TouchDesigner](/devices/touchdesigner) | Derivative TouchDesigner | TCP or UDP |
-| [Metus Player](/devices/metus-player) | Metus media playout | HTTP API |
-| [Vizrt TriCaster](/devices/tricaster) | Vizrt (NewTek) TriCaster live production systems | HTTP API |
-| [Blackmagic Fairlight](/devices/fairlight) | Blackmagic Fairlight Live audio consoles | OSC over UDP |
-| [VISCA PTZ](/devices/visca-ptz) | VISCA-compatible pan/tilt/zoom cameras | VISCA over IP |
-| [Twitch](/devices/twitch) | A Twitch channel | Twitch API |
-| [Streamer.bot](/devices/streamer-bot) | Streamer.bot automation | WebSocket |
-| [File Watcher](/devices/file-watcher) | A watched folder on the agent host | Local file system |
+- [ATEM](/devices/atem) — Blackmagic ATEM video switchers
+- [vMix](/devices/vmix) — vMix live production software
+- [Vizrt TriCaster](/devices/tricaster) — Vizrt (NewTek) TriCaster systems
+- OBS Studio
+- Streamlabs Desktop
+- Ross Video Carbonite
+- Ross Video Ultrix
+- Utah Scientific
+- Barco Event Master
+- RØDECaster Video
+
+## Playout, media servers, and clip players
+
+- [CasparCG](/devices/casparcg) — CasparCG playout server
+- [Metus Player](/devices/metus-player) — Metus media playout
+- Metus Ingest
+- Blackmagic HyperDeck
+- Imimot Mitti
+- OnTheAir Video
+- Ross Video Server (Tria)
+- AV Stumpfl Pixera
+- Resolume Arena
+- Figure 53 QLab
+
+## Graphics
+
+- [TouchDesigner](/devices/touchdesigner) — Derivative TouchDesigner
+- Ross Video XPression
+- Singular.Live
+- Viz Flowics
+- RenewedVision ProPresenter
+
+## Audio
+
+- [Behringer X32](/devices/behringer-x32) — X32 / M32 digital audio mixers
+- [Blackmagic Fairlight](/devices/fairlight) — Blackmagic Fairlight Live audio consoles
+- Behringer X Air
+- Genelec Smart IP
+- Sennheiser Spectera
+
+## Cameras
+
+- [VISCA PTZ](/devices/visca-ptz) — VISCA-compatible pan/tilt/zoom cameras
+- Canon PTZ
+- Panasonic PTZ
+- BirdDog PTZ
+- Bolin PTZ
+- OBSBOT
+
+## Lighting
+
+- [ChamSys GeNetix](/devices/chamsys-genetix) — ChamSys MagicQ / GeNetix lighting consoles
+
+## Streaming and encoding
+
+- [Twitch](/devices/twitch) — a Twitch channel
+- Blackmagic Streaming Encoder
+- Teradek
+
+## Control surfaces, timing, and automation
+
+- [Streamer.bot](/devices/streamer-bot) — Streamer.bot automation
+- Bitfocus Companion
+- Bitfocus Satellite Surface
+- Cuez Automator
+- Ontime
+
+## Utility
+
+- [File Watcher](/devices/file-watcher) — a watched folder on the agent host
+- Generic OSC
+- HTTP Webhook
+- Shelly
 
 ## Adding a device
 
