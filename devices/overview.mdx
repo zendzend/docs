@@ -11,97 +11,97 @@ Every device type below can be added and driven today. Where a device name links
 
 ## Video switchers and production systems
 
-| Device | Controls | Connection |
+| Device | Controls | Connection settings |
 | --- | --- | --- |
-| [ATEM](/devices/atem) | Blackmagic ATEM video switchers | Network (UDP) |
-| [vMix](/devices/vmix) | vMix live production software | TCP API |
-| [Vizrt TriCaster](/devices/tricaster) | Vizrt (NewTek) TriCaster systems | HTTP API |
-| OBS Studio | OBS Studio live production | WebSocket |
-| Streamlabs Desktop | Streamlabs Desktop | WebSocket |
-| Ross Video Carbonite | Ross Carbonite production switchers | TCP |
-| Ross Video Ultrix | Ross Ultrix routing platform | TCP |
-| Utah Scientific | Utah Scientific routers | TCP |
-| Barco Event Master | Barco Event Master screen management | JSON-RPC over HTTP |
-| RØDECaster Video | RØDECaster Video production console | OSC over TCP |
+| [ATEM](/devices/atem) | Blackmagic ATEM video switchers | Host, UDP port, ME index |
+| [vMix](/devices/vmix) | vMix live production software | Host, TCP API port, media paths |
+| [Vizrt TriCaster](/devices/tricaster) | Vizrt (NewTek) TriCaster systems | Host, port, user name, password |
+| OBS Studio | OBS Studio live production | Host, port, password |
+| Streamlabs Desktop | Streamlabs Desktop | Host, port, API token |
+| Ross Video Carbonite | Ross Carbonite production switchers | Host, TCP port |
+| Ross Video Ultrix | Ross Ultrix routing platform | Host, TCP port |
+| Utah Scientific | Utah Scientific routers | Host, controller model, port |
+| Barco Event Master | Barco Event Master screen management | Host, JSON-RPC port, ASCII port |
+| RØDECaster Video | RØDECaster Video production console | Host, TCP port |
 
 ## Playout, media servers, and clip players
 
-| Device | Controls | Connection |
+| Device | Controls | Connection settings |
 | --- | --- | --- |
-| [CasparCG](/devices/casparcg) | CasparCG playout server | AMCP over TCP |
-| [Metus Player](/devices/metus-player) | Metus media playout | HTTP API |
-| Metus Ingest | Metus ingest | TCP |
-| Blackmagic HyperDeck | HyperDeck recorders and players | HTTP API and WebSocket |
-| Imimot Mitti | Mitti clip playback | OSC over UDP |
-| OnTheAir Video | OnTheAir Video playout | HTTP API |
-| Ross Video Server (Tria) | Ross Tria video servers | TCP |
-| AV Stumpfl Pixera | Pixera media servers | OSC over UDP |
-| Resolume Arena | Resolume Arena | HTTP API and OSC |
-| Figure 53 QLab | QLab show playback | OSC over UDP |
+| [CasparCG](/devices/casparcg) | CasparCG playout server | Host, AMCP port |
+| [Metus Player](/devices/metus-player) | Metus media playout | Host, HTTP port, auth token, media paths |
+| Metus Ingest | Metus ingest | Host, TCP port |
+| Blackmagic HyperDeck | HyperDeck recorders and players | Host, port |
+| Imimot Mitti | Mitti clip playback | Host, send port, feedback port |
+| OnTheAir Video | OnTheAir Video playout | Host, port |
+| Ross Video Server (Tria) | Ross Tria video servers | Host, TCP port |
+| AV Stumpfl Pixera | Pixera media servers | Host, OSC send port |
+| Resolume Arena | Resolume Arena | Host, REST port, OSC port |
+| Figure 53 QLab | QLab show playback | Host, send port, reply port, workspace |
 
 ## Graphics
 
-| Device | Controls | Connection |
+| Device | Controls | Connection settings |
 | --- | --- | --- |
-| [TouchDesigner](/devices/touchdesigner) | Derivative TouchDesigner | TCP or UDP |
-| [Ross Video XPression](/devices/xpression) | XPression graphics | TCP |
-| Singular.Live | Singular.Live cloud graphics | HTTP API |
-| Viz Flowics | Viz Flowics cloud graphics | HTTP API |
-| RenewedVision ProPresenter | ProPresenter presentation software | HTTP API |
+| [TouchDesigner](/devices/touchdesigner) | Derivative TouchDesigner | Host, port, protocol |
+| [Ross Video XPression](/devices/xpression) | XPression graphics | Host, TCP port |
+| Singular.Live | Singular.Live cloud graphics | App token, API base URL |
+| Viz Flowics | Viz Flowics cloud graphics | Graphics token, API base URL |
+| RenewedVision ProPresenter | ProPresenter presentation software | Host, network API port |
 
 ## Audio
 
-| Device | Controls | Connection |
+| Device | Controls | Connection settings |
 | --- | --- | --- |
-| [Behringer X32](/devices/behringer-x32) | X32 / M32 digital audio mixers | OSC over UDP |
-| [Blackmagic Fairlight](/devices/fairlight) | Fairlight Live audio consoles | OSC over UDP |
-| Behringer X Air | X Air / M Air compact mixers | OSC over UDP |
-| Genelec Smart IP | Genelec Smart IP loudspeakers | HTTP API |
-| Sennheiser Spectera | Sennheiser Spectera wireless | HTTP API |
+| [Behringer X32](/devices/behringer-x32) | X32 / M32 digital audio mixers | Host, UDP port, channel count |
+| [Blackmagic Fairlight](/devices/fairlight) | Fairlight Live audio consoles | Host, OSC UDP port, channel count |
+| Behringer X Air | X Air / M Air compact mixers | Host, UDP port, model |
+| Genelec Smart IP | Genelec Smart IP loudspeakers | Host, port, user name, password |
+| Sennheiser Spectera | Sennheiser Spectera wireless | Host, port, API user, password, TLS trust |
 
 ## Cameras
 
-| Device | Controls | Connection |
+| Device | Controls | Connection settings |
 | --- | --- | --- |
-| [VISCA PTZ](/devices/visca-ptz) | VISCA-compatible PTZ cameras | VISCA over IP |
-| [Panasonic PTZ](/devices/panasonic-ptz) | Panasonic PTZ cameras | HTTP API |
-| Canon PTZ | Canon PTZ cameras | HTTP API |
-| BirdDog PTZ | BirdDog PTZ cameras | HTTP API and VISCA over IP |
-| Bolin PTZ | Bolin PTZ cameras | VISCA over IP |
-| OBSBOT | OBSBOT cameras | OSC |
+| [VISCA PTZ](/devices/visca-ptz) | VISCA-compatible PTZ cameras | Host, protocol, port, camera address |
+| Canon PTZ | Canon PTZ cameras | Host, port, user name, password, model |
+| [Panasonic PTZ](/devices/panasonic-ptz) | Panasonic PTZ cameras | Host, port, user name, password, model |
+| BirdDog PTZ | BirdDog PTZ cameras | Host, REST port, VISCA port, camera address |
+| Bolin PTZ | Bolin PTZ cameras | Host, port, camera address |
+| OBSBOT | OBSBOT cameras | Host, transport, port, model, device ID |
 
 ## Lighting
 
-| Device | Controls | Connection |
+| Device | Controls | Connection settings |
 | --- | --- | --- |
-| [ChamSys GeNetix](/devices/chamsys-genetix) | ChamSys MagicQ / GeNetix lighting consoles | OSC over UDP |
+| [ChamSys GeNetix](/devices/chamsys-genetix) | ChamSys MagicQ / GeNetix lighting consoles | Host, port |
 
 ## Streaming and encoding
 
-| Device | Controls | Connection |
+| Device | Controls | Connection settings |
 | --- | --- | --- |
-| [Twitch](/devices/twitch) | A Twitch channel | Twitch API |
-| Blackmagic Streaming Encoder | Blackmagic streaming encoders | HTTP API and WebSocket |
-| Teradek | Teradek encoders | HTTP API |
+| [Twitch](/devices/twitch) | A Twitch channel | Broadcaster login, app credentials |
+| Blackmagic Streaming Encoder | Blackmagic streaming encoders | Host, port |
+| Teradek | Teradek encoders | Host, password |
 
 ## Control surfaces, timing, and automation
 
-| Device | Controls | Connection |
+| Device | Controls | Connection settings |
 | --- | --- | --- |
-| [Streamer.bot](/devices/streamer-bot) | Streamer.bot automation | WebSocket |
-| [Bitfocus Companion](/devices/bitfocus-companion) | Companion button surfaces | HTTP API |
-| Bitfocus Satellite Surface | A Satellite surface connecting to the agent | TCP (the agent listens) |
-| Cuez Automator | Cuez Automator | HTTP API |
-| Ontime | Ontime rundown timer | WebSocket |
+| [Streamer.bot](/devices/streamer-bot) | Streamer.bot automation | Host, port, password |
+| [Bitfocus Companion](/devices/bitfocus-companion) | Companion button surfaces | Host, port, watched buttons |
+| Bitfocus Satellite Surface | A Satellite surface connecting to the agent | Listen port, network interface, surface |
+| Cuez Automator | Cuez Automator | Host, port |
+| Ontime | Ontime rundown timer | Host, port |
 
 ## Utility
 
-| Device | Controls | Connection |
+| Device | Controls | Connection settings |
 | --- | --- | --- |
-| [File Watcher](/devices/file-watcher) | A watched folder on the agent host | Local file system |
-| Generic OSC | Any OSC-capable device or application | OSC over UDP or TCP |
-| HTTP Webhook | Any HTTP endpoint | HTTP request |
-| [Shelly](/devices/shelly) | Shelly smart switches and power monitoring | HTTP API |
+| [File Watcher](/devices/file-watcher) | A watched folder on the agent host | Watch folder, file filter, watch mode |
+| Generic OSC | Any OSC-capable device or application | Target host, transport, send and listen ports |
+| HTTP Webhook | Any HTTP endpoint | Target URL, method, headers, allowed hosts |
+| [Shelly](/devices/shelly) | Shelly smart switches and power monitoring | Host, password |
 
 ## Adding a device
 

@@ -1,0 +1,46 @@
+---
+title: "Shelly"
+sidebarTitle: "Shelly"
+description: "Switch mains-powered gear on and off from your rundown with Shelly smart relays, including timed pulses and live power metering."
+icon: "power"
+---
+
+The **Shelly** device controls [Shelly](https://www.shelly.com/) smart switches and relays, so your automations can power studio gear on and off — a tally lamp, an on-air sign, a fan, a monitor — and read how much power it is drawing.
+
+## Connection
+
+Provide the relay's **host**. A **password** is only needed if you enabled authentication on the device; it is off by default on Gen2 models.
+
+Multi-channel relays expose more than one output. You choose the output per command with a **switch ID** rather than fixing it on the device, so one configured device can drive every channel.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Turn on | Turns the switch output on |
+| Turn off | Turns the switch output off |
+| Toggle | Flips the output to its opposite state |
+| Set state | Sets the output on or off from a value — bind it to a field to drive it from your page |
+| Pulse on | Turns on for a number of seconds, then switches off automatically |
+| Pulse off | Turns off for a number of seconds, then switches back on — a power cycle for the connected load |
+| Get status | Reads the current on/off state and the power metering |
+
+<Tip>
+  **Pulse on** is the one to use for a momentary trigger, such as closing a contact for a second. **Pulse off** power-cycles a device that has locked up, without anyone walking to the rack.
+</Tip>
+
+## State
+
+The device reports back live:
+
+- Connection state
+- Switch ID and whether the output is on
+- Active power in watts, voltage, and current
+- Device temperature
+- Last action and last error
+
+Because power draw is reported, a [rule](/automation/rules) can react to a device that is drawing no current when it should be running.
+
+## Triggers
+
+The Shelly device is control and status only — it raises no triggers of its own. To act on its state, read it in a rule condition.
