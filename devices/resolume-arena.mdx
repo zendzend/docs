@@ -1,0 +1,36 @@
+---
+title: "Resolume Arena"
+sidebarTitle: "Resolume Arena"
+description: "Trigger clips and columns in Resolume Arena from your rundown, set layer and clip opacity, bypass or solo layers, drive effect parameters, and select decks."
+icon: "layers"
+---
+
+The **Resolume Arena** device controls [Resolume Arena](https://resolume.com/software/avmixer), so your rundown can fire the visuals for an item and fade them out again when it comes off air.
+
+## Connection
+
+Provide the **host**, the **OSC port** used to send commands, and the **REST port** Fabl reads state back from.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Connect clip | Triggers a clip in a layer |
+| Trigger column | Triggers a column across the whole composition |
+| Clear layer | Disconnects a layer's active clip |
+| Set layer opacity | Sets a layer's video opacity, from 0 to 1 |
+| Set clip opacity | Sets a clip's video opacity, from 0 to 1 |
+| Bypass layer | Bypasses a layer, or takes it out of bypass |
+| Solo layer | Solos a layer, or un-solos it |
+| Set effect parameter | Sets an effect parameter on a layer to a value |
+| Select deck | Selects a deck by index |
+
+Layers, columns, and clips are addressed by their 1-based index, matching the numbering shown in Resolume.
+
+<Tip>
+  **Trigger column** fires a whole look at once across every layer, which is usually what a rundown item wants — firing clips layer by layer can leave the composition briefly mismatched.
+</Tip>
+
+## State and triggers
+
+The device reports its connection state, whether Resolume is reachable, and which layers are bypassed. A trigger fires when the connection changes.

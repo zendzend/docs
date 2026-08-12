@@ -1,0 +1,28 @@
+---
+title: "Ross Video Ultrix"
+sidebarTitle: "Ross Ultrix"
+description: "Route sources on a Ross Ultrix platform from your rundown — take a crosspoint on chosen levels, fire salvos, and control timers."
+icon: "waypoints"
+---
+
+The **Ultrix** device controls a [Ross Video Ultrix](https://www.rossvideo.com/) routing platform, so your rundown can change what is feeding a destination as the show moves between items.
+
+## Connection
+
+Provide the router's **host** and **TCP port**.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Route | Takes a source to a destination on the levels you specify |
+| Salvo | Fires a salvo, taking a whole set of routes at once |
+| Timer | Runs, stops, pauses, or ends a timer or clock |
+
+<Tip>
+  A **salvo** is the safer choice when several destinations must change together — a set of individual routes fired from separate rule actions can arrive a frame or two apart.
+</Tip>
+
+## State and triggers
+
+The device reports its connection state and raises a trigger when the connection changes.

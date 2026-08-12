@@ -141,7 +141,15 @@
               "devices/bitfocus-companion",
               "devices/obs-studio",
               "devices/streamlabs-desktop",
-              "devices/cuez-automator"
+              "devices/cuez-automator",
+              "devices/ontime",
+              "devices/carbonite",
+              "devices/tria",
+              "devices/ultrix",
+              "devices/mitti",
+              "devices/qlab",
+              "devices/pixera",
+              "devices/resolume-arena"
             ]
           }
         ],

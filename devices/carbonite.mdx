@@ -1,0 +1,73 @@
+---
+title: "Ross Video Carbonite"
+sidebarTitle: "Ross Carbonite"
+description: "Control a Ross Carbonite switcher from your rundown — cuts and auto transitions, keyers, crosspoints, memories, the clip player, Media-Store, sequencers and MultiViewer."
+icon: "sliders"
+---
+
+The **Carbonite** device controls [Ross Video Carbonite](https://www.rossvideo.com/) production switchers, so a rundown item can cut a source to air, bring a key on, recall a memory, or roll a clip.
+
+## Connection
+
+Provide the switcher's **host** and **TCP port**.
+
+## Commands
+
+### Transitions
+
+| Command | What it does |
+| --- | --- |
+| Auto | Performs an auto transition on an ME |
+| Cut (take) | Performs a cut on an ME |
+| Fade to black | Fades the program output to black |
+| Set transition rate | Sets the transition rate in frames for an ME |
+| Set transition type | Sets the type — dissolve, DVE, media, or wipe |
+| Set next transition | Sets which elements the next transition includes |
+
+### Keyers
+
+| Command | What it does |
+| --- | --- |
+| Auto keyer | Auto-transitions a keyer, on air, off air, or toggling |
+| Cut keyer | Cuts a keyer, on air, off air, or toggling |
+| Set keyer mode | Sets normal, additive, or full |
+| Chroma-key init | Initialises a chroma-key engine |
+
+### Sources and memories
+
+| Command | What it does |
+| --- | --- |
+| Set crosspoint | Routes a source to a destination |
+| Recall memory | Recalls a memory on an ME |
+| Store memory | Stores a memory on an ME |
+| Set mnemonic | Sets the on-panel name for a video source |
+| Recall / store settings | Loads or saves switcher settings by name |
+
+### Clips and Media-Store
+
+| Command | What it does |
+| --- | --- |
+| Load / play / pause / eject clip | Controls the clip player |
+| Clip loop on / off | Turns clip looping on or off |
+| Load Media-Store item | Loads a still or animation into a Media-Store channel |
+
+### Sequencer
+
+| Command | What it does |
+| --- | --- |
+| Load / unload sequence | Loads a sequence into a sequencer, or clears it |
+| Next | Runs the currently selected item |
+| Up / Down | Moves the selection |
+| Focus | Moves the selection to a specific event |
+
+### MultiViewer and other
+
+| Command | What it does |
+| --- | --- |
+| MultiViewer box | Selects a source in a MultiViewer box, shifted or not |
+| Custom Control | Runs a Custom Control by bank and number |
+| GPI | Triggers a GPI |
+
+## State and triggers
+
+The device reports its connection state and raises a trigger when the connection changes.

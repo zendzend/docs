@@ -1,0 +1,34 @@
+---
+title: "AV Stumpfl Pixera"
+sidebarTitle: "Pixera"
+description: "Drive AV Stumpfl Pixera timelines from your rundown — play, pause and stop by name or index, jump between cues, and move the playhead."
+icon: "projector"
+---
+
+The **Pixera** device controls [AV Stumpfl Pixera](https://avstumpfl.com/en/products/pixera) media servers, so a rundown item can start the right timeline for a look and hold the rest of the show in step with it.
+
+## Connection
+
+Provide the server's **host** and **OSC send port**.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Transport by name | Plays, pauses, or stops a timeline by its name in Pixera |
+| Transport by index | Plays, pauses, or stops a timeline by its zero-based index |
+| Toggle timeline | Toggles a named timeline between play and pause |
+| Start first timeline | Starts playback of the first timeline |
+| Next cue | Jumps a timeline to its next cue |
+| Previous cue | Jumps a timeline to its previous cue |
+| Set playhead | Moves a timeline's playhead to a time in seconds |
+
+A raw OSC command is available for any Pixera address not listed here.
+
+<Tip>
+  Addressing a timeline **by name** keeps a rule readable and survives reordering; the index is faster to type but shifts when timelines are added or removed.
+</Tip>
+
+## State and triggers
+
+The device reports its connection state and raises a trigger when the connection changes.

@@ -1,0 +1,67 @@
+---
+title: "Ontime"
+sidebarTitle: "Ontime"
+description: "Drive an Ontime rundown timer from Fabl — start and load events, add or remove time, control auxiliary timers, and put messages on the timer view."
+icon: "timer"
+---
+
+The **Ontime** device connects Fabl to [Ontime](https://getontime.no/), the event and rundown timer, so your show can drive the countdown the stage and gallery are watching — and react when that countdown changes.
+
+## Connection
+
+Provide the **host** and **port** of the machine running Ontime.
+
+## Commands
+
+### Playback
+
+| Command | What it does |
+| --- | --- |
+| Start | Starts playback; choose which event to start, or start what is already loaded |
+| Load | Loads an event onto the timer without starting it |
+| Add time | Adds or removes time on the running timer |
+
+### Timer display
+
+| Command | What it does |
+| --- | --- |
+| Set message | Sets the timer message text, its visibility, or both |
+| Set secondary message | Sets the secondary message text or visibility |
+| Blackout | Blacks out the timer view, or restores it |
+
+### Auxiliary timers
+
+Ontime has three auxiliary timers alongside the main one:
+
+| Command | What it does |
+| --- | --- |
+| Start / Pause / Stop | Controls an auxiliary timer |
+| Set duration | Sets an auxiliary timer's length |
+| Set direction | Sets whether it counts up or down |
+| Add time | Adds or removes time on an auxiliary timer |
+
+### Rundown
+
+| Command | What it does |
+| --- | --- |
+| Set event property | Sets a property on an event by id — title, note, colour, or a custom field |
+
+<Tip>
+  Binding **Set message** to a field on your page puts live show data on the studio timer — the next guest's name, or a note to the presenter — without anyone typing into Ontime.
+</Tip>
+
+## Triggers
+
+[Rules](/automation/rules) can react to:
+
+- The Ontime connection changes
+- The playback state changes
+- The loaded event changes
+- The timer phase changes — warning, danger, or overtime
+- The on-air flag changes
+
+The phase trigger is the useful one for a director: a rule can fire when a segment crosses into danger or overtime, cueing a wrap signal or a graphic automatically.
+
+## State
+
+The device reports its connection state, the playback state, the loaded event's id, title and cue, the current timer phase, and whether Ontime is on air.

@@ -1,0 +1,40 @@
+---
+title: "Imimot Mitti"
+sidebarTitle: "Imimot Mitti"
+description: "Play video cues from Imimot Mitti — jump and play by cue ID, name or playlist index, set volume, opacity and speed, and locate the playhead to a timecode."
+icon: "clapperboard"
+---
+
+The **Mitti** device controls [Imimot Mitti](https://imimot.com/mitti/), the video cue player, so your rundown can roll the right clip as each item goes on air.
+
+## Connection
+
+Provide the **host** and the **send port**. Set a **feedback port** to receive playback state back from Mitti; leave it at 0 to run without feedback.
+
+## Commands
+
+### Playing cues
+
+| Command | What it does |
+| --- | --- |
+| Jump to cue | Jumps to a cue by ID, or by a relative keyword — current, previous, next, selected, or all |
+| Jump to cue by name | Jumps to the first cue whose name matches |
+| Play selected cue | Plays whatever cue is currently selected |
+| Play cue by ID | Plays a specific cue |
+| Play cue by index | Plays a cue by its position in the playlist |
+| Play cue by name | Plays the first cue whose name matches |
+
+### Adjusting a cue
+
+| Command | What it does |
+| --- | --- |
+| Set volume | Sets a cue's volume in decibels, from −60 to 12 |
+| Set opacity | Sets a cue's opacity as a percentage |
+| Set speed | Sets a cue's playback speed as a percentage |
+| Locate | Moves the current cue's playhead to a SMPTE timecode |
+
+Volume, opacity, and speed accept a value bound to a field on your page, so a rule can drive them from show data. A raw OSC command is also available for any address not listed here.
+
+## State and triggers
+
+The device reports its connection state, whether Mitti is playing, the current cue's name and ID, the next cue's name, and whether the video and audio outputs are on. A trigger fires when the connection changes.
