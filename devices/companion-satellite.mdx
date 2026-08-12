@@ -5,41 +5,41 @@ description: "Use a Stream Deck, Loupedeck, or other control surface to drive Fa
 icon: "satellite"
 ---
 
-The **Bitfocus Satellite Surface** device lets a hardware control surface — such as an Elgato Stream Deck, Loupedeck, X-keys, Infinitton, or Stream Dock — drive your Fabl [rules](/automation/rules) and display live Fabl state.
+The **Satellite Surface** device drives a control surface attached through Bitfocus Companion Satellite, letting Fabl paint its keys directly - a countdown for the floor, a clock, or a live reading from a clip player.
 
-It uses the free [Bitfocus Companion Satellite](https://bitfocus.io/companion-satellite) app, which owns the USB connection to your surface and relays it to the agent over your network — so the agent needs no drivers for the surface.
+For controlling Companion itself, see [Bitfocus Companion](/devices/bitfocus-companion).
 
 ## Connection
 
-Install the Companion Satellite app on the machine your surface is plugged into, and point it at the **agent's host and port** (instead of a Companion install). Each Fabl device represents **one surface**.
+This device works the other way round from every other one: **the agent listens and the surface connects to it**. So instead of a host, you configure:
 
-In Fabl, identify which surface the device represents by its **product name** (for example, `Loupedeck Live`) or the id the Satellite app assigns. If needed, adjust the **listening port** (default **16622**) and the **network interface** the agent binds to.
-
-<Tip>
-  Two surfaces of the same model can't be told apart by product name — give at least one of them its assigned surface id instead.
-</Tip>
+- The **listen port** the Satellite connects to
+- The **network interface** to listen on
+- A **surface** filter, by product name - for example Loupedeck Live
+- The **Satellite API version**
 
 ## Commands
 
-The Satellite Surface device paints keys and reads their state, including:
+| Command | What it does |
+| --- | --- |
+| Paint key | Paints a key with text, colours, and optionally a reading from a clip player |
+| Show clock | Shows a live wall clock on a key |
+| Count up | Counts up on a key from the moment the action runs |
+| Count down | Counts down on a key over a duration |
+| Blank key | Blanks a single key |
+| Blank all | Blanks every key on the surface |
+| Repaint | Repaints every control from what it was last told to show |
+| List controls | Lists the surface's control ids |
+| Set brightness | Sets the surface brightness |
 
-- **Paint a key** with text, an icon, an image, and colours
-- Show a live **clock**, a count-up **stopwatch**, or a **countdown** on a key
-- Show a clip's **position** or **remaining time** on a key, from a connected playout device
-- **Clear** a key or the whole surface, and set the surface **brightness**
-- **List the controls** the surface offers
+A key can carry a label above its value, an icon drawn in the text colour, or an image from the agent host.
 
-<Note>
-  Keys and controls are addressed by their own id — use **list controls** to discover them — not by a grid number.
-</Note>
+<Tip>
+  Run **Repaint** after a surface sleeps or reconnects. It restores every control from what it was last told to show, so the surface comes back with the show's state rather than blank.
+</Tip>
+
+**List controls** returns the control ids that every other command expects, which is the quickest way to find out what a surface exposes.
 
 ## State and triggers
 
-The device reports its connection state and raises triggers your rules can react to, including:
-
-- A **button** being pressed or released
-- An **encoder** (knob) being rotated
-- A displayed **variable** changing
-- A **surface** attaching or detaching
-
-Trigger data such as the control id and surface name is available for use in rule actions.
+The device reports its connection state and raises a trigger when the connection changes.

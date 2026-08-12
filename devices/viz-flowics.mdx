@@ -5,30 +5,35 @@ description: "Control Vizrt Viz Flowics cloud graphics — take overlays on and 
 icon: "sparkles"
 ---
 
-The **Viz Flowics** device controls [Vizrt Viz Flowics](https://www.vizrt.com/products/viz-flowics/) (formerly Flowics), a cloud, HTML5 graphics platform, over its Graphics Control API. It is ideal for driving live overlays — such as lower thirds — straight from your rundown.
+The **Viz Flowics** device controls Viz Flowics cloud HTML5 graphics, so a rundown item can put an overlay on air and feed it live values from your page.
 
 ## Connection
 
-The agent connects to Viz Flowics over the internet. Provide the graphics package's **Control API token** (stored securely), and if needed set a different **API base URL**.
-
-<Note>
-  Before Fabl can address a text or image element, give it a **Control API ID** in the Flowics editor and republish the graphics package.
-</Note>
+Viz Flowics is a cloud service, so there is no host to reach on your network. Provide the **graphics token** for the package you want to drive; the **API base URL** is already set and rarely needs changing.
 
 ## Commands
 
-The Viz Flowics device supports overlay control, including:
+| Command | What it does |
+| --- | --- |
+| Take in | Takes an overlay on air |
+| Take out | Takes an overlay off air |
+| Toggle | Switches an overlay between in and out |
+| Take in with text | Takes an overlay in and sets a text control in the same call |
+| Set text control | Updates a text control, whether the overlay is in or out |
+| Set image control | Sets an image control from a URL |
 
-- **Show** an overlay (take it on air), **hide** it (take it off air), or **toggle** it
-- **Update a text control** — ideal for pushing rundown text into a live graphic
-- Show an overlay and set its text in a single step
-- **Set an image control** from an asset in your Flowics library
-- Send a raw request for Control API operations not listed above, such as playlists, timers, and output control
+Text values are token-substituted, so a control can be driven straight from a field on your page.
 
 <Note>
-  One overlay is on air per region — taking a second overlay in the same region automatically takes out the first.
+  Triggering a second overlay in the same region automatically takes the first one out. You do not need a separate take-out action when swapping looks within a region.
 </Note>
 
-## State
+<Warning>
+  A control can only be addressed if it has been given a **Control API ID** in the Flowics editor, and the package has been republished since. A control without one cannot be reached, and the call will not find it.
+</Warning>
 
-The device reports its connection state, derived from the outcome of the commands it sends. It does not raise triggers.
+Images must already be hosted in the Flowics Assets Library. A raw Control API command is available for the output, playlist, timer and list families.
+
+## State and triggers
+
+The device reports its connection state, the last action, the last overlay addressed, and the last error. A trigger fires when the connection changes.

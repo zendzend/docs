@@ -1,0 +1,34 @@
+---
+title: "Utah Scientific"
+sidebarTitle: "Utah Scientific"
+description: "Route sources on a Utah Scientific system controller - on-air takes, monitor-matrix routing, and destination locks."
+icon: "waypoints"
+---
+
+The **Utah Scientific** device controls a Utah Scientific system controller (SC-3, SC-4 or UTAH-200), so your rundown can change what feeds a destination as the show moves between items.
+
+## Connection
+
+Provide the controller's **host** and pick the **controller model**. Leave **port** blank to use the default for that model. The **ping interval** and **response timeout** govern how the agent keeps the link healthy.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Route | Routes a source to a destination on one or more levels |
+| Route to monitor matrix | Routes a source to a monitor-matrix output on one or more levels |
+| Lock destination | Locks or unlocks a destination |
+
+A raw command is available for anything not covered above, taking the interface byte, the command or status type byte, and a data block in hex.
+
+<Warning>
+  **Route** changes what is on air. Locking a destination is the protection against an unintended take - a locked destination refuses routing changes until it is unlocked.
+</Warning>
+
+## Triggers
+
+Rules can react to the connection changing, and to a route changing - carrying the destination that changed, the source now routed to it, and the levels affected.
+
+## State
+
+The device reports whether the controller is reachable, along with the most recent routing change.

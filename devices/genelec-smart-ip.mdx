@@ -1,0 +1,36 @@
+---
+title: "Genelec Smart IP"
+sidebarTitle: "Genelec Smart IP"
+description: "Control Genelec Smart IP loudspeakers - output level, mute, input selection, acoustic profiles, power state and panel LEDs."
+icon: "speaker"
+---
+
+The **Genelec Smart IP** device controls Genelec Smart IP PoE loudspeakers, so a show can set monitoring levels, recall a room profile, and put the speakers to sleep afterwards.
+
+## Connection
+
+Provide the speaker's **host**, plus the **user name** and **password** it requires. The **status poll interval** sets how often Fabl re-reads its state.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Set level | Sets the output level in dB, in 0.1 dB steps |
+| Mute | Mutes, unmutes, or toggles the output |
+| Select inputs | Chooses which inputs the speaker listens on, in any combination |
+| Recall acoustic profile | Recalls profile 0 for default flat, or 1 to 5 for a user-defined profile |
+| Set power state | Sets the power state |
+| Set LEDs | Sets the front-panel LED intensity and the RJ45 connector LEDs |
+| Hide clip indicator | Hides the clip indicator on subwoofers |
+
+Levels are clamped to the speaker's own range rather than rejected. A profile recall is confirmed by reading the active profile back, so a rule knows the change actually took. A profile can also be set as the one the speaker loads at startup.
+
+<Note>
+  Two power conditions - ISS sleep and power fail - are reported but cannot be set. They are states the speaker enters on its own.
+</Note>
+
+The clip-indicator command applies to subwoofers and is ignored on two-way models. A raw command is available for any Smart IP call not listed here.
+
+## State and triggers
+
+The device reports whether the speaker is reachable, its power state, whether the output is muted, and the active acoustic profile. A trigger fires when the connection changes.

@@ -1,0 +1,48 @@
+---
+title: "RenewedVision ProPresenter"
+sidebarTitle: "ProPresenter"
+description: "Control ProPresenter 7 from your rundown - slides, messages, timers and capture - with live slide, timer and layer state."
+icon: "presentation"
+---
+
+The **ProPresenter** device controls RenewedVision ProPresenter 7, so a rundown item can trigger the right slide, put a message on stage, or start a timer.
+
+## Connection
+
+Provide the ProPresenter machine's **host** and its **network API port**. The **status poll interval** sets how often Fabl re-reads what is on screen.
+
+## Commands
+
+ProPresenter is driven across four areas:
+
+| Area | What you can do |
+| --- | --- |
+| Slides | Trigger a presentation and move through its slides |
+| Messages | Show or clear a stage message |
+| Timers | Start, stop and reset timers |
+| Capture | Start and stop capture |
+
+A presentation can be addressed by its UUID or by name - a name is resolved through the libraries - or as the one that is currently **active** or **focused**.
+
+Message text supports tokens, so a stage message can carry live values from your page rather than fixed wording.
+
+## State
+
+ProPresenter reports an unusually rich picture of what is on screen, and all of it is readable in a rule condition:
+
+- The text of the slide now on the audience output, its UUID, and its presenter notes
+- The text of the slide queued next
+- The active presentation's name and UUID, and the slide index within it
+- Timer name, UUID, state - stopped, running, complete, overrunning or overran - and its value at the moment it changed
+- Capture status and how long it has been running
+- The current stage message, empty when cleared
+- The current look
+- Whether the slide, media, audio and prop layers are showing
+
+<Tip>
+  Because the **next** slide's text is reported as well as the current one, a rule can prepare something ahead of the take rather than reacting after it.
+</Tip>
+
+## Triggers
+
+Rules can react to the connection changing.

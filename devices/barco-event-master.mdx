@@ -1,0 +1,48 @@
+---
+title: "Barco Event Master"
+sidebarTitle: "Barco Event Master"
+description: "Drive a Barco Event Master presentation processor - recall and manage presets, cut and auto to Program, run cues, and freeze sources."
+icon: "projector"
+---
+
+The **Barco Event Master** device controls an Event Master presentation processor, so a rundown item can recall the right look to Preview and take it to Program on cue.
+
+## Connection
+
+Provide the master unit's **host**, its **JSON-RPC port** and **ASCII port**, and the **toolset version**. The **agent callback base URL** is where the processor sends its notifications back.
+
+## Commands
+
+### Presets
+
+| Command | What it does |
+| --- | --- |
+| Recall preset | Recalls a preset by id to Preview, or straight to Program |
+| Recall next preset | Recalls the next preset in sequence to Preview |
+| Save preset | Saves the current Program state as a new preset |
+| Rename preset | Renames an existing preset |
+| Delete preset | Deletes a preset by id |
+
+Recall defaults to **Preview**, which is the safe default - the look is staged and only reaches the audience when you take it.
+
+### Transitions
+
+| Command | What it does |
+| --- | --- |
+| Cut | Switches Preview to Program immediately, with no transition |
+| Auto | Transitions Preview to Program over the transition time, with an optional duration override in frames |
+
+### Cues and sources
+
+| Command | What it does |
+| --- | --- |
+| Cue transport | Plays, pauses or stops a cue by id |
+| Freeze | Freezes or unfreezes a source, a screen destination, or an aux destination |
+
+## Triggers
+
+Rules can react to the connection changing, a preset changing - carrying its id and name - and a cue changing.
+
+## State
+
+The device reports its connection state, along with the most recent preset and cue changes.
