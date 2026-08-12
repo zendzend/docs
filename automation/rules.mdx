@@ -17,6 +17,8 @@ A trigger is the event that starts a rule. Triggers come from across the platfor
 
 Many triggers carry data about what happened (for example, the input number on a switcher, the channel on a mixer, or the file name from a watched folder). You can use that data in your actions.
 
+Rundown triggers also carry the triggering page's **public prompter link**, so a rule can push that link to a device — putting a scannable or clickable prompter URL on a display without anyone copying it by hand. The link only works while [public sharing](/production/prompter) is turned on for that page.
+
 ## Conditions
 
 Conditions filter whether a rule's actions should run after the trigger fires. Each condition compares a field or trigger value against a value you specify, using operators such as **equals**, **not equals**, **contains**, **greater than**, and **less than**. A rule can require **all** conditions to match or **any** of them.
@@ -29,6 +31,10 @@ When the trigger fires and conditions pass, the rule runs its actions in order. 
 - **Set block value** — write a value into a block on a page
 - **Prompter command** — control the [prompter](/production/prompter), such as sending content to it, clearing it, or focusing a field
 - **Control the rundown** — drive the live [rundown](/production/rundowns) from a rule: take the **next** item, **cue a block** (a specific item, by id or a token from the trigger), or **restart** to re-cue the first item
+- **Start a rundown** — put a page into [studio mode](/production/studio-mode) and begin the show from a rule, rather than someone pressing play
+- **Stop a rundown** — end the running show and reset it
+- **Session bar command** — program the [session bar](/production/studio-mode) on a director monitor, setting what its buttons show as the show moves
+- **Download media to a device** — fetch a media asset onto a device's own storage ahead of playback, so the clip is local when it is needed
 
 Action parameters can use values from the triggering event, so a single rule can react dynamically to whatever fired it.
 
