@@ -79,7 +79,6 @@
             "icon": "film",
             "pages": [
               "media/media-assets",
-              "media/transcoding",
               "media/subtitle-editor"
             ]
           },
