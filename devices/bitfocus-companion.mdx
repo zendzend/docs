@@ -1,0 +1,45 @@
+---
+title: "Bitfocus Companion"
+sidebarTitle: "Bitfocus Companion"
+description: "Drive Bitfocus Companion button surfaces from Fabl — set button text and colour, read and write custom variables, and trigger rules when a watched button is pressed."
+icon: "grid-3x3"
+---
+
+The **Bitfocus Companion** device connects Fabl to [Companion](https://bitfocus.io/companion), the button-surface controller used with Stream Deck and similar hardware. It works both ways: your automations can change what a button shows, and a physical button press can start a [rule](/automation/rules).
+
+## Connection
+
+Provide the **host** and **port** of the machine running Companion.
+
+To react to button presses, list the buttons you want to follow in **Watched Buttons** as `page/row/column`, separated by commas. Only listed buttons raise triggers.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Set button style | Sets a button's text, colour, background colour, and size |
+| Set button step | Sets a button's encoder step, for multi-step buttons |
+| Set custom variable | Writes a Companion custom variable |
+| Get custom variable | Reads a custom variable's current value |
+| Get module variable | Reads a module variable by connection label and name |
+| Rescan surfaces | Asks Companion to look for connected surfaces again |
+
+<Tip>
+  Bind the **text** on _Set button style_, or the **value** on _Set custom variable_, to a field on your page. The button then shows live show data — the current item name, a countdown, a guest's name — instead of a fixed label.
+</Tip>
+
+The two _Get_ commands read a value rather than changing anything, so they can be used in a rule condition to branch on what Companion currently holds.
+
+## Triggers
+
+Watched buttons raise:
+
+- A button is pressed
+- A button is released
+- A button's text or colour changes
+
+This turns any Companion surface into a control panel for Fabl: a press can advance a rundown, fire a graphic, or start the prompter scrolling.
+
+## State
+
+The device reports its connection state, how many buttons are being watched, the button watch status, the last button and its text, the last action and value read, and the last error.

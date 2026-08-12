@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "sequoia",
+  "theme": "mint",
   "name": "Fabl",
   "description": "Documentation for Fabl — the broadcast production platform for live rundowns, studio control, teleprompter, media, and device automation.",
   "colors": {
@@ -128,7 +128,11 @@
               "devices/fairlight",
               "devices/visca-ptz",
               "devices/twitch",
-              "devices/streamer-bot"
+              "devices/streamer-bot",
+              "devices/shelly",
+              "devices/bitfocus-companion",
+              "devices/panasonic-ptz",
+              "devices/xpression"
             ]
           }
         ],
@@ -149,5 +153,8 @@
   },
   "fonts": {
     "family": "Inter"
+  },
+  "metadata": {
+    "timestamp": true
   }
 }
