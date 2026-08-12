@@ -5,33 +5,46 @@ description: "Control Bolin Technology pan/tilt/zoom cameras over VISCA — driv
 icon: "camera"
 ---
 
-The **Bolin PTZ** device controls [Bolin Technology](https://www.bolintechnology.com/) pan/tilt/zoom cameras — including the R9, EXU, Dante AV, 7 Series, and Blue Line — over VISCA-over-IP.
+The **Bolin PTZ** device controls Bolin PTZ cameras, so a rundown item can reframe a shot or drop back to a stored preset.
 
 ## Connection
 
-The agent connects to the camera over your network. Provide the camera's **host**, and if needed adjust the **port** (default **52381**), the **camera address** (almost always **1**), and the **status poll interval**.
-
-<Note>
-  Bolin cameras control over VISCA on an unauthenticated network — keep them on an isolated production network.
-</Note>
+Provide the camera's **host**, **port**, and its **camera address**, which is 1 when controlling over IP.
 
 ## Commands
 
-The Bolin PTZ device supports the core camera operations, including:
+### Movement
 
-- **Pan, tilt, zoom, and focus** — drive in a direction, move to an absolute or relative position, return **home**, or reset; toggle **auto focus** or trigger a one-push focus
-- **Presets** — recall, store, or clear a stored position
-- **Power** the camera on or to standby
-- Adjust **exposure**, **backlight compensation**, and **white balance**, set **iris**, **gain**, and **shutter** (in manual mode), and **flip** or **mirror** the image
-- Control the **tally** lamp (on supported models)
-- Send a raw command for operations not listed above, including model-specific functions such as wiper or stream control
+| Command | What it does |
+| --- | --- |
+| Drive | Moves the head in one of eight directions at a pan and tilt speed |
+| Stop | Stops pan and tilt movement |
+| Go to position | Moves to an absolute pan/tilt position, where 0 is centre |
+| Move relative | Moves by a signed pan/tilt offset from where it is now |
+| Home | Returns the head to its home position |
+| Recalibrate | Recalibrates the pan/tilt head |
+
+### Presets
+
+| Command | What it does |
+| --- | --- |
+| Recall preset | Recalls a stored preset |
+| Store preset | Stores the current position as a preset |
+| Clear preset | Clears a stored preset |
+
+### Picture and power
+
+| Command | What it does |
+| --- | --- |
+| Zoom | Zooms tele or wide at a speed, stops zooming, or moves to an absolute position |
+| Focus | Focuses far or near at a speed, moves to an absolute position, toggles auto focus, or runs a one-push auto focus |
+| Exposure | Sets the auto-exposure mode |
+| Backlight compensation | Turns backlight compensation on or off |
+| White balance | Sets the mode, or runs a one-push white balance |
+| Power | Powers the camera on or puts it into standby |
+
+Manual focus commands apply only when auto focus is off.
 
 ## State and triggers
 
-The device reports its connection state and raises triggers your [rules](/automation/rules) can react to, including:
-
-- Connection changes
-- **Power** on / standby changes
-- A **preset** being recalled
-
-Trigger data such as the preset number and power state is available for use in rule actions.
+The device reports its connection state, vendor and model, and power state, and raises a trigger when the connection changes.

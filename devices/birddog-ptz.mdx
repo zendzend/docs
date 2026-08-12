@@ -5,38 +5,47 @@ description: "Control BirdDog NDI pan/tilt/zoom cameras — drive pan, tilt, zoo
 icon: "camera"
 ---
 
-The **BirdDog PTZ** device controls [BirdDog](https://www.birddog.tv/) NDI pan/tilt/zoom cameras — including the X and P series, A200 / A300, MAX, and MAKI Ultra.
-
-A single BirdDog PTZ device drives both camera movement and BirdDog's own NDI, tally, and imaging features, so you don't need to add a separate [VISCA PTZ](/devices/visca-ptz) device for the same camera.
+The **BirdDog PTZ** device controls BirdDog cameras. Motion and presets go over VISCA, while NDI settings, tally and picture controls go over the camera's REST API, so one device covers both halves.
 
 ## Connection
 
-The agent connects to the camera over your network. Provide the camera's **host**, and if needed adjust the **control port** (default **8080**), the **VISCA port** (default **52381**), the **camera address** (almost always **1**), and the **status poll interval**. You can also record the camera **model** for reference; it is detected automatically when left blank.
-
-<Note>
-  These cameras are unauthenticated — keep them on an isolated production network.
-</Note>
+Provide the camera's **host**, its **REST port** and its **VISCA-over-IP port**, and the **VISCA camera address**. Leave **Model** blank to have the family detected.
 
 ## Commands
 
-The BirdDog PTZ device supports the full range of camera operations, including:
+### Movement and presets
 
-- **Pan, tilt, zoom, and focus** — drive in a direction, move to an absolute or relative position, return **home**, or reset; toggle **auto focus** or trigger a one-push focus
-- **Presets** — recall, store, or clear a stored position
-- **Power** the camera on or to standby
-- Adjust **exposure**, **white balance**, **iris**, **gain**, and **shutter**, and **flip** or **mirror** the image — including BirdDog's named exposure and white-balance modes
-- **NDI output** — start or stop the NDI stream, set the stream name and video mode, and point the camera at an NDI discovery server
-- Control the **tally** lamp
-- Send a raw command for operations not listed above
+| Command | What it does |
+| --- | --- |
+| Drive | Moves the head in one of eight directions at a pan and tilt speed |
+| Stop | Stops pan and tilt movement |
+| Go to position | Moves to an absolute pan/tilt position, where 0 is centre |
+| Recall preset | Recalls a stored preset |
+| Power | Powers the camera on or puts it into standby |
 
-## State and triggers
+### NDI and tally
 
-The device reports its connection state and raises triggers your [rules](/automation/rules) can react to, including:
+| Command | What it does |
+| --- | --- |
+| Set tally | Turns the onboard tally lamp on or off |
+| Set NDI mode | Encode transmits the camera as an NDI source; decode stops it |
+| Set NDI pipeline | Switches between normal and low-latency mode |
+| Use discovery server | Enables or disables the configured NDI discovery server |
 
-- Connection changes
-- **Power** on / standby changes
-- **Tally** state changes
-- **NDI output** changes
-- A **preset** being recalled
+### Picture
 
-Trigger data such as the preset number, power state, and tally state is available for use in rule actions.
+| Command | What it does |
+| --- | --- |
+| Exposure mode | Sets the exposure mode |
+| Backlight compensation | Turns backlight compensation on or off |
+| White balance | Sets the white-balance mode |
+
+Steps a model does not support are rejected by the camera rather than silently ignored. A raw REST command covers the rest, such as gain, shutter, encode bandwidth and audio.
+
+## Triggers
+
+Rules can react to the connection changing, the tally changing, the NDI mode changing, the power state changing, and a preset being recalled.
+
+## State
+
+The device reports its connection state, the NDI source name, tally and power state, and the last recalled preset.
