@@ -1,0 +1,37 @@
+---
+title: "Streamlabs Desktop"
+sidebarTitle: "Streamlabs Desktop"
+description: "Control Streamlabs Desktop from your rundown — toggle streaming and recording, run the replay buffer, and drive studio mode."
+icon: "video"
+---
+
+The **Streamlabs Desktop** device controls [Streamlabs Desktop](https://streamlabs.com/streamlabs-obs), so your rundown can start the stream, roll a recording, and save a replay without leaving Fabl.
+
+## Connection
+
+Provide the **host** and **port** of the machine running Streamlabs Desktop, plus its **API token**.
+
+<Note>
+  Enable the remote control API in Streamlabs Desktop and copy the token from its settings before connecting.
+</Note>
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Toggle streaming | Starts streaming, or stops it if it is already running |
+| Toggle recording | Starts recording, or stops it if it is already running |
+| Start replay buffer | Starts the replay buffer |
+| Stop replay buffer | Stops the replay buffer |
+| Save replay | Writes the replay buffer to disk |
+| Enable studio mode | Turns studio mode on |
+| Disable studio mode | Turns studio mode off |
+| Execute studio mode transition | Fires the studio-mode transition |
+
+<Tip>
+  The stream and record commands are toggles rather than separate start and stop actions. If a rule needs to guarantee a state rather than flip it, check the current state in the rule's condition first.
+</Tip>
+
+## State and triggers
+
+The device reports its connection state and raises a trigger when the connection changes.
