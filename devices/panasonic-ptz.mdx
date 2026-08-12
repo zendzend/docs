@@ -1,0 +1,75 @@
+---
+title: "Panasonic PTZ"
+sidebarTitle: "Panasonic PTZ"
+description: "Control Panasonic PTZ cameras — pan, tilt and zoom, presets, focus and iris, tally, white balance and ND — with live position, power and tally state."
+icon: "camera"
+---
+
+The **Panasonic PTZ** device controls [Panasonic professional PTZ cameras](https://pro-av.panasonic.net/) over the network, so a rundown item can frame a shot, recall a preset, or light a tally without a camera operator touching anything.
+
+## Connection
+
+Provide the camera's **host**, and the **user name** and **password** if the camera requires authentication. **Port** and **status poll interval** can be left at their defaults.
+
+Leave **Model** blank and Fabl detects the camera family itself. Some capabilities differ per body — white-balance modes and ND steps in particular — and commands the camera does not support are rejected rather than silently ignored.
+
+## Commands
+
+### Movement
+
+| Command | What it does |
+| --- | --- |
+| Drive pan and tilt | Moves the head at a speed, where 50 is stop |
+| Stop | Stops pan and tilt movement |
+| Go to position | Moves to an absolute pan/tilt position, optionally at a chosen speed |
+| Home | Centres pan and tilt |
+| Zoom | Zooms at a speed, or moves the zoom to an absolute position |
+
+### Presets
+
+| Command | What it does |
+| --- | --- |
+| Recall preset | Recalls one of presets 1–100 |
+| Store preset | Saves the current position to a preset |
+| Set preset speed | Sets how fast preset recalls move |
+
+### Picture
+
+| Command | What it does |
+| --- | --- |
+| Focus | Focuses at a speed, moves to an absolute position, or toggles auto focus |
+| One-touch auto focus | Runs a single auto-focus pass |
+| Iris | Sets the manual iris level or an absolute position, or toggles auto iris |
+| Image stabilizer | Sets the optical stabilizer mode |
+| Gain | Sets the gain |
+| White balance | Sets the mode, or runs an auto white balance |
+| ND filter | Selects an ND step |
+| Colour bars | Switches the output between the camera picture and bars |
+
+### Studio
+
+| Command | What it does |
+| --- | --- |
+| Power | Powers the camera on or puts it into standby |
+| Tally | Turns the red or green tally on or off |
+| Scene file | Selects a scene file |
+| On-screen menu | Shows or hides the menu, moves the cursor, confirms or cancels |
+
+A raw command is also available for anything not covered above.
+
+## Triggers
+
+[Rules](/automation/rules) can react to:
+
+- The camera connection changes
+- The camera powers on or goes to standby
+- The tally changes
+- A preset is recalled
+
+<Tip>
+  Recalling a preset raises a trigger carrying the preset number, so one rule can react to "any preset recalled" and branch on which one it was.
+</Tip>
+
+## State
+
+The device reports its connection state, model, power state, red and green tally, the last preset recalled, whether auto focus and auto iris are on, live pan, tilt, zoom, focus and iris positions, and the last error.

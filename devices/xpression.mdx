@@ -1,0 +1,61 @@
+---
+title: "Ross Video XPression"
+sidebarTitle: "Ross XPression"
+description: "Drive Ross Video XPression graphics from your rundown — take and cue items, run the sequencer, control framebuffers and layers, and fire simulated GPIs."
+icon: "shapes"
+---
+
+The **XPression** device controls [Ross Video XPression](https://www.rossvideo.com/) graphics systems, so a rundown item can put a lower third, a full-frame, or a ticker on air at exactly the right moment.
+
+## Connection
+
+Provide the XPression machine's **host** and, if it differs from the default **7788**, its **TCP port**.
+
+## Commands
+
+### Taking graphics to air
+
+| Command | What it does |
+| --- | --- |
+| Take | Loads a take item to air on a framebuffer layer, leaving the focus where it is |
+| Cue | Prepares a take item for next air, so the take itself has no frame delay |
+| Read | Takes the current sequencer selection to air |
+| Next | Takes the current item to air and advances the selection |
+| Swap | Loads all cued items in a framebuffer to air together |
+
+### Sequencer
+
+| Command | What it does |
+| --- | --- |
+| Up / Down | Moves the sequencer selection |
+| Focus | Sets the sequencer focus to a take item |
+| Up next | Sets the preview to a take item without moving the focus bar |
+
+### Clearing
+
+| Command | What it does |
+| --- | --- |
+| Uncue | Removes one item from the cued state |
+| Uncue all | Removes every cued item |
+| Layer off | Removes a scene from air using the defined transition |
+| Clear framebuffer | Clears a whole framebuffer, or one layer within it |
+| Clear all | Clears every framebuffer |
+| Resume | Resumes all layers in a framebuffer, or one layer |
+
+### Other
+
+| Command | What it does |
+| --- | --- |
+| GPI | Fires a simulated GPI input |
+
+<Note>
+  Framebuffer numbers are entered as XPression shows them, starting at 1.
+</Note>
+
+<Tip>
+  Pair **Cue** with **Take** for the tightest on-air timing: cue the graphic when the item is cued in [studio mode](/production/studio-mode), then take it when the item goes on air.
+</Tip>
+
+## State and triggers
+
+The device reports its connection state and raises a trigger when the connection changes.
