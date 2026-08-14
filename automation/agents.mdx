@@ -27,6 +27,16 @@ An agent reports its status to Fabl:
 
 When an agent is offline, the devices it manages are unavailable until it reconnects. You can revoke or regenerate an agent's credentials at any time if you need to re-register it.
 
+## Agent dashboard
+
+The agent has a small dashboard you open in a browser **on the machine where the agent is installed**. Use it to enter the registration token, check the agent's connection status, and see the devices it's handling.
+
+By default the dashboard listens on port **8080**. If that port is already used by something else on the machine, open **Settings → Dashboard Port**, enter a different port, and save — the agent restarts and the page follows it to the new address.
+
+<Note>
+  If the agent can't start because its port is already taken, start it once with `--port <number>` to reach the dashboard again, then change the port from **Settings**.
+</Note>
+
 ## Agents and rundowns
 
 When you run a page in [studio mode](/production/studio-mode), you choose which agent executes the show. As you cue and take items, your commands are relayed to that agent, which carries them out on the connected devices.
