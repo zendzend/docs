@@ -1,0 +1,65 @@
+---
+title: "Tascam SS Recorder"
+sidebarTitle: "Tascam SS Recorder"
+description: "Control Tascam SS-R250N and SS-CDR250N rack recorders — start and stop recording, roll playback, switch media, and power — with live transport state and triggers."
+icon: "circle-dot"
+keywords: ["Tascam", "SS-R250N", "SS-CDR250N", "recorder", "playback"]
+---
+
+The **Tascam SS Recorder** device controls [Tascam SS-series rack recorders](https://tascam.com/us/product/ss-r250n/top) over the network, so a rundown can start and stop a recording, roll playback, or switch media as part of a show.
+
+## Models
+
+One device type drives both units in the range — pick yours from the **Model** dropdown:
+
+- **SS-R250N** — solid-state recorder
+- **SS-CDR250N** — the same recorder with a CD drive
+
+The only difference in control is the CD drive: **Eject** is available only on the SS-CDR250N.
+
+## Connection
+
+Provide the recorder's **host**. The **port** (default 23) and **status poll interval** can be left at their defaults. Choose the **Model** to match your unit.
+
+The **password** defaults to the model name (`SS-R250N` or `SS-CDR250N`) and is **case-sensitive** — leave it blank to use that default, or set it if the password has been changed on the unit's PASSWORD screen.
+
+<Note>
+  Remote power-on only works when **REMOTE POWER CONTROL** is switched on at the unit — it's **off** by default. Standby and reset work regardless.
+</Note>
+
+<Warning>
+  Setting **232C/PARA/NETWORK** to **LOCK** on the unit's LOCK SETUP screen disables Fabl's control entirely and drops the connection. If a recorder that was working suddenly goes offline, check this first.
+</Warning>
+
+## Commands
+
+### Transport
+
+- **Play**, **Stop**, and **Pause** (playback standby or record-ready)
+- **Record**, and **Record-ready** to arm without rolling
+- **Skip** to the next or previous track
+
+### Media and mode
+
+- **Select media** — SD1, SD2, USB, or CD
+- **Repeat** and **play mode** (continuous, single, program, random)
+- **Divide** the current file, or **delete** the current track's file
+- **Eject** — SS-CDR250N only
+
+### Power
+
+- **Power** the unit on, to standby, or reset it
+
+A raw command is also available for operations not listed above.
+
+## Triggers
+
+[Rules](/automation/rules) can react to:
+
+- The recorder connection changes
+- The transport state changes — stopped, playing, paused, recording, record-ready, and more
+- The media reaches its end
+
+## State
+
+The device reports its connection state, the current transport state, the selected media (SD1, SD2, USB or CD), and whether the media has reached its end.

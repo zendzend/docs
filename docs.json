@@ -165,7 +165,9 @@
               "devices/singular-live",
               "devices/propresenter",
               "devices/genelec-smart-ip",
-              "devices/sennheiser-spectera"
+              "devices/sennheiser-spectera",
+              "devices/sony-ptz",
+              "devices/tascam-ss-recorder"
             ]
           }
         ],

@@ -1,0 +1,65 @@
+---
+title: "Sony PTZ"
+sidebarTitle: "Sony PTZ"
+description: "Control Sony PTZ cameras — pan, tilt, zoom and focus, presets, power, white balance and image stabilizer — with live state and triggers, over VISCA or Sony's HTTP web interface."
+icon: "camera"
+keywords: ["Sony", "PTZ", "camera", "VISCA", "BRC-X400", "SRG", "FR7"]
+---
+
+The **Sony PTZ** devices control [Sony professional PTZ cameras](https://pro.sony/en_US/products/pan-tilt-zoom-cameras) over the network, so a rundown item can frame a shot, recall a preset, or power a camera without an operator touching it.
+
+Fabl offers two Sony camera device types. They control the same cameras in different ways, and you can add either — or both for one camera:
+
+- **Sony VISCA** — the fast, low-latency motion path every Sony PTZ body speaks. Best for pan, tilt, zoom and focus, presets, power and core imaging.
+- **Sony HTTP** — Sony's HTTP web interface, available on newer bodies such as the BRC-X400 and SRG-X families. Choose it for the higher-level features that path adds, such as auto-framing, richer imaging control and named presets.
+
+<Tip>
+  A Sony camera that isn't listed here still works with the generic [VISCA PTZ](/devices/visca-ptz) device, which carries the same Sony support.
+</Tip>
+
+## Supported cameras
+
+Between them the two device types cover the current Sony PTZ line, including the BRC-X400 and X401, the SRG-X400, X402 and X120, the SRG-A and SRG-H series, and the ILME-FR7. Sony HTTP targets the models that expose Sony's web interface — the BRC-X400 and SRG-X generation.
+
+## Connection
+
+### Sony VISCA
+
+Provide the camera's **host**. The **port** and **camera address** (almost always **1** over IP) can be left at their defaults, as can the **status poll interval**.
+
+<Note>
+  VISCA over IP is switched **off** by default on many Sony bodies and must be enabled first — through the camera's on-screen menu or its rear switches. The ILME-FR7 needs its switch 3 on, followed by a restart. Until it's enabled the camera won't connect.
+</Note>
+
+### Sony HTTP
+
+Provide the camera's **host**, and the **user name** and **password** — modern Sony bodies require them, and force the password to be changed at first setup. **Port**, **status poll interval** and **Model** can be left at their defaults; leave **Model** blank and Fabl detects the camera itself.
+
+## Commands
+
+Both device types support the core camera operations, including:
+
+- **Pan and tilt** — drive in a direction, move to an absolute or relative position, stop, or return **home**
+- **Zoom** — drive in or out, or move to an absolute position
+- **Focus** — drive near or far, set an absolute position, or toggle **auto focus**
+- **Presets** — recall or store a position
+- **Power** the camera on or to standby
+- **White balance** and **image stabilizer**
+
+Sony HTTP additionally reaches Sony's higher-level imaging and auto-framing features, and can name the presets it stores. On both device types, a raw command is available for operations not listed above.
+
+## Triggers
+
+[Rules](/automation/rules) can react to:
+
+- The camera connection changes
+- The camera powers on or goes to standby
+- A preset is recalled
+
+<Tip>
+  Recalling a preset raises a trigger carrying the preset number, so one rule can react to "any preset recalled" and branch on which one it was.
+</Tip>
+
+## State
+
+Each device reports its connection state, power state, the last preset recalled, and live pan, tilt, zoom and focus positions.
