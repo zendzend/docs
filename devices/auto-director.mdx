@@ -1,0 +1,42 @@
+---
+title: "AutoDirector"
+sidebarTitle: "AutoDirector"
+description: "An automated camera director that listens to your studio microphones and recommends which camera to cut to and how to balance the mics, leaving the switch to your rules."
+icon: "clapperboard"
+---
+
+**AutoDirector** is an automated camera director. It listens to your studio microphones to follow who is speaking and **recommends** which camera should be on air and how the microphones should be mixed. AutoDirector never drives your equipment itself — it raises triggers, and your [rules](/automation/rules) turn each recommendation into a switcher or mixer command. Because the switch happens in a rule, the same director works with whatever switcher and mixer you already control in Fabl.
+
+AutoDirector works together with [Studio Source](/devices/studio-source) devices, which represent the cameras and microphone feeds it watches.
+
+## Connection
+
+AutoDirector runs on a [Studio Agent](/automation/agents) and needs no network address. Configure it with:
+
+- A **studio group** name that links it to the Studio Source devices it should watch
+- A **style** that sets its pace for the kind of show — for example a two-person interview, a panel with overlapping voices, a single-speaker lecture, or a music performance, with a manual option for fine tuning
+- Whether it directs the **video**, the **audio**, or **both**
+
+Further settings tune how quickly it cuts, how long a microphone stays open after someone stops speaking, and how far unused microphones are turned down.
+
+## Commands
+
+Your rules can:
+
+- **Enable** the director or hand control back to an operator
+- Change its **style** or what it directs mid-show
+- **Force** a specific camera and hold it, **hold** the current shot, or **release** back to automatic
+- Tell the director which camera is actually on air, so it stands down when an operator takes a shot by hand
+- Take a camera **in or out** of the rotation
+
+## Triggers
+
+AutoDirector raises triggers your rules react to, including:
+
+- A **camera shot** being recommended, with the source to take and the suggested transition
+- A **microphone move** being recommended
+- The **active speaker** changing, or **overlap** and **silence** beginning or ending
+- A camera **entering or leaving** the rotation
+- The director **starting, stopping, or being overridden**
+
+Trigger data such as the recommended source, its switcher input, and the microphone channel is available for use in rule actions.

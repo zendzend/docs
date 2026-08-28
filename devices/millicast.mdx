@@ -1,0 +1,36 @@
+---
+title: "Millicast"
+sidebarTitle: "Millicast"
+description: "Manage a Millicast (Dolby OptiView) live stream — stop the broadcast, manage publish and subscribe tokens, cut live clips, and react when the stream goes live or viewer numbers change."
+icon: "tower-broadcast"
+---
+
+The **Millicast** device manages a live stream on [Millicast (Dolby OptiView)](https://optiview.dolby.com/), the WebRTC streaming platform, so your automations can react when a stream goes live and manage its viewers and clips.
+
+## Connection
+
+Each device represents one stream on your Dolby OptiView account. Provide the account **API secret** and the **stream name** the device represents. The **account ID** and **API base URL** are optional — leave them blank to use the account defaults — and a **poll interval** sets how often Fabl re-reads the stream's state.
+
+<Note>
+  The API secret is stored securely and is never shown again after it is entered.
+</Note>
+
+## Commands
+
+- **Stop** the broadcast on the platform
+- Enable or disable a **publish token**, or create a new **publish** or **subscribe** token for encoders and viewers
+- Cut a **live clip** of the last few seconds of the broadcast into a media asset
+- Send a raw request to the Millicast API as an escape hatch
+
+<Note>
+  Fabl stops a broadcast but does not start one — the encoder (such as vMix or OBS Studio) starts the stream. Live clipping is a premium capability that must be enabled on your Dolby OptiView plan.
+</Note>
+
+## State and triggers
+
+The device reports its connection state and raises triggers your [rules](/automation/rules) can react to:
+
+- The stream going **live** or **offline**
+- The **viewer count** changing
+
+Trigger data such as the stream name, live state, and viewer count is available for use in rule actions.

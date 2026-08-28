@@ -165,7 +165,12 @@
               "devices/singular-live",
               "devices/propresenter",
               "devices/genelec-smart-ip",
-              "devices/sennheiser-spectera"
+              "devices/sennheiser-spectera",
+              "devices/millicast",
+              "devices/unreal-engine",
+              "devices/newblue-captivate",
+              "devices/auto-director",
+              "devices/studio-source"
             ]
           }
         ],

@@ -1,0 +1,39 @@
+---
+title: "Studio Source"
+sidebarTitle: "Studio Source"
+description: "Represents one camera or microphone feed in your studio, reporting signal health and picture quality so AutoDirector and your rules can react."
+icon: "video"
+---
+
+A **Studio Source** represents a single feed in your studio — a camera, a set of microphones, or both. It gives [AutoDirector](/devices/auto-director) the cameras it can choose and the microphones it listens to, and it reports each feed's signal health and picture quality so your [rules](/automation/rules) can react when something goes wrong.
+
+## Connection
+
+Studio Source runs on a [Studio Agent](/automation/agents). Configure each source with:
+
+- A short **name** used wherever the source is referenced
+- A **studio group** name that links it to its AutoDirector
+- Whether it is a **camera**, whose **microphone channel** its picture shows, and how the **switcher** addresses it
+- Whether it **provides audio**, the **channel names** on the feed, and how the **mixer** addresses them
+- Optionally an **input** — an NDI source, stream, file, or capture device — so the agent can decode the feed and measure its quality, along with a **signal timeout**
+
+A camera the agent never needs to see can be configured by name alone, with no input.
+
+## Commands
+
+Your rules can:
+
+- Take a source **in or out** of the rotation
+- **Suppress quality reports** briefly while a correction settles
+- Change the source's **expected framing**
+
+## Triggers
+
+Studio Source raises triggers your rules react to, including:
+
+- A feed's **signal** stopping or resuming
+- A change in measured **picture quality**, such as focus or framing
+- A **camera moving** from its reference framing
+- A subject **leaving** or **returning** to frame
+
+Trigger data such as the source name and the affected quality dimension is available for use in rule actions.
