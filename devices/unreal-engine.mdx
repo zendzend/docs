@@ -1,0 +1,31 @@
+---
+title: "Unreal Engine"
+sidebarTitle: "Unreal Engine"
+description: "Drive an Unreal Engine virtual set or graphics from your rundown — set exposed preset properties, call preset functions, and react when the engine pushes changes back."
+icon: "cube"
+---
+
+The **Unreal Engine** device drives a scene in [Unreal Engine](https://www.unrealengine.com/) through its Remote Control API, so a rundown item can update a virtual set, lower third, scoreboard, or virtual camera in real time.
+
+## Connection
+
+Provide the **host** of the machine running Unreal Engine and, if you have changed them, the **command** and **event** ports. Enter the name of the **Remote Control Preset** this device drives — one device controls one preset, and the preset defines which properties and functions are exposed to Fabl.
+
+<Note>
+  Enable the Remote Control API in Unreal Engine and start its web server before connecting. The API has no authentication, so keep the engine on a trusted studio network.
+</Note>
+
+## Commands
+
+- Set an exposed **preset property** — text, a number, true/false, or a structured value
+- Call an exposed **preset function** to fire a sequence or Blueprint event
+- Set a property or call a function on any object by path, as an escape hatch
+
+## State and triggers
+
+The device reports its connection state and raises triggers your [rules](/automation/rules) can react to:
+
+- The engine **connecting or disconnecting**
+- An exposed **preset property changing** in the engine
+
+Trigger data such as the property label and its new value is available for use in rule actions.

@@ -1,0 +1,32 @@
+---
+title: "NewBlue Captivate"
+sidebarTitle: "NewBlue Captivate"
+description: "Control NewBlue Captivate live titles from your rundown — play and stop titles, push page data into title variables, and react when titles play or their data changes."
+icon: "closed-captioning"
+---
+
+The **NewBlue Captivate** device controls [NewBlue Captivate](https://www.newbluefx.com/captivate/) live titling and graphics, so a rundown item can put the right title on air carrying live data from your page.
+
+## Connection
+
+Provide the Captivate machine's **host** and, if you have changed them in Captivate, its **command** and **notification** ports. Captivate's API has no authentication, so keep it on a trusted studio network.
+
+## Commands
+
+- **Play**, **stop**, **cut in**, **cut out**, or **alert** a title
+- Play a title while setting a **title variable**, or update a variable on a title already on air
+- Update a variable across every title on a data-controller **input**
+- **Load a project** and set the **output device**
+- Start and stop **streaming**
+
+Title variables can carry live values from your page, so a lower third updates on cue rather than showing fixed wording.
+
+## State and triggers
+
+The device reports its connection state and raises triggers your [rules](/automation/rules) can react to:
+
+- Captivate **connecting or disconnecting**
+- A title's **play state** changing
+- A title's **data** changing
+
+Trigger data such as the title, variable, and value is available for use in rule actions.
