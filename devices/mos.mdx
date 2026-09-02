@@ -1,0 +1,55 @@
+---
+title: "MOS Newsroom"
+sidebarTitle: "MOS Newsroom"
+description: "Connect Fabl to a Newsroom Computer System over the MOS protocol — receive running orders and story scripts, report what's cued and on air, and offer your media library to the newsroom."
+icon: "newspaper"
+---
+
+The **MOS Newsroom** device connects Fabl to your Newsroom Computer System (NCS) — such as ENPS, iNEWS, Octopus, Dina, or Ross Inception — using the [MOS protocol](https://mosprotocol.com/). The newsroom pushes its running orders and story scripts to Fabl, Fabl reports what it has cued and on air back into that rundown, and your media library can appear in the newsroom's own search.
+
+## Connection
+
+The agent both listens for and connects to the newsroom system over your local network, so open the ports **both ways** between the agent host and the NCS. Provide:
+
+- **MOS ID** — Fabl's identifier in the newsroom.
+- **NCS ID** — the newsroom system's own identifier.
+- **NCS host** — the hostname or IP of the newsroom computer system.
+
+The **MOS ID** and **NCS ID** must match the newsroom's configuration exactly — a mismatch is answered with silence rather than an error. There is no password: MOS authenticates by this identifier pair and network reach, so network-level access is the security boundary.
+
+Optional settings let you adjust the **media object port** (default **10540**) and **running order port** (default **10541**) — installs older than MOS 2.5 use 10520 and 10521 — the message **encoding** (UTF-16 big-endian by default), and the **heartbeat** and **acknowledgement** timeouts. The device shows as **Connected** only once both channels are up.
+
+## Triggers
+
+Incoming running orders raise triggers your [rules](/automation/rules) can react to — they do not create Fabl pages automatically, so wire these to rules that populate your rundown. Triggers include:
+
+- A running order **arriving**, being **deleted**, or being marked **ready to air**
+- A **story script** arriving, with its slug, number, body text, and presenter
+- The newsroom **changing the running order** — inserting, moving, or removing items
+- The newsroom **cuing an item** or sending a **playback command**
+- The newsroom **connection** coming up or going down
+
+Trigger data such as the running order ID, story slug, script body, and item IDs is available for use in rule actions.
+
+## Commands
+
+The device can act back on the newsroom, including:
+
+- **Report an item's status** — ready, playing, or stopped — into the running order
+- **Request a story action** — ask the newsroom to create, update, move, or delete a story
+- **Refresh** the list of active running orders or **resync** one in full
+- **Publish** or **withdraw** media library assets offered to the newsroom
+
+Requesting a story change is only a request: the newsroom may refuse it or never acknowledge it, so a rule should not depend on its outcome.
+
+## State
+
+The device reports its connection state — whether both newsroom channels are up, the connected NCS ID, how many running orders it holds, and how many media assets it is publishing.
+
+## Reporting on-air state
+
+Fabl's rundown and the newsroom's running order are separate models, so the link between them is stated explicitly rather than guessed. An item is reported back to the newsroom when a rule binds it — mapping a Fabl automation ID to the newsroom's item — or when the newsroom item plays a Fabl-published media asset. Cued items are reported as **ready**, on-air items as **playing**, and finished items as **stopped**.
+
+## Publishing your media library
+
+Turn on **Publish media library** to offer your Fabl media assets to the newsroom, so producers can search for them and drag them into stories. It is off by default, and when off no library data leaves the agent. You can limit what's shared to assets carrying a specific **tag**.
