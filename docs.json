@@ -106,13 +106,14 @@
       },
       {
         "tab": "Devices",
-        "groups": [
+        "icon": "sliders",
+        "pages": [
           {
             "group": "Overview",
+            "icon": "book-open",
             "pages": [
               "devices/overview"
-            ],
-            "icon": "book-open"
+            ]
           },
           {
             "group": "Supported Devices",
@@ -167,9 +168,9 @@
               "devices/genelec-smart-ip",
               "devices/sennheiser-spectera"
             ]
-          }
-        ],
-        "icon": "sliders"
+          },
+          "devices/mos"
+        ]
       }
     ]
   },
