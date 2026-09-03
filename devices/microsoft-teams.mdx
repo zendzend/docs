@@ -1,0 +1,33 @@
+---
+title: "Microsoft Teams"
+sidebarTitle: "Microsoft Teams"
+description: "Post messages to Microsoft Teams channels and react to messages posted in them — keep your team in the loop and trigger rules on chat activity."
+icon:
+  style: "brands"
+  name: "microsoft"
+  library: "fontawesome"
+---
+
+The **Microsoft Teams** integration posts messages to your [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software) channels and reacts to messages posted in them, so your automations can keep your team in the loop and respond to what people say in chat.
+
+## Connection
+
+Connect a Microsoft 365 account from **Automations → Integrations**. Choose Microsoft Teams and sign in with your Microsoft work or school account to authorize Fabl. One connected account can be used by any number of [rules](/automation/rules).
+
+Because the integration reads channel messages to power its triggers, a Microsoft 365 administrator may need to approve access for your organization the first time the account is connected. Sending messages does not require administrator approval, so an account can post to channels even before message triggers are approved.
+
+## Commands
+
+- **Post a message** to a channel of any team the connected account has joined. Messages are sent as plain text, so you can interpolate values from your page and from trigger data directly into them.
+- Optionally send the message as a **reply** to an existing message — for example, to answer the message that triggered the rule, keeping the conversation in one thread.
+
+## State and triggers
+
+The integration reports its connection state and raises triggers your [rules](/automation/rules) can react to:
+
+- A **message posted** in a channel of a team the connected account has joined
+- The integration **connecting or disconnecting**
+
+Trigger data — including the team and channel name, the message text, the sender's name, and the message identifier — is available for use in rule actions, so a rule can reply in the same channel or quote what was said.
+
+A few things deliberately do not raise a trigger: messages posted by the connected account itself (so a rule never answers its own reply), system notices such as members joining or a channel being renamed, and messages deleted before Fabl reads them. Messages from bots or connectors are still delivered and marked as such, so a rule can decide whether to act on them.

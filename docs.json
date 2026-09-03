@@ -165,7 +165,8 @@
               "devices/singular-live",
               "devices/propresenter",
               "devices/genelec-smart-ip",
-              "devices/sennheiser-spectera"
+              "devices/sennheiser-spectera",
+              "devices/microsoft-teams"
             ]
           }
         ],
