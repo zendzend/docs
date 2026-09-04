@@ -1,81 +1,85 @@
 ---
-title: "Build Custom Automations with Fabl Workflow Builder"
-sidebarTitle: "Custom Workflows"
-description: "Use Fabl's visual workflow builder to create trigger-action chains that automate exports, status updates, and third-party integrations."
+title: "Workflows"
+sidebarTitle: "Workflows"
+description: "Build visual, multi-step automations that encode, caption, publish, and announce your media — started by hand, by a rule, or from a video in your media library."
 ---
 
-The Fabl workflow builder gives you a visual canvas for wiring together triggers and actions without writing any code. You define what event starts the workflow, add one or more actions to run in sequence, and optionally apply conditions so the automation only fires when your criteria are met. Once enabled, the workflow runs automatically every time its trigger conditions are satisfied.
+Workflows are visual automations you build on a canvas. Each workflow has a **trigger** that starts it and one or more **steps** that run in order. Use them to take a piece of media through a repeatable chain of work — for example encode a video, generate captions for it, publish it to YouTube, and announce it in Slack — without doing each step by hand.
 
-## Open the workflow builder
+Find them under **Automations → Workflows** in the sidebar.
 
-Navigate to **Settings → Automations** in your workspace sidebar. Click **New Workflow** in the top-right corner to open the builder canvas.
+<Info>
+  Workflows are related to but separate from [Rules](/automation/rules). A rule reacts to a live production or device event and runs actions on your gear through an on‑prem [agent](/automation/agents). A workflow is a multi‑step chain that works on your media, and it can be started by a rule.
+</Info>
 
-## Create a workflow from scratch
+## Build a workflow
 
 <Steps>
-  <Step title="Name your workflow">
-    Enter a descriptive name for your workflow in the **Workflow name** field (for example, "Export rundown on approval"). A clear name helps your team understand what the automation does at a glance.
+  <Step title="Create the workflow">
+    On the **Workflows** page, click the **New workflow** button, give it a name, and open it to reach the canvas.
   </Step>
-  <Step title="Choose a trigger">
-    Click **Add Trigger** and select an event from the trigger list. Each trigger represents something that happens in Fabl or in a connected integration. See the [trigger reference](#available-triggers) below for a full list.
+  <Step title="Set how it starts">
+    Configure the trigger to choose how the workflow is started — by hand, by a rule, or from a video in the media library. See [How a workflow starts](#how-a-workflow-starts).
   </Step>
-  <Step title="Add a condition (optional)">
-    Click **Add Condition** beneath the trigger to filter when the workflow fires. For example, you can restrict a trigger to a specific show, segment type, or user role. Multiple conditions are evaluated with AND logic by default.
+  <Step title="Add steps">
+    Add one or more steps from the palette and arrange them in the order they should run. See [The steps you can add](#the-steps-you-can-add).
   </Step>
-  <Step title="Add one or more actions">
-    Click **Add Action** and choose what Fabl should do when the trigger fires. You can chain multiple actions — they execute in the order you arrange them. See the [action reference](#available-actions) below.
+  <Step title="Configure each step">
+    Open a step to fill in its settings. Steps that talk to an outside service — Publish to YouTube, Slack message, Ask Claude, Ask ChatGPT — use one of your [connected accounts](/automation/overview), and the Encode step uses your encoding account's configurations.
   </Step>
-  <Step title="Configure each action">
-    Fill in the required fields for each action. For example, a **Send Slack Message** action requires a channel and message body; an **Export Rundown** action requires a format and destination folder.
-  </Step>
-  <Step title="Test the workflow">
-    Click **Test Workflow** to send a simulated trigger event through your action chain. Review the test results in the **Run Log** panel to confirm each action completes successfully before going live.
-  </Step>
-  <Step title="Enable the workflow">
-    Toggle the workflow status to **Active** and click **Save**. The workflow will begin running automatically whenever the trigger conditions are met.
+  <Step title="Run it">
+    Start the workflow with the **Run** button, or let its trigger start it. Each run appears in the run history so you can follow its progress.
   </Step>
 </Steps>
 
+## The steps you can add
+
+| Step | What it does |
+| --- | --- |
+| Encode | Encode the video with your encoding account's configurations. |
+| Generate captions | Transcribe the video and attach subtitles to it. |
+| Publish to YouTube | Upload the finished media to YouTube. |
+| In-app notification | Send a completion toast to your team. |
+| Webhook | POST the result to a URL you set. |
+| Slack message | Post a message to a Slack channel. |
+| Ask Claude | Ask Claude something and write the answer into a field. |
+| Ask ChatGPT | Ask ChatGPT something and write the answer into a field. |
+
+The steps that work on the media — Encode, Generate captions, Publish to YouTube — expect the run to have a video to act on, so give the workflow a video subject when you start it.
+
+## How a workflow starts
+
+A workflow's trigger decides where it can be started from:
+
+- **By hand or by a rule** — start it with the **Run** button in the editor, or have a [rule](/automation/rules) start it when a production event occurs.
+- **From a video in the media library** — Fabl also offers the workflow on every video in your media library, and runs it with that video as its subject.
+
+## How steps pass work along
+
+Steps run in the order you arrange them, and a later step reads what an earlier step wrote **in the same run**. For example, an **Ask Claude** step can write a summary into a field, and a **Slack message** or **Publish to YouTube** step further down the chain that reads that same field goes out carrying the answer the model just wrote.
+
+<Note>
+  Every field a workflow reads is checked when the run starts: a workflow that names a field nothing carries is refused before any step runs, so a setup mistake is caught up front rather than part‑way through.
+</Note>
+
+## Watch and manage runs
+
+Each time a workflow runs it appears in the run list on the **Workflows** page. A run is in one of four states:
+
+| Status | Meaning |
+| --- | --- |
+| Running | The run is still working through its steps. |
+| Completed | Every step finished. |
+| Failed | A step could not complete; open the run to see which one and why. |
+| Cancelled | The run was stopped before it finished. |
+
+Open a run to see each step's outcome. From the run you can:
+
+- **Stop** a run that is still running.
+- **Delete** a finished run from the history.
+
+To run a workflow again, start it again — open it and use **Run**, or start it from its video in the media library. There is no re‑run button on a past run.
+
 <Tip>
-  Always test a workflow in a non-production show before enabling it in a live environment. Use a duplicate or staging show to verify that exports land in the right folders, Slack messages appear in the correct channels, and conditional logic behaves as expected. Catching issues during testing prevents unwanted notifications or duplicate exports during a live production.
+  Try a new workflow on a spare or test video before pointing it at live media. Confirm that encodes, captions, and publishes land where you expect, and that any Slack or YouTube step posts to the right place, before you rely on it.
 </Tip>
-
-## Available triggers
-
-| Trigger | Description |
-|---|---|
-| Rundown Approved | Fires when a rundown status is changed to **Approved** by any user with approval permissions. |
-| Segment Marked Complete | Fires when an individual segment's status is set to **Complete**. |
-| Show Started | Fires when a show's start time is reached and the show transitions to **Live** status. |
-| Show Ended | Fires when a show is manually ended or its scheduled end time passes. |
-| File Uploaded | Fires when a new asset is uploaded to a specified show or folder. |
-| Scheduled Time | Fires at a recurring time you define (daily, weekly, or a custom cron schedule). |
-| Webhook Received | Fires when Fabl receives an inbound HTTP POST to your workspace webhook URL. |
-| Integration Event | Fires when a connected third-party tool (e.g., Google Drive, Slack) emits a configured event. |
-
-## Available actions
-
-| Action | Description |
-|---|---|
-| Send Slack Message | Posts a message to a specified Slack channel or direct message. Supports dynamic variables (e.g., show name, rundown title). |
-| Send Email Notification | Sends an email to one or more recipients. Supports plain-text and templated HTML bodies. |
-| Export Rundown | Exports the current rundown to PDF, CSV, or XLSX and optionally sends it to a Google Drive folder or email. |
-| Update Segment Status | Changes the status of a segment (e.g., Draft → Review → Complete). |
-| Create Google Drive Folder | Creates a new folder in a connected Google Drive account, useful for organizing show assets automatically. |
-| Upload to Google Drive | Uploads a Fabl-generated file or asset to a specified Google Drive folder. |
-| Trigger Webhook | Sends an HTTP POST request to an external URL with a configurable JSON payload. |
-| Add Show Note | Appends an automated note to a show's activity log with a custom message. |
-
-## Manage existing workflows
-
-Navigate to **Settings → Automations** to see a list of all workflows in your workspace. From this view you can:
-
-- **Enable or disable** a workflow using the toggle in the workflow row.
-- **Edit** a workflow by clicking its name to reopen the builder canvas.
-- **Duplicate** a workflow to use it as a starting point for a similar automation.
-- **Delete** a workflow permanently — this cannot be undone.
-- **View run history** by clicking **Run Log** to see recent trigger events, action outcomes, and any errors.
-
-<Info>
-  Disabled workflows retain their configuration and run history. Re-enabling a workflow does not replay past trigger events — it only starts responding to new ones.
-</Info>
