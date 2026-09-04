@@ -14,6 +14,7 @@ The File Watcher runs on the [agent](/automation/agents) host and watches the lo
 - **Watch folder** — the absolute path to monitor on the agent machine
 - **File filter** — limit to all files, video, or images
 - **Watch mode** — automatic (use OS file events where available, otherwise poll) or polling, with a configurable **poll interval**
+- **Write-settle delay** — how long a new file's size must stay unchanged before it's reported, in milliseconds (default 3000). Many tools — screen recorders, exporters, and copy utilities — write a placeholder or temporary file first and then swap the finished file into place, which can otherwise fire a rule twice or while the file is still incomplete. The delay holds a newly seen file until it stops changing, so each arrival triggers once, on the finished file. Set it to 0 to report every file event immediately.
 
 ## Commands
 
