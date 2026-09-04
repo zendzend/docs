@@ -87,6 +87,7 @@
             "group": "Automation",
             "pages": [
               "automation/overview",
+              "automation/custom-workflows",
               "automation/rules",
               "automation/devices",
               "automation/agents"
