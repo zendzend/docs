@@ -1,0 +1,56 @@
+---
+title: "MA Lighting grandMA3"
+sidebarTitle: "grandMA3"
+description: "Drive an MA Lighting grandMA3 lighting console over OSC — press executor keys, move faders, change pages, call macros, and send console commands."
+icon: "lightbulb"
+---
+
+The **[MA Lighting grandMA3](https://www.malighting.com/)** device drives a grandMA3 lighting console over OSC. As your show advances, Fabl presses executor keys, moves executor faders, changes the executor page, calls macros, and sends console command lines.
+
+This device is **command-only**: Fabl sends to the console and does not read the rig's state back or raise triggers.
+
+## Set up the console first
+
+grandMA3 ignores incoming OSC until it is enabled on the console — and a console with OSC input switched off behaves exactly like a network problem: Fabl connects, commands send cleanly, and nothing on stage moves. In **Menu → In & Out → OSC**, set up the line Fabl will send to:
+
+| Console setting | Value |
+| --- | --- |
+| **Enable Input** | On |
+| **Receive** | Yes |
+| **Receive Command** | Yes — this separately gates page changes, transport, macros, and console commands |
+| **Mode** | UDP |
+| **Port** | Match the **OSC Port** you set in Fabl |
+| **Prefix** | Match the **OSC Prefix** you set in Fabl (no slashes), or leave both empty |
+| **FaderRange** | Match the **Fader Range** you set in Fabl |
+
+<Note>
+  **Fader Range has no universal value.** The console decides which incoming value means 100%, so Fabl scales the 0–100% level you enter onto whatever range the console is set to. Read the range off the console and enter the same number in Fabl rather than guessing.
+</Note>
+
+## Connection
+
+| Setting | Required | Default | Notes |
+| --- | --- | --- | --- |
+| **Console IP** | Yes | — | The console or grandMA3 onPC machine |
+| **OSC Port** | Yes | 8000 | Must match the console's OSC line |
+| **OSC Prefix** | No | empty | No slashes; leave empty if the console's Prefix is empty |
+| **Fader Range** | Yes | 100 | Must match the console's FaderRange |
+
+The console's OSC line must be set to **UDP** mode to match this device.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| **Press executor key** | Press (and release) an executor key on a given page. What the key does — Go, Flash, Toggle — is the key's own assignment on the console. |
+| **Set executor fader** | Move an executor fader to a level, entered as 0–100% and scaled to the fader range. The level can be bound to a page field so the fader follows that field's value. |
+| **Select page** | Switch the executor page. |
+| **Executor transport** | Go, Pause, or Off a specific executor, regardless of the key's assignment. |
+| **Call macro** | Run a macro by number or by name. |
+| **Send console command** | Send any console command line — for example `Fixture 1 At 75`. |
+
+Every executor command names the **page** it acts on, so a cue never depends on whichever page the operator last selected.
+
+## State
+
+The device reports its connection state, which is only ever as good as the last command it sent. A command that fails to reach the console leaves the device disconnected with the reason shown, and fails the rule action that sent it; a later command that gets through clears it. Because the console never replies, successful delivery cannot be confirmed from Fabl — turn on **EchoInput** on the console while setting things up to confirm packets are arriving.
