@@ -32,6 +32,8 @@ When the trigger fires and conditions pass, the rule runs its actions in order. 
 
 Action parameters can use values from the triggering event, so a single rule can react dynamically to whatever fired it.
 
+When an action's parameter accepts structured data, you can enter it as **JSON**, **XML**, **header lines**, or **plain text** — limited to the formats the selected device accepts. Fabl detects and formats the content as you type, and offers token autocomplete for inserting values from the trigger.
+
 ### Looping a rundown
 
 The **restart** rundown command re-cues the first item without disturbing what's on air, so the next take wraps back to the top — the basis for an automatic loop. Combine it with a rundown-item trigger and a condition on the item's position (rundown-item triggers carry data such as whether the item is the last in the rundown, plus the first item's block id) to loop a show end-to-end. For example: when an item is taken on air and it is the last in the rundown, restart.

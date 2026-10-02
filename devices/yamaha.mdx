@@ -1,0 +1,36 @@
+---
+title: "Yamaha Digital Mixer"
+sidebarTitle: "Yamaha Digital Mixer"
+description: "Control Yamaha CL/QL, TF, DM3, DM7, and Rivage PM digital mixers — mute channels, set levels and sends, recall scenes — with live state and triggers."
+icon: "audio-lines"
+---
+
+The **Yamaha Digital Mixer** device controls [Yamaha](https://www.yamahaproaudio.com/) digital mixing consoles, including the CL/QL, TF, DM3, DM7, and Rivage PM families.
+
+## Connection
+
+The agent connects to the console over the network. Provide the **host** and select the **console model**. If needed, adjust the **port** (default **49280**) and the **reconnect interval**.
+
+## Commands
+
+The Yamaha device supports common mixing operations, including:
+
+- **Mute** and **unmute** a channel
+- Set a channel's **fader level**
+- Set a channel's **send level** to a mix
+- Set a **mix fader** level
+- Turn a **DCA** on or off and set its level
+- **Recall a scene** (with A/B bank on the TF, DM3, and DM7)
+
+The commands offered match the selected model — for example, DCA operations are not shown for the DM3.
+
+## State and triggers
+
+The device reports its connection state and raises triggers your [rules](/automation/rules) can react to, including:
+
+- Connection changes
+- Channel **mute** changes
+- Channel **fader** changes
+- **Scene recalled**
+
+Trigger data such as the channel number and level is available for use in rule actions.

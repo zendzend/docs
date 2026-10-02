@@ -1,0 +1,28 @@
+---
+title: "Magewell Director"
+sidebarTitle: "Magewell Director"
+description: "Control a Magewell Director live production unit — record, stream, switch scenes, show graphics overlays, and run the scoreboard, countdown, and timer."
+icon: "tv-2"
+---
+
+The **Magewell Director** device controls a [Magewell Director](https://www.magewell.com/director) live production unit — recording, streaming, scene switching, graphics overlays, and its scoreboard, countdown, and timer.
+
+## Connection
+
+The agent connects to the Director over the network. Provide the **host** and select the **model**. If needed, choose the **control transport** (HTTP or OSC) and adjust its **port**.
+
+## Commands
+
+The Director device supports live-production operations, including:
+
+- Start and stop **recording**
+- Start and stop **streaming**, and **stop all streaming**
+- **Switch scene**, with a transition
+- **Show** or **hide** a graphics overlay, and **clear** overlays
+- **Set** or **adjust** a team's score, and **reset the scoreboard**
+- **Set a countdown**, and **show** or **hide** it
+- Control a **timer** — play, pause, or reset
+
+## State
+
+The device reports its connection state. This driver sends commands to the Director and does not raise triggers.
