@@ -1,0 +1,27 @@
+---
+title: "OGraf"
+sidebarTitle: "OGraf"
+description: "Control any OGraf-compatible graphics player — show, update, step, and stop graphics on a layer, clear a layer, and run custom actions."
+icon: "layer-group"
+---
+
+The **OGraf** device controls any graphics player that implements the [OGraf](https://ograf.ebu.io) graphics API, letting your rundown drive on-air graphics.
+
+## Connection
+
+The agent connects to the graphics player over the network. Provide the **API base URL** and, if the player requires it, an **API key**. If needed, set a **renderer ID** and the **poll interval**.
+
+## Commands
+
+The OGraf device supports graphics operations, including:
+
+- **Show** a graphic on a layer, with its data
+- **Update** a graphic's data live
+- **Step** a graphic
+- **Stop** a graphic
+- **Clear** a layer
+- Invoke a **custom action** on a graphic or on the renderer
+
+## State and triggers
+
+The device reports its connection state and raises a trigger when the graphics output connects or drops.

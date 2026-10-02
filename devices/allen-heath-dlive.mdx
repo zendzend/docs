@@ -1,0 +1,38 @@
+---
+title: "Allen & Heath dLive"
+sidebarTitle: "Allen & Heath dLive"
+description: "Control an Allen & Heath dLive mixing system — mute channels, set levels and sends, recall scenes — with live state and triggers."
+icon: "audio-lines"
+---
+
+The **Allen & Heath dLive** device controls an [Allen & Heath dLive](https://www.allen-heath.com/hardware/dlive/) digital mixing system, connecting to either the MixRack or the Surface.
+
+## Connection
+
+The agent connects to the console over the network. Provide the **host** and choose whether it connects to the **MixRack** or the **Surface**. If needed, adjust the **port** and the console's **base channel**, and set which **channels** Fabl should monitor.
+
+For a secured connection, enable **TLS** and provide the **user profile** and **password**, along with the certificate-trust option (validate, pin, or trust any) and an optional certificate fingerprint.
+
+## Commands
+
+The dLive device supports common mixing operations, including:
+
+- **Mute** and **unmute** a channel
+- Set a channel's **fader level**
+- Set a channel's **send level** to an aux, FX, or matrix
+- Assign a channel to the **main mix**, a **DCA**, or a **mute group**
+- Adjust a mic **preamp** — gain, pad, and 48V phantom power
+- **Rename** a channel or change its **strip colour**
+- **Recall a scene** (MixRack) or **recall a cue** (Surface)
+- Fire **Scene Go**, **Next**, or **Previous** (Surface)
+
+## State and triggers
+
+The device reports its connection state and raises triggers your [rules](/automation/rules) can react to, including:
+
+- Connection changes
+- Channel **mute** changes
+- Channel **fader** changes
+- **Scene** and **cue** recalls
+
+Trigger data such as the channel number and level is available for use in rule actions.
