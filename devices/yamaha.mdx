@@ -1,0 +1,39 @@
+---
+title: "Yamaha Digital Mixer"
+sidebarTitle: "Yamaha"
+description: "Control a Yamaha digital mixing console — mute and fade channels, set sends and DCAs, and recall scenes — across CL/QL, TF, DM3, DM7 and Rivage PM, with live state and triggers."
+icon: "audio-lines"
+---
+
+The **Yamaha Digital Mixer** device controls a [Yamaha](https://www.yamahaproaudio.com/) digital mixing console over the network, so a rundown can set levels and recall scenes in step with the show.
+
+Supported console families include **CL/QL**, **TF**, **DM3**, **DM7**, and **Rivage PM**.
+
+## Connection
+
+Provide the console's **host** and choose the **console model**. Adjust the **port** (commonly **49280**) if your console uses a different one, and set how long to wait before **reconnecting** if the link drops.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Mute / unmute input | Mutes or unmutes an input channel |
+| Set input fader | Sets an input channel's level in dB |
+| Set mix send | Sets a channel's send level to a mix bus |
+| Set mix master | Sets a mix bus master fader level |
+| Switch DCA | Switches a DCA on or off (not available on DM3) |
+| Set DCA fader | Sets a DCA fader level |
+| Recall scene | Recalls a scene (choose a bank on TF, DM3, and DM7) |
+
+## State and triggers
+
+The device reports its connection state and raises triggers your [rules](/automation/rules) can react to, including:
+
+- Connection changes
+- **Mute** changes (input, mix, or DCA)
+- **Fader** changes (input, mix, or DCA)
+- **Scene recalled**
+
+<Note>
+  Changes Fabl makes are not reported back as triggers, so rules do not retrigger themselves, and recalling a scene raises a single trigger rather than one per parameter.
+</Note>

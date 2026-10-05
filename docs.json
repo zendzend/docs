@@ -165,7 +165,13 @@
               "devices/singular-live",
               "devices/propresenter",
               "devices/genelec-smart-ip",
-              "devices/sennheiser-spectera"
+              "devices/sennheiser-spectera",
+              "devices/allen-heath-dlive",
+              "devices/yamaha",
+              "devices/grandma3",
+              "devices/magewell-director",
+              "devices/watchout",
+              "devices/ograf"
             ]
           }
         ],

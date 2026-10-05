@@ -1,0 +1,49 @@
+---
+title: "Magewell Director"
+sidebarTitle: "Magewell Director"
+description: "Control a Magewell Director live production unit — switch scenes, record and stream, and drive overlays, scoreboard and countdown graphics — from your rundown."
+icon: "sliders"
+---
+
+The **Magewell Director** device controls a [Magewell Director](https://www.magewell.com/director) all-in-one live production unit, so a rundown can switch scenes, start the stream, and update on-screen graphics from one place.
+
+Supported models include **Director Mini**, **Director One**, and **Director Plus**.
+
+## Connection
+
+Provide the **Director IP** shown on the unit and choose the **model**. The default **transport** is HTTP on port **8080**; you can switch to OSC and set its port if you prefer to control the unit that way.
+
+## Commands
+
+### Switching
+
+| Command | What it does |
+| --- | --- |
+| Switch scene | Switches to a scene, optionally with a cut or fade |
+
+### Record and stream
+
+| Command | What it does |
+| --- | --- |
+| Start / stop recording | Controls recording |
+| Start / stop streaming | Starts or stops a streaming destination |
+| Stop all streaming | Stops every active stream |
+
+### Graphics
+
+| Command | What it does |
+| --- | --- |
+| Show / hide overlay | Puts a graphic overlay on or off air |
+| Clear overlays | Removes all overlays |
+| Set score | Sets a scoreboard score |
+| Adjust score | Adds to or subtracts from a score |
+| Reset scoreboard | Clears the scoreboard |
+| Set countdown | Sets the countdown duration |
+| Show / hide countdown | Shows or hides the countdown |
+| Control timer | Plays, pauses, or resets the timer |
+
+Scene names, destinations, scores, and durations accept tokens, so they can be driven straight from your page.
+
+## State
+
+The device reports its connection state. It sends commands to the Director and does not raise triggers.
