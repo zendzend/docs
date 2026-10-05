@@ -1,0 +1,27 @@
+---
+title: "OGraf"
+sidebarTitle: "OGraf"
+description: "Drive OGraf-compatible graphics from your rundown — show, update, step and stop graphics on a layer, and clear layers — over the OGraf API."
+icon: "shapes"
+---
+
+The **OGraf** device drives graphics on an [OGraf](https://ograf.ebu.io/)-compatible player, so a rundown can put a graphic on air and feed it live data. OGraf is an open graphics standard from the EBU.
+
+## Connection
+
+Provide the player's **API base URL**. Add an **API key** if the player requires one, and a **renderer ID** to target a specific renderer. A **poll interval** sets how often Fabl checks the player's status.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Show | Loads a graphic onto a layer and plays it in |
+| Update | Changes a graphic's live data without replaying the animation |
+| Step | Advances a graphic to its next step, or jumps to a step |
+| Stop | Takes a graphic off air with its out animation |
+| Clear layer | Removes everything on a layer immediately |
+| Custom action | Invokes a graphic's or renderer's custom action |
+
+## State and triggers
+
+The device reports its connection state and raises a trigger when the player's renderer becomes available or unavailable.

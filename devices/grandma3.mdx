@@ -1,0 +1,27 @@
+---
+title: "MA Lighting grandMA3"
+sidebarTitle: "grandMA3"
+description: "Control an MA Lighting grandMA3 console over OSC — press executors, set faders, change pages, run macros, and send console commands."
+icon: "lightbulb"
+---
+
+The **MA Lighting grandMA3** device controls an [MA Lighting grandMA3](https://www.malighting.com/grandma3/) console (or grandMA3 onPC) over OSC, so a rundown can fire executors and run cues in step with the show.
+
+## Connection
+
+Provide the console's **host** and **OSC port** (commonly **8000**). Set the **fader range** to match the console's configured range so fader levels scale correctly. An optional **OSC prefix** can be added if your console expects one.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Press / release executor | Presses or releases an executor key (hold both for a flash) |
+| Set executor fader | Sets an executor fader level from 0 to 100% |
+| Select page | Changes the executor page |
+| Transport executor | Runs Go, Pause, or Off on an executor |
+| Call macro | Runs a macro by number or name |
+| Console command | Sends a raw command line, for example `Fixture 1 At 75` |
+
+## State
+
+The device reports its connection state. It sends commands to the console and does not poll it for state or raise triggers.

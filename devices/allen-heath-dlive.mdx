@@ -1,0 +1,44 @@
+---
+title: "Allen & Heath dLive"
+sidebarTitle: "Allen & Heath dLive"
+description: "Control an Allen & Heath dLive mixing system — mute and fade channels, set sends and preamps, recall scenes and cues — with live state and triggers."
+icon: "audio-lines"
+---
+
+The **Allen & Heath dLive** device controls an [Allen & Heath dLive](https://www.allen-heath.com/hardware/dlive/) digital mixing system over the network, so a rundown can set levels, recall scenes, and react to changes made at the desk.
+
+## Connection
+
+Provide the system's **host** and choose the **target** — the MixRack or the Surface, which expose different capabilities. Set the **base MIDI channel** to match the desk's control configuration. The **port** has a sensible default and rarely needs changing.
+
+For an encrypted connection, enable **TLS** and provide the **user profile**, **password**, and certificate-trust settings. You can also list which **channels to monitor** so the desk reports their changes as triggers, and (on the Surface) choose which scene control numbers map to Go, Next, and Previous.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Mute / unmute channel | Mutes or unmutes a channel |
+| Set fader level | Sets a channel's level in dB (or to -inf) |
+| Set send level | Sets a channel's send to an aux, FX send, or matrix |
+| Main assignment | Assigns a channel to, or removes it from, the main mix |
+| DCA assignment | Adds a channel to, or removes it from, a DCA group |
+| Mute-group assignment | Adds a channel to, or removes it from, a mute group |
+| Set preamp gain | Sets the input preamp gain |
+| Toggle preamp pad | Switches the input pad on or off |
+| Toggle phantom power | Switches 48V phantom power on or off |
+| Rename channel | Sets a channel's name on the desk |
+| Set channel colour | Sets a channel's colour on the desk |
+| Recall scene | Recalls a scene (MixRack) |
+| Recall cue | Recalls a cue (Surface) |
+
+## State and triggers
+
+The device reports its connection state and raises triggers your [rules](/automation/rules) can react to, including:
+
+- Connection changes
+- Channel **mute** changes
+- Channel **fader** changes
+- **Scene recalled** (MixRack)
+- **Cue recalled** (Surface)
+
+Trigger data such as the channel and level is available for use in rule actions.
