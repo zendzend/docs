@@ -1,0 +1,34 @@
+---
+title: "Dataton WATCHOUT"
+sidebarTitle: "Dataton WATCHOUT"
+description: "Control Dataton WATCHOUT media servers — load shows, run and halt timelines, jump to cues, set inputs, and manage standby and online state — with live state and triggers."
+icon: "projector"
+---
+
+The **Dataton WATCHOUT** device controls a [Dataton WATCHOUT](https://www.dataton.com/watchout) media server over the network.
+
+## Connection
+
+The agent connects to WATCHOUT over your local network. Provide the **host** and choose the **role** — the WATCHOUT 7 Director, a WATCHOUT 6 production computer, or a display cluster — which sets the available commands. The default **port** suits each role and can be overridden, and you can set how often Fabl polls WATCHOUT for its status.
+
+## Commands
+
+The WATCHOUT device supports playback operations, including:
+
+- **Run**, **halt**, **kill**, and **reset** timelines
+- **Go to** a control cue or a time position
+- **Set an input** to a value, with an optional fade
+- **Load a show**
+- Set **online** and **standby** state
+
+Some commands are available only for certain roles.
+
+## State and triggers
+
+The device reports its connection state, the loaded show, online and standby state, and whether the main timeline is running. It raises triggers your [rules](/automation/rules) can react to, including:
+
+- Connection changes
+- Show changes
+- Playback changes
+
+Status triggers require polling to be enabled.

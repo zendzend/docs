@@ -1,0 +1,33 @@
+---
+title: "Yamaha"
+sidebarTitle: "Yamaha"
+description: "Control Yamaha digital mixing consoles — mute channels, set fader and send levels, drive DCAs, and recall scenes — with live state and triggers."
+icon: "audio-lines"
+---
+
+The **Yamaha** device controls a [Yamaha](https://www.yamaha.com/en/products/proaudio/mixers/) digital mixing console — CL/QL, TF, DM3, DM7, or RIVAGE PM series — over the network.
+
+## Connection
+
+The agent connects to the console over your local network. Provide the **host** and select your **console model**. The default control **port** (commonly **49280**) can be overridden, and you can set how long Fabl waits before reconnecting a dropped session.
+
+## Commands
+
+The Yamaha device supports mixing operations, including:
+
+- **Mute** and **unmute** an input channel
+- Set an input channel's **fader level** or its **send level** to a mix
+- Set a **mix bus** master level
+- Switch a **DCA** on or off and set its **level**
+- **Recall a scene**
+
+## State and triggers
+
+The device reports its connection state and raises triggers your [rules](/automation/rules) can react to, including:
+
+- Connection changes
+- Channel **mute** changes
+- Channel **fader** changes
+- **Scene recalled**
+
+Trigger data such as the channel and level is available for use in rule actions.

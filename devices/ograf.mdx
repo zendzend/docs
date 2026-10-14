@@ -1,0 +1,27 @@
+---
+title: "OGraf"
+sidebarTitle: "OGraf"
+description: "Drive any OGraf-compatible graphics player — show, update, step, and stop graphics on named layers — with live renderer state."
+icon: "shapes"
+---
+
+The **OGraf** device drives a graphics player that implements the [OGraf](https://ograf.ebu.io/) open graphics standard, letting your rundown put graphics on air through any compatible renderer.
+
+## Connection
+
+The agent connects to the graphics player over your local network. Provide the player's **API base URL** and, if the player requires one, an **API key**. If the player exposes more than one renderer, set the **renderer ID**; otherwise leave it blank. You can adjust how often Fabl reads the renderer with the **poll interval**.
+
+## Commands
+
+The OGraf device supports graphics operations, including:
+
+- **Show** a graphic on a layer with its data
+- **Update** a graphic's data live
+- **Step** a graphic forward or to a specific step
+- **Stop** a graphic with its out animation
+- **Clear** a layer
+- Run a graphic's **custom action**
+
+## State and triggers
+
+The device reports live renderer state — including which renderer is in use, its status, the available layers and graphics, and which graphics are currently on air. It raises a trigger your [rules](/automation/rules) can react to when the renderer connects or disconnects.

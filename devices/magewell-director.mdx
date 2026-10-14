@@ -1,0 +1,27 @@
+---
+title: "Magewell Director"
+sidebarTitle: "Magewell Director"
+description: "Control a Magewell Director live switcher — switch scenes, stream and record, manage graphics overlays, and run scoreboards and countdown timers."
+icon: "sliders"
+---
+
+The **Magewell Director** device controls a [Magewell Director](https://www.magewell.com/director) live production switcher (Director Mini, One, or Plus) over the network.
+
+## Connection
+
+The agent connects to the Director over your local network. Provide the **host** (the Director's IP address) and choose the **model**. The default **transport** and **port** suit most setups and can be overridden.
+
+## Commands
+
+The Magewell Director device supports live production operations, including:
+
+- **Switch a scene** to programme, with a cut or fade
+- **Start** and **stop** streaming, and stop all streams at once
+- **Start** and **stop** recording
+- **Show**, **hide**, and **clear** graphics overlays
+- **Set** and **adjust** a scoreboard score, and **reset** the scoreboard
+- Set, show, and hide a **countdown timer**, and **play, pause, or reset** a timer
+
+## State
+
+The device reports its connection state and the outcome of the last command. This driver sends commands to the Director and does not raise triggers.

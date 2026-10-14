@@ -1,0 +1,27 @@
+---
+title: "Google Ad Manager"
+sidebarTitle: "Google Ad Manager"
+description: "Signal upcoming ad breaks to Google Ad Manager for dynamic ad insertion — trigger and cancel breaks from your rundown — with live break state."
+icon: "megaphone"
+---
+
+The **Google Ad Manager** device tells [Google Ad Manager](https://admanager.google.com/) that an ad break is coming in a live stream, giving it time to assemble the ad pod for dynamic ad insertion (DAI).
+
+## Connection
+
+Connect Google Ad Manager from **Automations → Integrations**: choose **Google Ad Manager**, enter your Ad Manager **network code**, and sign in with a Google account that can authorize the network. Once connected, add the device from **Automations → Devices** and select the network.
+
+<Note>
+  You need a Google Ad Manager network with dynamic ad insertion and API access enabled, and a live stream event created in Ad Manager to receive the breaks.
+</Note>
+
+## Commands
+
+The Google Ad Manager device supports ad-break operations:
+
+- **Trigger an ad break** — schedule a break of a given duration, fired ahead of time so Ad Manager has the lead time it needs. You identify the stream, and can add audience targeting parameters and a pod template.
+- **Cancel an ad break** — withdraw a scheduled break before Ad Manager begins assembling its pod.
+
+## State and triggers
+
+The device reports its connection state, the last ad break it created, and that break's current state (scheduled, decisioned, or complete). It raises a trigger your [rules](/automation/rules) can react to when the connection changes.
