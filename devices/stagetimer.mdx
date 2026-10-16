@@ -1,0 +1,53 @@
+---
+title: "Stagetimer"
+sidebarTitle: "Stagetimer"
+description: "Run a Stagetimer room from your rundown — drive and adjust timers, show messages, flash the display, set blackout and on-air, and react when a timer starts, changes, or runs low."
+icon: "stopwatch"
+---
+
+The **Stagetimer** device controls [Stagetimer](https://stagetimer.io/), the browser-based countdown and show timer, so your rundown can run its timers, post messages to the stage, and react as time runs down. One device controls one Stagetimer **room**.
+
+## Connection
+
+Provide the **API base URL**, the **room ID**, and an **API key**:
+
+- **API base URL** — for Stagetimer in the cloud, use `https://api.stagetimer.io/v1`. For the offline desktop app, point it at the app's local address on your network (for example `http://<desktop-ip>:3000/v1`).
+- **Room ID** — shown on the room's controller page, or in the desktop app.
+- **API key** — a **room key** for a single room, or a **team key** for every room your team owns. It is stored encrypted and masked in the device settings.
+
+A device saved without a room ID or API key still appears in your device list and reports what's missing until you complete it.
+
+<Note>
+  The Stagetimer API requires a **paid Stagetimer licence** — a free room is refused. A team key is shared across all of your rooms and draws on one shared rate limit, so prefer a room key unless you need a single key for several rooms.
+</Note>
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| Start / Stop / Start or stop / Reset / Start fresh | Transport for the running timer. *Start or stop* toggles, so prefer explicit **Start** or **Stop** in rules |
+| Next / Previous | Move to the next or previous timer |
+| Add time / Subtract time | Add or remove a number of seconds |
+| Jump | Move the time by a number of seconds — a negative value jumps back |
+| Start timer / Stop timer / Select timer | Act on a specific timer, chosen by its position or its id |
+| Update timer | Change a timer's name, speaker, notes, duration, or wrap-up thresholds |
+| Show message / Hide message | Show or hide a message on the stage |
+| Create and show message | Create a message — text, colour, bold, uppercase — and show it |
+| Flash | Flash the timer display a number of times |
+| Stop flash | Stop flashing |
+| Set blackout / Set on air | Turn the room's blackout or on-air state on or off |
+
+Timers and messages are addressed by their **position** in the room, counting from 1, or by their **id**.
+
+## State and triggers
+
+The device reports its connection state, the current timer and its remaining time, the playback state (running, paused, or stopped), the timer's wrap-up phase, whether a message is showing, and whether blackout or on-air is active.
+
+It raises triggers your rules can react to when:
+
+- the connection changes;
+- playback starts, pauses, or stops;
+- a different timer is selected;
+- the remaining time crosses a wrap-up colour (yellow or red) or reaches zero;
+- a message is shown or hidden;
+- blackout or on-air is switched.
