@@ -1,0 +1,52 @@
+---
+title: "Allen & Heath SQ"
+sidebarTitle: "Allen & Heath SQ"
+description: "Control Allen & Heath SQ-5, SQ-6, and SQ-7 digital mixers over the network — mute, faders, sends, pan, assigns, scenes, and soft keys — with live state and triggers."
+icon: "audio-lines"
+---
+
+The **Allen & Heath SQ** device controls [Allen & Heath SQ-5, SQ-6, and SQ-7](https://www.allen-heath.com/hardware/sq-series/) digital mixing consoles over the network. One device type covers all three frames; the model only changes the number of soft keys.
+
+The SQ is a two-way device: besides carrying out commands, it reports mutes, fader moves, scene recalls, and soft-key presses from the desk as triggers your [rules](/automation/rules) can react to.
+
+## Connection
+
+The agent connects to the desk over your network. Provide the **host**; the **port** defaults to **51325** and only needs changing if your setup requires it.
+
+Two settings must match the desk's own MIDI configuration (under **Utility → General → MIDI** on the console), or levels and triggers will be wrong:
+
+- **MIDI channel** — set it to the same channel as the desk. A mismatch shows as a connection error naming the channel to check.
+- **Fader law** — choose **Linear** or **Audio** to match the desk's NRPN Fader Law. A mismatch is not detected and makes every level read and set incorrectly.
+
+Choose the **model** (SQ-5 / SQ-6 / SQ-7) and, optionally, set which **channels are monitored** — the channels whose faders and mutes raise triggers and are read at connect time (for example `input:1-48, dca:1-8, main:1`).
+
+<Note>
+  A soft key sends nothing unless it has been assigned a MIDI function on the desk. Assign the **MIDI note** function to each soft key that should fire a trigger.
+</Note>
+
+## Commands
+
+Channels, scenes, and soft keys are numbered from 1, as on the desk. Supported operations include:
+
+- **Mute** and **unmute** a channel
+- Set a channel's **fader level** in dB (or fully off)
+- **Nudge a fader** up or down by 1 dB
+- Set a **send level** to an aux, FX send, or matrix
+- Set **pan / balance** to a destination
+- **Assign** a channel to a destination (main, group, aux, FX send, or matrix)
+- **Recall a scene** (1–300)
+- **Press** and **release** a soft key
+
+Channel types include input, group, FX return, FX send, aux, matrix, main (LR), DCA, and mute group. Levels run from −89 dB to +10 dB; only an explicit *off* pulls a fader fully down, so a mistyped value cannot silently kill a channel on air.
+
+## State and triggers
+
+The device reports its connection state and raises triggers your rules can react to, including:
+
+- Connection changes
+- Channel **mute** changes
+- Channel **fader** changes (for monitored channels)
+- **Scene recalled**
+- **Soft key pressed**
+
+Trigger data such as the channel type, channel number, level, and scene is available for use in rule actions. Only real changes fire — a value the desk re-reports unchanged, or an echo of a change Fabl itself made, raises nothing, so a rule that reacts to a mute does not loop. During a scene recall the desk reports many parameters at once; the recall itself fires once and channel triggers settle before firing.

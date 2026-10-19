@@ -1,0 +1,58 @@
+---
+title: "Art-Net"
+sidebarTitle: "Art-Net"
+description: "Send and receive DMX512 lighting data over the network with Art-Net — set and fade channels, blackout, release, and discover nodes — with live state and triggers."
+icon: "lightbulb"
+---
+
+The **Art-Net** device sends and receives DMX512 lighting data over your network using [Art-Net](https://art-net.org.uk/). One device is a single Art-Net endpoint — the node or addresses it transmits to, the universes Fabl may send, and the incoming channels it watches — covering output, input, and node discovery together.
+
+## Connection
+
+Provide the **target**: a lighting node's IP address for **unicast** (only that node receives frames, the recommended setup), or a **broadcast** address (ending in `.255`) to reach every node on the network.
+
+Lighting networks usually sit on their own network interface, so set the **bind address** to the agent's IP on the lighting network; left empty, the device listens on all interfaces. The **port** defaults to **6454** and rarely needs changing. If other lighting software on the same host already holds the port, the device shares it, but only one Art-Net device per agent should listen.
+
+Further settings control transmission and monitoring:
+
+- **Output universes** — an allow-list of the universes Fabl may transmit (for example `0-3, 16`). A command for any other universe is refused and sends nothing, so a mistyped rule cannot take over a console's universe.
+- **Refresh rate** — the frame rate during fades (up to 44 Hz).
+- **Keep-alive** — how often an active universe is re-sent, so fixtures do not fall back to their fail-safe.
+- **Monitored channels** and **thresholds** — the incoming channels that raise triggers, and the levels at which a threshold-crossed trigger fires.
+
+<Note>
+  Give Fabl its own universe wherever you can. When Fabl and a console share one universe, the node merges or drops sources depending on its configuration, which is the most common real-world problem.
+</Note>
+
+### Universe numbering
+
+Fabl uses the 0-based Art-Net Port-Address everywhere (0–32767) and never adds or subtracts one. Many consoles label Port-Address 0 as “universe 1”, so check which convention your console's patch uses. DMX channels count from 1 to 512, as on every console and fixture manual.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| **Set channel** | Set one channel and transmit immediately. |
+| **Set channels** | Set a contiguous run of channels, e.g. the RGBW of one fixture. |
+| **Set 16-bit channel** | Set a 16-bit value across a coarse and fine channel pair. |
+| **Fade channels** | Fade from the current levels to the targets over a duration, linear or s-curve. |
+| **Blackout** | Set every channel in a universe to zero. |
+| **Release** | Stop transmitting a universe, so the node falls back to its other source or fail-safe. |
+| **Poll nodes** | Discover Art-Net nodes on the network and refresh the node list. |
+
+Values are given in **DMX** (0–255, or 0–65535 for 16-bit) or as a **percentage** (0–100). A value out of range is refused rather than clamped. A later set or fade on a channel takes over smoothly from a fade still running on it.
+
+## State and triggers
+
+The device reports its bind and connection state, the target, the active and received universes, and the discovered nodes. It raises triggers your [rules](/automation/rules) can react to, including:
+
+- A **monitored channel changes** level
+- A channel **crosses a threshold** (up or down)
+- A monitored universe **starts or stops receiving**
+- A **node appears or disappears** from discovery
+
+Trigger data such as the universe, channel, value, percentage, and node details is available for use in rule actions.
+
+## Testing without hardware
+
+Any Art-Net visualiser or lighting tool with Art-Net input and output (for example QLC+) can stand in for a node or a console. Run it on another machine, or bind Fabl to a different address, so its packets are not mistaken for Fabl's own output.
