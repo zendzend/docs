@@ -166,7 +166,8 @@
               "devices/propresenter",
               "devices/genelec-smart-ip",
               "devices/sennheiser-spectera",
-              "devices/allen-heath-sq"
+              "devices/allen-heath-sq",
+              "devices/artnet"
             ]
           }
         ],
