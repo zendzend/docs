@@ -1,0 +1,165 @@
+---
+title: "Fabl MCP tools reference"
+sidebarTitle: "MCP tools"
+description: "Every tool the Fabl MCP server offers an AI assistant, grouped by area, with what each one does and whether Claude asks before running it."
+keywords:
+  - "MCP"
+  - "tools"
+  - "Claude"
+  - "readOnlyHint"
+  - "destructiveHint"
+---
+
+The Fabl MCP server offers 97 tools, grouped below by area. The **Asks first** column shows whether Claude asks for your approval before each call: tools that only read run without asking, and every tool that changes something or acts on your studio asks first. Each tool also checks your [role and permissions](/team/roles-and-permissions) before it runs. To connect an assistant, see [Connect an assistant](/ai/connect).
+
+## Account and utilities
+
+| Tool | What it does | Asks first |
+| --- | --- | --- |
+| `get_current_user` | Shows who the assistant acts as: your name and email, the organization, your role and your permissions | No |
+| `get_current_datetime` | Gets the current date and time | No |
+
+## Spaces and folders
+
+| Tool | What it does | Asks first |
+| --- | --- | --- |
+| `list_spaces` | Lists or searches spaces | No |
+| `create_space` | Creates a space | Yes |
+| `update_space` | Changes a space's title or icon | Yes |
+| `delete_space` | Permanently deletes a space and everything in it | Yes |
+| `create_folder` | Creates a folder in a space or another folder | Yes |
+| `update_folder` | Changes a folder's title or icon | Yes |
+| `delete_folder` | Permanently deletes a folder and everything in it | Yes |
+
+## Pages
+
+| Tool | What it does | Asks first |
+| --- | --- | --- |
+| `list_pages` | Lists or searches pages, optionally within a space or folder and by date | No |
+| `search_pages` | Searches pages by title and content | No |
+| `search_workspaces` | Finds which spaces contain a word, across every title and value | No |
+| `get_page_content` | Reads a page's full content: every block, field label and value | No |
+| `create_page` | Creates a page in a space or folder, optionally dated | Yes |
+| `update_page` | Changes a page's title, icon, date or time | Yes |
+| `duplicate_page` | Copies a page with all its content | Yes |
+| `delete_page` | Permanently deletes a page and its content | Yes |
+
+## Fields and blocks
+
+| Tool | What it does | Asks first |
+| --- | --- | --- |
+| `get_block_children` | Shows the blocks directly inside a page, component, template or container | No |
+| `get_block_references` | Lists the pages that use a synced component or field preset | No |
+| `add_field` | Adds a field to a page, component or template | Yes |
+| `update_field` | Changes a field's label, placeholder, default, options, automation id or styling | Yes |
+| `update_block_value` | Sets a field's value, the content shown on the page | Yes |
+| `move_block` | Moves a block to another parent or position | Yes |
+| `delete_block` | Permanently deletes a block and everything inside it | Yes |
+| `add_media_to_page` | Adds a video, image or audio placeholder to a page, component or template | Yes |
+
+## Components
+
+| Tool | What it does | Asks first |
+| --- | --- | --- |
+| `list_components` | Lists or searches components | No |
+| `get_component_update` | Previews what copies of a component on a page would take from the library component | No |
+| `create_component` | Creates a component | Yes |
+| `update_component` | Changes a component's title or icon | Yes |
+| `change_header_layout` | Changes a component's header layout | Yes |
+| `style_component_header` | Sets or clears the color of a component's header | Yes |
+| `assign_component_workspaces` | Sets the spaces a component can be placed in | Yes |
+| `add_component_to_page` | Places a copy of a component on a page | Yes |
+| `update_component_copies` | Brings copies of a component on a page up to date | Yes |
+| `delete_component` | Permanently deletes a component. Copies already on pages stay | Yes |
+
+## Templates, field presets and tags
+
+| Tool | What it does | Asks first |
+| --- | --- | --- |
+| `list_templates` | Lists or searches templates | No |
+| `create_template` | Creates a template | Yes |
+| `update_template` | Changes a template's title or icon | Yes |
+| `assign_template_workspaces` | Sets the spaces a template can be applied in | Yes |
+| `save_page_as_template` | Creates a template from a page's structure | Yes |
+| `apply_template` | Applies a template to a page | Yes |
+| `delete_template` | Permanently deletes a template. Pages it was applied to keep their content | Yes |
+| `list_field_presets` | Lists or searches field presets | No |
+| `create_field_preset` | Creates a field preset | Yes |
+| `update_field_preset` | Changes a field preset and every placement of it | Yes |
+| `instantiate_field_preset` | Places a field preset as a synced field | Yes |
+| `list_tags` | Lists the organization's tags | No |
+| `get_block_tags` | Shows the tags on a block | No |
+| `set_block_tags` | Replaces the tags on a block | Yes |
+
+## Media and feeds
+
+| Tool | What it does | Asks first |
+| --- | --- | --- |
+| `list_media_assets` | Lists or searches the media library | No |
+| `list_feeds` | Lists the feeds you follow, with their health and import settings | No |
+| `list_feed_items` | Lists a feed's current items, newest first | No |
+| `import_feed_items` | Imports chosen feed items as pages, like the **Import** button | Yes |
+
+## Automation rules
+
+| Tool | What it does | Asks first |
+| --- | --- | --- |
+| `list_rules` | Lists or searches rules with their triggers, conditions and actions | No |
+| `get_rule` | Reads one rule in full | No |
+| `list_trigger_schemas` | Lists the built-in trigger types and their fields | No |
+| `list_action_schemas` | Lists the action types and what each one needs | No |
+| `list_condition_operators` | Lists the operators a condition can use | No |
+| `list_automation_targets` | Lists the fields a rule can write to by automation id | No |
+| `get_automation_usage` | Shows how many rule actions you use against your plan's limit | No |
+| `create_rule` | Creates a rule | Yes |
+| `update_rule` | Replaces a rule in full | Yes |
+| `patch_rule` | Changes only the named parts of a rule | Yes |
+| `add_rule_action` | Adds an action to a rule | Yes |
+| `update_rule_action` | Replaces one action of a rule | Yes |
+| `remove_rule_action` | Removes one action from a rule | Yes |
+| `toggle_rule` | Turns a rule on or off | Yes |
+| `test_rule` | Runs a draft rule's actions now without saving it | Yes |
+| `trigger_rule` | Runs a saved rule's actions now, skipping its conditions | Yes |
+| `trigger_rule_action` | Runs one action of a saved rule now | Yes |
+| `delete_rule` | Permanently deletes a rule | Yes |
+
+## Devices, agents and integrations
+
+| Tool | What it does | Asks first |
+| --- | --- | --- |
+| `list_agents` | Lists your studio agents and whether they are online | No |
+| `list_devices` | Lists or searches your devices | No |
+| `get_device` | Reads one device with its status and configuration | No |
+| `list_device_types` | Lists the device types your agents report | No |
+| `get_device_type` | Reads a device type's commands and triggers | No |
+| `list_integrations` | Lists your connected integrations | No |
+| `list_integration_providers` | Lists the integration providers you can connect | No |
+
+## Rundowns
+
+| Tool | What it does | Asks first |
+| --- | --- | --- |
+| `get_rundown_status` | Shows whether a page's rundown is live, and what is on air and cued | No |
+| `start_rundown` | Starts a page's rundown on the agent you name | Yes |
+| `cue_rundown_item` | Cues an item, ready to take to air | Yes |
+| `take_rundown_item` | Takes the cued item to air | Yes |
+| `stop_rundown` | Stops the live rundown and ends the show | Yes |
+
+## Workflows
+
+| Tool | What it does | Asks first |
+| --- | --- | --- |
+| `list_workflows` | Lists workflows and the rules that start them | No |
+| `get_workflow` | Reads a workflow's trigger, stages and connections | No |
+| `list_workflow_step_kinds` | Lists the step kinds and their settings | No |
+| `list_workflows_for_media_asset` | Lists the workflows a media asset can start | No |
+| `list_workflow_runs` | Lists workflow runs, running ones first | No |
+| `get_workflow_run` | Reads a run step by step, including where and why it stopped | No |
+| `create_workflow` | Creates a workflow | Yes |
+| `set_workflow_graph` | Replaces a workflow's stages and connections | Yes |
+| `rename_workflow` | Renames a workflow | Yes |
+| `run_workflow` | Starts a workflow now | Yes |
+| `run_workflow_on_media_asset` | Starts a workflow on a media asset | Yes |
+| `cancel_workflow_run` | Stops a running workflow | Yes |
+| `delete_workflow_run` | Removes a finished run from the history | Yes |
+| `delete_workflow` | Permanently deletes a workflow. Its past runs stay in the history | Yes |
