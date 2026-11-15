@@ -1,0 +1,91 @@
+---
+title: "Connect Claude and other AI assistants to Fabl"
+sidebarTitle: "Connect an assistant"
+description: "Connect Claude or any MCP client to the Fabl MCP server so an AI assistant can read and edit your pages, rules, workflows and rundowns as you."
+keywords:
+  - "MCP"
+  - "Model Context Protocol"
+  - "Claude"
+  - "AI assistant"
+  - "connector"
+---
+
+Fabl runs a **Model Context Protocol (MCP) server**, so an AI assistant such as Claude can work in your organization for you: find pages, fill in fields, build components and templates, write automation rules and workflows, and run a rundown. You connect once, sign in with your Fabl account, and the assistant then acts as you, with your permissions.
+
+## Server address
+
+```text
+https://api.fabl.studio/mcp
+```
+
+The server uses the Streamable HTTP transport. You don't need an API key: the first time your assistant connects, it opens a browser window where you sign in to Fabl and approve access.
+
+## Connect Claude
+
+<Tabs>
+  <Tab title="Claude (web and desktop)">
+    <Steps>
+      <Step title="Add a custom connector">
+        In Claude, open **Settings → Connectors** and choose **Add custom connector**.
+      </Step>
+      <Step title="Enter the server address">
+        Name it **Fabl** and paste `https://api.fabl.studio/mcp` as the URL.
+      </Step>
+      <Step title="Sign in to Fabl">
+        Choose **Connect**. Sign in with your Fabl account in the window that opens and approve access.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Claude Code">
+    Add the server from your terminal:
+
+    ```bash
+    claude mcp add --transport http fabl https://api.fabl.studio/mcp
+    ```
+
+    Then run `/mcp` inside Claude Code, select **fabl** and authenticate. Your browser opens so you can sign in to Fabl and approve access.
+  </Tab>
+  <Tab title="Other MCP clients">
+    Any client that supports remote MCP servers over Streamable HTTP with OAuth sign-in can connect. Add a server with the URL `https://api.fabl.studio/mcp`. The client finds Fabl's sign-in page by itself, registers itself and opens it in your browser, so there is nothing else to configure.
+  </Tab>
+</Tabs>
+
+<Tip>
+  To check the connection, ask your assistant "Who am I in Fabl?". It answers with your name, the organization it is working in, your role and your permissions.
+</Tip>
+
+## What the assistant can do
+
+The assistant acts as you in your organization. Every tool checks your [role and permissions](/team/roles-and-permissions) before it runs, so the assistant can only do what you could do in the app. If you can't delete a rule in Fabl, neither can your assistant.
+
+What it can reach:
+
+- **Content**: spaces, folders, pages, fields, components, templates, field presets and tags
+- **Media**: search the library and add media to pages
+- **Feeds**: browse followed feeds and import their items
+- **Automation**: rules, devices, device types, agents and integrations
+- **Workflows**: build workflows, run them and follow their runs
+- **Live production**: start and stop a rundown, cue items and take them to air
+
+See [MCP tools](/ai/tools) for the full list.
+
+## When Claude asks for approval
+
+Every Fabl tool tells your assistant whether it only reads or whether it changes something:
+
+- **Read-only tools** (listing, getting and searching) can run without asking you each time.
+- **Tools that change anything** always ask for your approval first. This includes creating, editing and deleting content, and anything that acts on your studio: testing or triggering a rule, and starting, cueing or taking a rundown.
+
+Claude uses these hints to decide when to ask. Other clients may handle them differently, so check your client's settings.
+
+<Warning>
+  Tools that trigger rules or drive a rundown send commands to the real devices behind your [agent](/automation/agents). Approve them only when your studio is ready for it.
+</Warning>
+
+## Usage
+
+Every tool call is counted in your organization's AI usage. Open **Settings → Billing** to see the **AI usage** tile, which shows assistant actions this month, split between the in-app chat and MCP.
+
+## Disconnect
+
+To stop an assistant from working in Fabl, remove the Fabl connector in your client's settings. In Claude Code, run `claude mcp remove fabl`.

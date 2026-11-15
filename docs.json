@@ -95,7 +95,9 @@
           },
           {
             "group": "AI assistants",
-            "pages": []
+            "pages": [
+              "ai/connect"
+            ]
           },
           {
             "group": "Team & Settings",
