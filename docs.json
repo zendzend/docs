@@ -96,7 +96,8 @@
           {
             "group": "AI assistants",
             "pages": [
-              "ai/connect"
+              "ai/connect",
+              "ai/tools"
             ]
           },
           {
