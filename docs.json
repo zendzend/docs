@@ -94,6 +94,10 @@
             "icon": "spline"
           },
           {
+            "group": "AI assistants",
+            "pages": []
+          },
+          {
             "group": "Team & Settings",
             "pages": [
               "team/invite-members",
